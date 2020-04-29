@@ -1,5 +1,80 @@
-body {
-    background-color: darkorchid;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    min-width: 1438px;
+    width: 100%;
+}
+
+.container .header-barr {
+    height: 23px;
+    margin: 1px 1px 0px 1px;
+    border-bottom: solid 1px #110038;
+    background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
+    font-family: "Chakra Petch";
+    font-size: 12px;
+    letter-spacing: 0;
+    color: floralwhite;
+}
+
+.container header {
+    width: 1200px;
+    margin: 35px 140px 16px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container header .logo {
+    width: 102.6px;
+    height: 64px;
+}
+
+.container header .logo img {
+    width: 100%;
+}
+
+.container .buttons-text {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.container .buttons-text .menu-ch-gif {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .buttons-text .menu-ch-gif .menu {
+    display: flex;
+    flex-direction: column;
+    /*margin-top: -80px;
+  z-index: -1;*/
+}
+
+.container .text {
+    font-family: "Chakra Petch";
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+
+.container button {
+    width: 144px;
+    height: 36px;
+    /*margin-right: 16px;*/
+    background-color: #F7C9F3;
+    font-family: "Chakra Petch";
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #110038;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
 
