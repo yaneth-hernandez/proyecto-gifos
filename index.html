@@ -30,30 +30,72 @@
                     <div class="menu-ch-gif">
                         <div class="ch-gif">
                             <button id="ch-gif" onclick="elegirTemas()">Elegir Tema</button>
-                        </div>
+                            <button id="button-dopdown" onclick="menuDopdown()"><i class="fas fa-caret-down"></i></button>
+                            <span class="text">Mis Guifos</span>
 
+                        </div>
                         <div class="menu">
-                            <button onclick="sailorDay()">Sailor Day</button>
-                            <button onclick="sailorNight()">Sailor Night</button>
+                            <button id=sailor-day onclick="sailorDay()">Sailor Day</button>
+                            <button id=sailor-night onclick="sailorNight()">Sailor Night</button>
                         </div>
-                    </div>
-                    <!--<div class="button-dopdown">
-                    <label for="theme"><i class="fas fa-caret-down"></i></label>
-                    <input type="checkbox" name="theme" id="theme" />
-                </div>-->
-
-                    <div class="button-dopdown">
-                        <button id="button-dopdown" onclick="menuDopdown()"><i class="fas fa-caret-down"></i></button>
-                    </div>
-                    <div class="text">
-                        <span>Mis Guifos</span>
                     </div>
                 </div>
             </header>
+            <section class="buscar">
+                <div class="bar-buscar">
+                    <span>Buscar </span>
+                </div>
+                <div class="buscar-form">
+                    <form action="">
+                        <div>
+                            <input type="sumit" id="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" size="154" />
+                        </div>
+                        <div>
+                            <button id="btn-search" onclick="activarBusqueda()"><i class="fas fa-search"></i> Buscar</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </section>
+            <article class="sugerencias">
+                <div class="sugerimos">
+                    Hoy te sugerimos:
+                </div>
+                <div class="sugeridos">
+                    <div class="options">
+                        <div class="option1">
+                            <span>Lorem ipsum dolor sit amet </span>
+                            <div class="cierre"><i class="fas fa-times"></i></div>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="option2">
+                            <span>Lorem ipsum dolor sit amet </i></span>
+                            <div class="cierre"><i class="fas fa-times"></i></div>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="option3">
+                            <span>Lorem ipsum dolor sit amet </span>
+                            <div class="cierre"><i class="fas fa-times"></i></div>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="option4">
+                            <span>Lorem ipsum dolor sit amet</span>
+                            <div class="cierre"><i class="fas fa-times"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
             <footer></footer>
-            <script src="js/index.js"></script>
+        </div>
+        </div>
+        <script src="js/index.js"></script>
+
 </body>
-</div>
+
 </main>
 
 </html>
