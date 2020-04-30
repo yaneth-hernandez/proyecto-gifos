@@ -59,7 +59,7 @@
 .container .buttons-text .menu-ch-gif .menu {
     display: flex;
     flex-direction: column;
-    margin-top: -80px;
+    margin-top: -200px;
     z-index: -1;
 }
 
@@ -142,6 +142,9 @@
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 }
 
+
+/*===inicio sección buscar==*/
+
 section .buscar {
     width: 1200px;
     padding: 0px 0px 40px 0px;
@@ -198,16 +201,41 @@ input #text {
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 }
 
-article .sugerencias {
-    width: 1200px;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+#btn-search:hover {
+    width: 102px;
+    height: 36px;
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    font-family: 'Chakra Petch';
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 18px;
 }
+
+#btn-search:visited {
+    width: 102px;
+    height: 36px;
+    background: #E6BBE2;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    font-family: 'Chakra Petch';
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+
+
+/*===fin sección buscar==*/
+
+
+/*===inicio articulo-sugerencias===*/
 
 .sugerimos {
     width: 1200px;
-    margin-top: 65px;
+    margin: 65px 0px 16px 0px;
     font-family: 'Chakra Petch';
     font-size: 14px;
     color: #110038;
@@ -217,24 +245,26 @@ article .sugerencias {
     box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
 }
 
-.sugeridos {
-    margin-top: 20px;
+.sug-option {
+    width: 1200px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    align-content: center;
 }
 
-.options {
+.option-content {
     width: 288px;
     height: 313px;
     background: #E6E6E6;
     box-shadow: #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.option1,
-.option2,
-.option3,
-.option4 {
+.option-barr {
+    width: 280px;
     height: 24px;
     box-shadow: inset -2px 0px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
@@ -243,16 +273,43 @@ article .sugerencias {
     font-weight: bold;
     letter-spacing: 0;
     color: floralwhite;
-}
-
-.options .option1,
-.option2,
-.option3,
-.option4 {
     display: flex;
     justify-content: space-between;
 }
 
-.cierre {
-    color: #000000;
+.btn-cierre {
+    color: black;
+    width: 16px;
+    height: 16px;
+    background: gray;
 }
+
+.video-btn-content {
+    width: 280px;
+    height: 280px;
+    background: violet;
+}
+
+.gif {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-opt {
+    position: absolute;
+    transform: translateX(-265px) translateY(235px);
+    width: 81px;
+    height: 34px;
+    background: #4180F6;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+    font-family: 'Chakra Petch';
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+}
+
+
+/*===fin artìculo sugerencias===*/
