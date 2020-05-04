@@ -7,14 +7,14 @@
     min-width: 1440px;
     width: 100%;
     box-sizing: border-box;
-    background-color: #FFFFFF;
+    background-color: #110038;
 }
 
 .container .header-barr {
     height: 23px;
     margin: 1px 1px 0px 1px;
-    border-bottom: solid 1px #110038;
-    background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+    box-shadow: 0 1px 0 0 #110038;
     font-family: "Chakra Petch";
     font-size: 12px;
     letter-spacing: 0;
@@ -68,7 +68,7 @@
 .container .text {
     font-family: "Chakra Petch";
     font-size: 16px;
-    color: #110038;
+    color: #FFFFFF;
     letter-spacing: 0;
     line-height: 18px;
     margin-left: 16px;
@@ -84,14 +84,14 @@
     width: 144px;
     height: 36px;
     margin-right: 16px;
-    background-color: #F7C9F3;
     font-family: "Chakra Petch";
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0px;
-    color: #110038;
+    color: #FFFFFF;
+    background: #EE3EFE;
     border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;
 }
 
@@ -103,10 +103,10 @@
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0px;
-    color: #110038;
-    background: #F7C9F3;
+    color: #FFFFFF;
+    background: #EE3EFE;
     border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;
 }
 
@@ -119,10 +119,10 @@
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0px;
-    color: #110038;
-    background-color: #F7C9F3;
+    color: #FFFFFF;
+    background: #EE3EFE;
     border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;
 }
 
@@ -133,8 +133,8 @@ ul.menu {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
 
 li {
@@ -150,9 +150,9 @@ li {
     line-height: 22px;
     letter-spacing: 0px;
     color: #110038;
-    background: #FFF4FD;
-    border: 1px solid #CCA6C9;
-    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+    background: #CCCCCC;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;
 }
 
@@ -165,7 +165,7 @@ li {
     line-height: 22px;
     letter-spacing: 0px;
     color: #110038;
-    background: #F0F0F0;
+    background: #CCCCCC;
     border: 1px solid #808080;
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;
@@ -177,8 +177,8 @@ li {
 section .buscar {
     width: 1200px;
     padding: 0px 0px 40px 0px;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .bar-buscar {
@@ -188,7 +188,7 @@ section .buscar {
     display: flex;
     align-items: center;
     box-shadow: inset -2px 0px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-    background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
     font-family: "Chakra Petch";
     font-size: 14px;
     font-weight: bold;
@@ -203,8 +203,8 @@ section .buscar {
 .buscar-form form {
     width: 1200px;
     height: 75px;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 0px 0 0 #FFFFFF;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -235,9 +235,9 @@ section .buscar {
     font-family: "Chakra Petch";
     font-size: 16px;
     line-height: 18px;
-    letter-spacing: 0px;
-    color: #B4B4B4;
-    background: #E6E6E6;
+    letter-spacing: 0;
+    color: #8F8F8F;
+    background: #B4B4B4;
     border: 1px solid #808080;
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;
@@ -277,8 +277,8 @@ section .buscar {
     display: flex;
     flex-wrap: wrap;
     padding-top: 17px;
-    background: #e6e6e6;
-    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .sugerencia1,
@@ -327,9 +327,9 @@ section .buscar {
 .result-list8 {
     width: 140px;
     height: 34px;
-    background: #4180F6;
+    background: #2E32FB;
     border: 1px solid #4C2F99;
-    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+    box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
     font-family: 'Chakra Petch';
     font-size: 14px;
     color: #FFFFFF;
@@ -357,8 +357,8 @@ section .buscar {
     color: #110038;
     letter-spacing: 0;
     background: #FFFAFE;
-    border: 1px solid #E6BBE2;
-    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+    border: 1px solid #2E32FB;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
 }
 
 .sug-option {
@@ -371,8 +371,8 @@ section .buscar {
 .option-content {
     width: 288px;
     height: 313px;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -383,7 +383,7 @@ section .buscar {
     width: 280px;
     height: 24px;
     box-shadow: inset -2px 0px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-    background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
     font-family: "Chakra Petch";
     font-size: 14px;
     font-weight: bold;
@@ -416,9 +416,9 @@ section .buscar {
     transform: translateX(-265px) translateY(235px);
     width: 81px;
     height: 34px;
-    background: #4180F6;
+    background: #2E32FB;
     border: 1px solid #4C2F99;
-    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+    box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
     font-family: 'Chakra Petch';
     font-size: 14px;
     color: #FFFFFF;
@@ -451,8 +451,8 @@ section .buscar {
     color: #110038;
     letter-spacing: 0;
     background: #FFFAFE;
-    border: 1px solid #E6BBE2;
-    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+    border: 1px solid #2E32FB;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
 }
 
 .tend-ver-gifo {
@@ -465,7 +465,7 @@ section .buscar {
     width: 286px;
     height: 24px;
     box-shadow: inset -2px 0px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-    background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
     font-family: "Chakra Petch";
     font-size: 14px;
     font-weight: bold;
@@ -477,7 +477,7 @@ section .buscar {
     width: 588px;
     height: 24px;
     box-shadow: inset -2px 0px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-    background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
     font-family: "Chakra Petch";
     font-size: 14px;
     font-weight: bold;
@@ -488,8 +488,8 @@ section .buscar {
 .ver-gifo-standar {
     width: 294px;
     height: 304px;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -499,8 +499,8 @@ section .buscar {
 .ver-gifo {
     width: 596px;
     height: 298px;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
