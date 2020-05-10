@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gif.os</title>
     <link rel=icon href="img/gifOF_logo.png">
-    <link rel="stylesheet" href="css/style.css">
-    <!--<link rel="stylesheet" href="css/style-theme2.css">-->
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="css/style-theme2.css" id="style-theme-rel">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -21,7 +21,7 @@
         <div class="content-body">
             <header>
                 <div class="logo">
-                    <img src="img\gifOF_logo.png" />
+                    <img src="img\gifOF_logo.png" id="header-logo" />
                 </div>
                 <div class="buttons-text">
                     <div class=cr-gif>
@@ -30,16 +30,19 @@
 
                     <div class="menu-ch-gif">
                         <div class="ch-gif">
-                            <button id="ch-gif" onclick="elegirTemas()">Elegir Tema</button>
-                            <button id="button-dopdown" onclick="menuDopdown()"><i class="fas fa-caret-down"></i></button>
+                            <button id="ch-gif" onclick="themeButtonDopdown()">Elegir Tema</button>
+                            <button id="button-dopdown" onclick="themeButtonDopdown()"><i class="fas fa-caret-down"></i></button>
 
                             <a class="text" href="#"><span class="guion-bajo">M</span>
                                 is Guifos</a>
                         </div>
-                        <ul class="menu">
-                            <li class="bto-sd"><button id=sailor-day onclick="sailorDay()">Sailor Day</button></li>
-                            <li class="bto-sn"><button id=sailor-night onclick="sailorNight()">Sailor Night</button></li>
-                        </ul>
+
+                        <nav id="contenedor-menu">
+                            <ul class="menu">
+                                <li class="bto-sd"><button id=sailor-day onclick="themeSailorDay()">Sailor Day</button></li>
+                                <li class="bto-sn"><button id=sailor-night onclick="themeSailorNight()">Sailor Night</button></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </header>

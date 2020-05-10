@@ -31,10 +31,9 @@
 
 .container header {
     width: 1200px;
-    padding: 0px 0px 40px 0px;
+    padding: 0px 0px 0px 0px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .container header .logo {
@@ -56,13 +55,6 @@
 .container .buttons-text .menu-ch-gif {
     display: flex;
     flex-direction: column;
-}
-
-.container .buttons-text .menu-ch-gif .menu {
-    display: flex;
-    flex-direction: column;
-    margin-top: -200px;
-    z-index: -1;
 }
 
 .container .text {
@@ -126,9 +118,14 @@
     cursor: pointer;
 }
 
+#contenedor-menu {
+    visibility: hidden;
+}
+
 ul.menu {
     width: 167px;
     height: 102px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -144,7 +141,6 @@ li {
 #sailor-day {
     width: 150px;
     height: 36px;
-    /*margin-right: 16px;*/
     font-family: 'Chakra Petch';
     font-size: 16px;
     line-height: 22px;
@@ -159,7 +155,6 @@ li {
 #sailor-night {
     width: 150px;
     height: 36px;
-    /*margin-right: 16px;*/
     font-family: 'Chakra Petch';
     font-size: 16px;
     line-height: 22px;
@@ -176,7 +171,7 @@ li {
 
 section .buscar {
     width: 1200px;
-    padding: 0px 0px 40px 0px;
+    padding: 30px 0px 40px 0px;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
