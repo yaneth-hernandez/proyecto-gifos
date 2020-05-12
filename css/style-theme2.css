@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 .container {
@@ -64,7 +65,6 @@
     letter-spacing: 0;
     line-height: 18px;
     margin-left: 16px;
-    text-decoration: none;
 }
 
 .guion-bajo {
@@ -87,10 +87,13 @@
     cursor: pointer;
 }
 
+#cr-gif:link {
+    color: #FFFFFF;
+}
+
 #ch-gif {
     width: 131px;
     height: 36px;
-    /*margin-right: 16px;*/
     font-family: "Chakra Petch";
     font-size: 16px;
     line-height: 18px;
@@ -105,7 +108,6 @@
 #button-dopdown {
     width: 36px;
     height: 36px;
-    /*margin-right: 16px;*/
     margin-left: -4px;
     font-family: "Chakra Petch";
     font-size: 16px;
@@ -206,7 +208,7 @@ section .buscar {
     align-items: center;
 }
 
-#text {
+#text-buscar {
     width: 1057px;
     height: 48px;
     background: #FFFFFF;
@@ -267,8 +269,8 @@ section .buscar {
 .resultado-sugerido {
     position: absolute;
     width: 1200px;
-    margin-top: -140px;
-    z-index: -3;
+    /*margin-top: -140px;
+    z-index: -3;*/
     display: flex;
     flex-wrap: wrap;
     padding-top: 17px;
@@ -276,9 +278,7 @@ section .buscar {
     box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
 
-.sugerencia1,
-.sugerencia2,
-.sugerencia3 {
+.sugerencia {
     width: 89%;
     height: 36px;
     margin-left: 15px;
@@ -290,9 +290,7 @@ section .buscar {
     box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
 }
 
-#sugerencia1,
-#sugerencia2,
-#sugerencia3 {
+.sugerencia-text {
     font-family: 'Chakra Petch';
     font-size: 16px;
     color: #110038;
@@ -483,6 +481,7 @@ section .buscar {
 .ver-gifo-standar {
     width: 294px;
     height: 304px;
+    margin-bottom: 16px;
     background: #B4B4B4;
     box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
     display: flex;
@@ -494,6 +493,7 @@ section .buscar {
 .ver-gifo {
     width: 596px;
     height: 298px;
+    margin-bottom: 16px;
     background: #B4B4B4;
     box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
     display: flex;

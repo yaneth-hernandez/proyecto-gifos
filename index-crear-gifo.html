@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=icon href="img/gifOF_logo.png">
+    <title>Crear gifOs</title>
+    <!--<link rel="stylesheet" href="css/stylecreargifo.css">-->
+    <link rel="stylesheet" href="css/stylecreargifo-theme2.css" id="style-theme-crear-gifo">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header-barr">
+        <p>Bienvenidos/as Guifos.com!------Dondes los guifos están.//////Número de visitas: 12.765.803 </p>
+    </div>
+    <main class="contenedor-crear-gifos" id="contenedor-crear-gifos">
+        <header class="container-header">
+            <div class="logo-arrow">
+                <a class="link-arrow" href="http://127.0.0.1:5500/index.html"><img src="img/arrow.svg" id="header-arrow" /></a>
+                <img src="img/gifOF_logo.png" id="header-logo-arrow" />
+            </div>
+            <div class="buttons-text">
+                <div class=cr-gif>
+                    <button id="cr-gif" onclick="crearGifos()"><a href="http://127.0.0.1:5500/index-crear-gifo.html">Crear Guifos</a></button>
+                </div>
+                <div class="menu-ch-gif">
+                    <div class="ch-gif">
+                        <button id="ch-gif" onclick="themeButtonDopdown()">Elegir Tema</button>
+                        <button id="button-dopdown" onclick="themeButtonDopdown()"><i class="fas fa-caret-down"></i></button>
+
+                        <a class="text-mis-gifos" href="http://127.0.0.1:5500/index-crear-gifo.html" target="_blank"><span class="guion-bajo">M</span>
+                            is Guifos</a>
+                    </div>
+                    <nav id="contenedor-menu">
+                        <ul class="menu">
+                            <li class="bto-sd"><button id=sailor-day onclick="themeSailorDayCrGifo()">Sailor Day</button></li>
+                            <li class="bto-sn"><button id=sailor-night onclick="themeSailorNightCrGifo()">Sailor Night</button></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!--inicio mis gifos- crear gifos-->
+
+
+        <figure class="crear-gifos" id="crear-gifos">
+            <figcaption class="barra-crear-gifo" id="barra-crear-gifo">Crear Guifos</figcaption>
+            <div class="cont-img-tit-crear-gifo">
+                <div class="img-crear-gifo"><img id="img-crear-gifo" src="img/window img.png" alt="Crear-gifos"></div>
+                <div class="titulo-crear-gifo" id="titulo-crear-gifo">Aquí podrás crear tus propios guifos</div>
+            </div>
+            <p class="text-crear-gifo" id="text-crear-gifo">Crear tu <span class="crear-gifos-negrita">guifo</span> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos<br> personalizados. Los pasos para crear tu guifo son:</p>
+            <ol class="text-crear-gifo">
+                <li>1) Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
+
+                <li>2) Capturar tu momento guifo</li>
+                <li>3) Revisar el momento</li>
+                <li>4) Listo para subir y compartir! ¿Quieres comenzar a crear tu <span class="crear-gifos-negrita">guifo</span> ahora?
+            </ol>
+            <div class=content-btn-crear-gifo>
+                <button id="btn-cancelar" onclick="cancelarCreacionGifo()">Cancelar</button>
+                <button id="btn-comenzar" onclick="comenzarCreacionGifo()">Comenzar</button>
+            </div>
+        </figure>
+
+        <section class="mis-gifos-contenedor">
+            <div class="mis-gifos-titulo">
+                Mis guifos
+            </div>
+            <div class="mis-gifos-ver-contenedor">
+                <figure class="ver-mis-gifo">
+                    <img id="ver-mis-gifo1" src="" alt="">
+                    <figcaption class="ver-mis-gifo-text">
+                        #Lorem ipsum
+                    </figcaption>
+                </figure>
+                <figure class="ver-mis-gifo">
+                    <img id="ver-mis-gifo2" src="" alt="">
+                    <figcaption class="ver-mis-gifo-text">
+                        #Lorem ipsum
+                    </figcaption>
+                </figure>
+                <figure class="ver-mis-gifo">
+                    <img id="ver-mis-gifo3" src="" alt="">
+                    <figcaption class="ver-mis-gifo-text">
+                        #Lorem ipsum
+                    </figcaption>
+                </figure>
+                <figure class="ver-mis-gifo">
+                    <img id="ver-mis-gifo4" src="" alt="">
+                    <figcaption class="ver-mis-gifo-text">
+                        #Lorem ipsum
+                    </figcaption>
+                </figure>
+                <figure class="ver-mis-gifo">
+                    <img id="ver-mis-gifo5" src="" alt="">
+                    <figcaption class="ver-mis-gifo-text">
+                        #Lorem ipsum
+                    </figcaption>
+                </figure>
+                <figure class="ver-mis-gifo">
+                    <img id="ver-mis-gifo6" src="" alt="">
+                    <figcaption class="ver-mis-gifo-text">
+                        #Lorem ipsum
+                    </figcaption>
+                </figure>
+                <figure class="ver-mis-gifo">
+                    <img id="ver-mis-gifo7" src="" alt="">
+                    <figcaption class="ver-mis-gifo-text">
+                        #Lorem ipsum
+                    </figcaption>
+                </figure>
+                <figure class="ver-mis-gifo">
+                    <img id="ver-mis-gifo8" src="" alt="">
+                    <figcaption class="ver-mis-gifo-text">
+                        #Lorem ipsum
+                    </figcaption>
+                </figure>
+
+            </div>
+        </section>
+    </main>
+
+    <!--fin mis gifos- crear gifos-->
+    <script src="js/index.js"></script>
+</body>
+
+</html>

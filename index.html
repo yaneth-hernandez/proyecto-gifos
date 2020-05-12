@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gif.os</title>
     <link rel=icon href="img/gifOF_logo.png">
-    <!--<link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style-theme2.css" id="style-theme-rel">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500&display=swap" rel="stylesheet">
@@ -25,26 +25,23 @@
                 </div>
                 <div class="buttons-text">
                     <div class=cr-gif>
-                        <button id="cr-gif" onclick="crearGifos()">Crear Guifos</button>
+                        <button id="cr-gif" onclick="crearGifos()"><a href="http://127.0.0.1:5500/index-crear-gifo.html">Crear Guifos</a></button>
                     </div>
-
                     <div class="menu-ch-gif">
                         <div class="ch-gif">
                             <button id="ch-gif" onclick="themeButtonDopdown()">Elegir Tema</button>
                             <button id="button-dopdown" onclick="themeButtonDopdown()"><i class="fas fa-caret-down"></i></button>
 
-                            <a class="text" href="#"><span class="guion-bajo">M</span>
+                            <a class="text" href="http://127.0.0.1:5500/index-crear-gifo.html" target="_blank"><span class="guion-bajo">M</span>
                                 is Guifos</a>
                         </div>
-
                         <nav id="contenedor-menu">
                             <ul class="menu">
                                 <li class="bto-sd"><button id=sailor-day onclick="themeSailorDay()">Sailor Day</button></li>
                                 <li class="bto-sn"><button id=sailor-night onclick="themeSailorNight()">Sailor Night</button></li>
                             </ul>
                         </nav>
-                    </div>
-                </div>
+
             </header>
             <!--inicio sección buscar-->
             <section class="buscar">
@@ -53,7 +50,7 @@
                     <figcaption class="bar-buscar">Buscar</figcaption>
                     <form action="">
                         <div>
-                            <input type="sumit" id="text" class="letra-text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" size="154" />
+                            <input type="sumit" id="text-buscar" class="letra-text" onkeydown="opcionesBusqueda()" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" size="154" />
                         </div>
                         <div>
                             <button id="btn-search" onclick="activarBusqueda()"><i class="fas fa-search"></i> Buscar</button>
@@ -61,9 +58,12 @@
                     </form>
                 </figure>
                 <figure class="resultado-sugerido" id="resultado-sugerido">
-                    <button class="sugerencia1"><span id="sugerencia1">lorem ipsu</span></button>
-                    <button class="sugerencia2"><span id="sugerencia2">lorem ipsu</span></button>
-                    <button class="sugerencia3"><span id="sugerencia3">lorem ipsu</span></button>
+                    <button class="sugerencia" id="sugerencia1"><span class="sugerencia-text">lorem ipsu</span></button>
+                    <button class="sugerencia" id="sugerencia2"><span class="sugerencia-text">lorem ipsu</span></button>
+                    <button class="sugerencia" id="sugerencia3"><span class="sugerencia-text">lorem ipsu</span></button>
+                    <button class="sugerencia" id="sugerencia4"><span class="sugerencia-text">lorem ipsu</span></button>
+                    <button class="sugerencia" id="sugerencia5"><span class="sugerencia-text">lorem ipsu</span></button>
+                    <button class="sugerencia" id="sugerencia6"><span class="sugerencia-text">lorem ipsu</span></button>
                 </figure>
 
                 <figure class="results-list">
@@ -252,9 +252,9 @@
             </section>
             <!--==tendencias- fin==-->
             <footer></footer>
-        </div>
-        </div>
-        <script src="js/index.js"></script>
+            </div>
+            </div>
+            <script src="js/index.js"></script>
 </body>
 
 </main>
