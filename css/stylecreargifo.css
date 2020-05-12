@@ -59,7 +59,7 @@ header.container-header {
     flex-direction: column;
 }
 
-.text {
+.text-mis-gifos {
     font-family: "Chakra Petch";
     font-size: 16px;
     color: #110038;
@@ -286,7 +286,7 @@ li {
     justify-content: space-between;
 }
 
-.mis-gifos-titulo {
+#mis-gifos-titulo {
     height: 32px;
     margin: 65px 0px 16px 0px;
     display: flex;
