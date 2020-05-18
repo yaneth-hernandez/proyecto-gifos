@@ -276,6 +276,7 @@ section .buscar {
     padding-top: 17px;
     background: #B4B4B4;
     box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+    visibility: hidden;
 }
 
 .sugerencia {
@@ -389,7 +390,7 @@ section .buscar {
 .btn-cierre {
     color: black;
     width: 16px;
-    height: 16px;
+    height: 14px;
     background: gray;
 }
 
@@ -481,7 +482,7 @@ section .buscar {
 .ver-gifo-standar {
     width: 294px;
     height: 304px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     background: #B4B4B4;
     box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
     display: flex;
@@ -493,7 +494,6 @@ section .buscar {
 .ver-gifo {
     width: 596px;
     height: 298px;
-    margin-bottom: 16px;
     background: #B4B4B4;
     box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
     display: flex;

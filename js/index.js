@@ -1,5 +1,14 @@
-//página principal
+//inicialización de funciones
+const opcionIndex = 'index';
+const opcionCrear = 'crear';
 
+const nombreIndexCss = 'indexCssKey';
+const nombreCrearCss = 'crearCssKey';
+const nombreLogo = 'logoKey';
+
+recuperarEstilo(location.pathname);
+
+//página principal
 function themeButtonDopdown() {
     var objectSelector = document.querySelector("#contenedor-menu").style.visibility;
     if (objectSelector == "" || objectSelector == "hidden") {
@@ -9,38 +18,73 @@ function themeButtonDopdown() {
     }
 }
 
-function themeSailorNight() {
-    document.querySelector("#style-theme-rel").href = "/css/style-theme2.css";
-    document.querySelector("#header-logo").src = "img/gifOF_logo_dark.png";
+function guardarEstilo(nombreKey, valor) {
+    localStorage.removeItem(nombreKey);
+    localStorage.setItem(nombreKey, valor);
+}
+
+function recuperarEstilo(origenPagina) {
+    var recuperarTemaCss;
+    var recuperarTemaLogo;
+
+    recuperarTemaLogo = localStorage.getItem(nombreLogo);
+    if (origenPagina == "/index.html") {
+        recuperarTemaCss = localStorage.getItem(nombreIndexCss);
+        if (recuperarTemaCss != null && recuperarTemaLogo != null) {
+            document.querySelector("#style-theme-rel").href = recuperarTemaCss;
+            document.querySelector("#header-logo").src = recuperarTemaLogo;
+        }
+    } else if (origenPagina == "/index-crear-gifo.html") {
+        recuperarTemaCss = localStorage.getItem(nombreCrearCss);
+        if (recuperarTemaCss != null && recuperarTemaLogo != null) {
+            document.querySelector("#style-theme-crear-gifo").href = recuperarTemaCss;
+            document.querySelector("#header-logo-arrow").src = recuperarTemaLogo;
+        }
+    }
+}
+
+function themeSailorNight(esIndexOCrear) {
+    const valorIndexCss = "/css/style-theme2.css";
+    const valorCrearCss = "css/stylecreargifo-theme2.css";
+    const valorLogo = "img/gifOF_logo_dark.png";
+
+    if (esIndexOCrear == opcionIndex) {
+        document.querySelector("#style-theme-rel").href = valorIndexCss;
+        document.querySelector("#header-logo").src = valorLogo;
+    } else if (esIndexOCrear == opcionCrear) {
+        document.querySelector("#style-theme-crear-gifo").href = valorCrearCss;
+        document.querySelector("#header-logo-arrow").src = valorLogo;
+    }
+    guardarEstilo(nombreIndexCss, valorIndexCss);
+    guardarEstilo(nombreCrearCss, valorCrearCss);
+    guardarEstilo(nombreLogo, valorLogo);
     themeButtonDopdown();
 }
 
-function themeSailorDay() {
-    document.querySelector("#style-theme-rel").href = "/css/style.css";
-    document.querySelector("#header-logo").src = "img/gifOF_logo.png";
+function themeSailorDay(esIndexOCrear) {
+    const valorIndexCss = "/css/style.css";
+    const valorCrearCss = "css/stylecreargifo.css";
+    const valorLogo = "img/gifOF_logo.png";
+
+    if (esIndexOCrear == opcionIndex) {
+        document.querySelector("#style-theme-rel").href = valorIndexCss;
+        document.querySelector("#header-logo").src = valorLogo;
+    } else if (esIndexOCrear == opcionCrear) {
+        document.querySelector("#style-theme-crear-gifo").href = valorCrearCss;
+        document.querySelector("#header-logo-arrow").src = valorLogo;
+    }
+    guardarEstilo(nombreCrearCss, valorCrearCss);
+    guardarEstilo(nombreIndexCss, valorIndexCss);
+    guardarEstilo(nombreLogo, valorLogo);
     themeButtonDopdown();
 }
 
 function opcionesBusqueda() {
-
     var objectSelector = document.querySelector(".resultado-sugerido").style.visibility;
     if (objectSelector == "" || objectSelector == "hidden") {
         document.querySelector(".resultado-sugerido").style.visibility = "visible";
     } else {
         document.querySelector(".resultado-sugerido").style.visibility = "hidden";
     }
-}
 
-//crear gifos
-
-function themeSailorNightCrGifo() {
-    document.querySelector("#style-theme-crear-gifo").href = "css/stylecreargifo-theme2.css";
-    document.querySelector("#header-logo-arrow").src = "img/gifOF_logo_dark.png";
-    themeButtonDopdown();
-}
-
-function themeSailorDayCrGifo() {
-    document.querySelector("#style-theme-crear-gifo").href = "css/stylecreargifo.css";
-    document.querySelector("#header-logo-arrow").src = "img/gifOF_logo.png";
-    themeButtonDopdown();
 }
