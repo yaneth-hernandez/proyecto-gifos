@@ -78,23 +78,3 @@ function themeSailorDay(esIndexOCrear) {
     guardarEstilo(nombreLogo, valorLogo);
     themeButtonDopdown();
 }
-
-/*
- Events page
-*/
-const textObject = document.querySelector("#text-buscar");
-textObject.addEventListener("input",
-    function() {
-        opcionesBusqueda(textObject.value)
-    }
-);
-
-
-function opcionesBusqueda(valor) {
-    //alert(valor);
-    if (valor == "") {
-        document.querySelector(".resultado-sugerido").style.visibility = "hidden";
-    } else {
-        document.querySelector(".resultado-sugerido").style.visibility = "visible";
-    }
-}

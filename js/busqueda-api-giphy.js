@@ -1,6 +1,8 @@
 let seccionSugerencias = 'SUGERENCIAS';
 let seccionBuscar = 'BUSCAR';
 let seccionTendencias = 'TENDENCIAS';
+let seccionResultadoSugerido = 'RESULTADOS_SUGERIDOS';
+let seccionMostrarGifos = 'MOSTRAR_GIFOS';
 
 function configuracionSearchUrl(qParametro, limit) {
     const protocolDomRecurso = 'https://api.giphy.com/v1/gifs/search?';
@@ -41,6 +43,10 @@ function buscarGifo(valorBusqueda, limit, nombreSeccion) {
             })
             if (nombreSeccion == seccionSugerencias) {
                 cambiarSeccionSugerenciasHtml(arregloResultadosGiphy);
+            } else if (nombreSeccion == seccionResultadoSugerido) {
+                cambiarSeccionListaSugerido(arregloResultadosGiphy);
+            } else if (nombreSeccion == seccionMostrarGifos) {
+                mostrarSeccionRestultadosBusqueda(arregloResultadosGiphy);
             }
         })
         .catch((error) => {
@@ -52,17 +58,12 @@ function buscarGifo(valorBusqueda, limit, nombreSeccion) {
 class GiphyClass {
     constructor(obj) {
         this.id = obj.id;
+        this.title = obj.title;
         downsized_large: {
-            this.height = obj.images.downsized_large.height;
-            this.size = obj.images.downsized_large.size;
-            this.url = obj.images.downsized_large.url;
-            this.width = obj.images.downsized_large.width;
-        }
-        downsized_small: {
-            this.height = obj.images.downsized_small.height;
-            this.mp4 = obj.images.downsized_small.mp4;
-            this.mp4_size = obj.images.downsized_small.mp4_size;
-            this.width = obj.images.downsized_small.mp4_width;
+            this.height = obj.images.original.height;
+            this.size = obj.images.original.size;
+            this.url = obj.images.original.url;
+            this.width = obj.images.original.width;
         }
     }
 }
@@ -105,11 +106,69 @@ function preCargarSugerencias() {
 }
 
 function cambiarSeccionSugerenciasHtml(objetoDatos) {
-    let valor = objetoDatos;
-    document.querySelector("#sugerido-gif0").src = objetoDatos[0].url;
-    document.querySelector("#sugerido-gif1").src = objetoDatos[1].url;
-    document.querySelector("#sugerido-gif2").src = objetoDatos[2].url;
-    document.querySelector("#sugerido-gif3").src = objetoDatos[3].url;
+    document.getElementById("sugerido-gif0").src = objetoDatos[0].url;
+    document.getElementById("sugerido-gif1").src = objetoDatos[1].url;
+    document.getElementById("sugerido-gif2").src = objetoDatos[2].url;
+    document.getElementById("sugerido-gif3").src = objetoDatos[3].url;
 }
 
+function cargarListaSugerida(inputTextoSugerido) {
+    const maximoResultado = 3;
+    buscarGifo(inputTextoSugerido, maximoResultado, seccionResultadoSugerido);
+
+    if (inputTextoSugerido == "") {
+        document.querySelector(".resultado-sugerido").style.visibility = "hidden";
+    } else {
+        document.querySelector(".resultado-sugerido").style.visibility = "visible";
+    }
+}
+
+function cambiarSeccionListaSugerido(objetoDatos) {
+    document.getElementById('sugerencia-text1').textContent = objetoDatos[0].title;
+    document.getElementById('sugerencia-text2').textContent = objetoDatos[1].title;
+    document.getElementById('sugerencia-text3').textContent = objetoDatos[2].title;
+}
+
+function clickListaSugerida(tituloGif) {
+    //buscar gifo
+    buscarGifo(tituloGif, 100, seccionMostrarGifos);
+    //mostrar resultados, se debe llamar dentro de buscar 
+    //recoger barra
+    //mostrar botones sección resultado-lista
+    //ocultar hoy te sugerimos
+    //cambiar título: tendencias a título:resultados de búsqueda, dos puntos texto del span, del botón seleccionado
+}
+
+function mostrarSeccionRestultadosBusqueda(objetoDatos) {
+    const contenidoSource = 'SOURCE_GIPHY';
+    const datoIdGiphy = 'ID_GIPHY';
+
+    const classGyfoStarndard = 'ver-gifo-small';
+    const classGyfoLargo = 'ver-gifo-largo';
+
+
+    let renderGifo = "<figure class='ver-gifo-standar'>";
+    renderGifo = renderGifo + "<img class='ver-gifo-small' id='ID_GIPHY' src='SOURCE_GIPHY' alt='' srcset=''>";
+    renderGifo = renderGifo + "<figcaption class='ver-gifo-text-standar'>";
+    renderGifo = renderGifo + "#Lorem ipsum</figcaption></figure>";
+
+    document.querySelector("#tend-ver-gifo").innerHTML = '';
+    for (var i = 0; i < objetoDatos.length; i++) {
+        let nuevoRenderGifo = renderGifo.replace(contenidoSource, objetoDatos[i].url)
+            .replace(datoIdGiphy, objetoDatos[i].id);
+
+        let finalRenderGifo = '';
+        let ancho = parseInt(objetoDatos[i].width);
+        if (ancho >= 600) {
+            finalRenderGifo = nuevoRenderGifo.replace(classGyfoStarndard, classGyfoLargo);
+        } else {
+            finalRenderGifo = nuevoRenderGifo;
+        }
+
+        var figure = document.createElement('figure');
+        figure.innerHTML = finalRenderGifo;
+
+        document.querySelector("#tend-ver-gifo").appendChild(figure);
+    }
+}
 preCargarSugerencias();
