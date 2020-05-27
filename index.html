@@ -52,7 +52,7 @@
                             <input type="sumit" id="text-buscar" class="letra-text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" size="154" />
                         </div>
                         <div>
-                            <button id="btn-search" onclick="activarBusqueda()"><i class="fas fa-search"></i> Buscar</button>
+                            <button id="btn-search" onclick="activarBusqueda()"><img src="img\lupa_inactive.svg"/> Buscar</button>
                         </div>
                     </form>
                 </figure>
@@ -84,60 +84,44 @@
                     Hoy te sugerimos:
                 </div>
                 <div class="sug-option">
-
                     <figure class="option-content">
                         <figcaption class="option-barr">
-                            <span class="text-option-barr">#Lorem ipsu</span>
+                            <span id="hashtags0" class="text-option-barr">#Lorem ipsu</span>
                             <button class="btn-cierre"><img class="gif" src="img\close.svg"></button>
                         </figcaption>
-
                         <div class="video-btn-content">
-
-                            <video class="gif"></video>
+                            <img id="sugerido-gif0" class="gif" src="" />
                             <button class="btn-opt" onclick="vermasOpt1(this)">Ver más...</button>
-
                         </div>
                     </figure>
-
                     <figure class="option-content">
                         <figcaption class="option-barr">
-                            <span class="text-option-barr">#Lorem ipsu</span>
+                            <span id="hashtags1" class="text-option-barr">#Lorem ipsu</span>
                             <button class="btn-cierre"><img class="gif" src="img\close.svg"></button>
                         </figcaption>
-
                         <div class="video-btn-content">
-
-                            <video class="gif"></video>
+                            <img id="sugerido-gif1" class="gif" src="" />
                             <button class="btn-opt" onclick="vermasOpt1()">Ver más...</button>
-
                         </div>
                     </figure>
-
                     <figure class="option-content">
                         <figcaption class="option-barr">
-                            <span class="text-option-barr">#Lorem ipsu</span>
+                            <span id="hashtags2" class="text-option-barr">#Lorem ipsu</span>
                             <button class="btn-cierre"><img class="gif" src="img\close.svg"></button>
                         </figcaption>
-
                         <div class="video-btn-content">
-
-                            <video class="gif"></video>
+                            <img id="sugerido-gif2" class="gif" src="" />
                             <button class="btn-opt" onclick="vermasOpt1()">Ver más...</button>
-
                         </div>
                     </figure>
-
                     <figure class="option-content">
                         <figcaption class="option-barr">
-                            <span class="text-option-barr">#Lorem ipsu</span>
+                            <span id="hashtags3" class="text-option-barr">#Lorem ipsu</span>
                             <button class="btn-cierre"><img class="gif" src="img\close.svg"></button>
                         </figcaption>
-
                         <div class="video-btn-content">
-
-                            <img class="gif" src="img/globe_img.png"></video>
+                            <img id="sugerido-gif3" class="gif" src="" />
                             <button class="btn-opt" onclick="vermasOpt1()">Ver más...</button>
-
                         </div>
                     </figure>
                 </div>
@@ -254,6 +238,7 @@
             </div>
             </div>
             <script src="js/index.js"></script>
+            <script src="js/busqueda-api-giphy.js"></script>
 </body>
 
 </main>
