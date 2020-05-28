@@ -227,7 +227,7 @@ section .buscar {
     padding-left: 16px;
 }
 
-#btn-search {
+.btn-search {
     width: 102px;
     height: 36px;
     font-family: "Chakra Petch";
@@ -241,20 +241,7 @@ section .buscar {
     cursor: pointer;
 }
 
-#btn-search:active {
-    width: 102px;
-    height: 36px;
-    background: #E6BBE2;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-    font-family: 'Chakra Petch';
-    font-size: 16px;
-    color: #110038;
-    letter-spacing: 0;
-    line-height: 18px;
-}
-
-#btn-search:hover {
+.btn-search-active {
     width: 102px;
     height: 36px;
     background: #F7C9F3;

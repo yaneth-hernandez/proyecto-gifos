@@ -225,7 +225,7 @@ section .buscar {
     padding-left: 16px;
 }
 
-#btn-search {
+.btn-search {
     width: 102px;
     height: 36px;
     /*margin-right: 16px;*/
@@ -240,28 +240,15 @@ section .buscar {
     cursor: pointer;
 }
 
-#btn-search:active {
+.btn-search-active {
     width: 102px;
     height: 36px;
-    background: #E6BBE2;
+    background: #EE3EFE;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     font-family: 'Chakra Petch';
     font-size: 16px;
-    color: #110038;
-    letter-spacing: 0;
-    line-height: 18px;
-}
-
-#btn-search:hover {
-    width: 102px;
-    height: 36px;
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-    font-family: 'Chakra Petch';
-    font-size: 16px;
-    color: #110038;
+    color: #FFFFFF;
     letter-spacing: 0;
     line-height: 18px;
 }
@@ -269,8 +256,6 @@ section .buscar {
 .resultado-sugerido {
     position: absolute;
     width: 1200px;
-    /*margin-top: -140px;
-    z-index: -3;*/
     display: flex;
     flex-wrap: wrap;
     padding-top: 17px;

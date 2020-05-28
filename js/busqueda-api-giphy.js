@@ -3,6 +3,7 @@ let seccionBuscar = 'BUSCAR';
 let seccionTendencias = 'TENDENCIAS';
 let seccionResultadoSugerido = 'RESULTADOS_SUGERIDOS';
 let seccionMostrarGifos = 'MOSTRAR_GIFOS';
+let seccionBotonSearch = 'BUSCAR_GIFOS';
 
 function configuracionSearchUrl(qParametro, limit) {
     const protocolDomRecurso = 'https://api.giphy.com/v1/gifs/search?';
@@ -47,6 +48,8 @@ function buscarGifo(valorBusqueda, limit, nombreSeccion) {
                 cambiarSeccionListaSugerido(arregloResultadosGiphy);
             } else if (nombreSeccion == seccionMostrarGifos) {
                 mostrarSeccionRestultadosBusqueda(arregloResultadosGiphy);
+            } else if (nombreSeccion == seccionBotonSearch) {
+                mostrarSeccionRestultadosBusqueda(arregloResultadosGiphy);
             }
         })
         .catch((error) => {
@@ -78,8 +81,9 @@ function obtenerSugerencias() {
         'homerosimpson',
         'bruce lee',
         'the muppets',
-        'dance moms',
+        'friends',
         'adele',
+        'the big bang theory',
         'bob esponja',
         'mr bean',
         'harry potter',
@@ -131,7 +135,7 @@ function cambiarSeccionListaSugerido(objetoDatos) {
 
 function clickListaSugerida(tituloGif) {
     //buscar gifo
-    buscarGifo(tituloGif, 100, seccionMostrarGifos);
+    buscarGifo(tituloGif, 50, seccionMostrarGifos);
     //mostrar resultados, se debe llamar dentro de buscar 
     //recoger barra
     //mostrar botones sección resultado-lista
@@ -159,7 +163,7 @@ function mostrarSeccionRestultadosBusqueda(objetoDatos) {
 
         let finalRenderGifo = '';
         let ancho = parseInt(objetoDatos[i].width);
-        if (ancho >= 600) {
+        if (ancho >= 588) {
             finalRenderGifo = nuevoRenderGifo.replace(classGyfoStarndard, classGyfoLargo);
         } else {
             finalRenderGifo = nuevoRenderGifo;
@@ -171,4 +175,19 @@ function mostrarSeccionRestultadosBusqueda(objetoDatos) {
         document.querySelector("#tend-ver-gifo").appendChild(figure);
     }
 }
+
+function activarBotonBusqueda(inputActivarBoton) {
+    if (inputActivarBoton == '') {
+        document.querySelector("#btn-search-id").className = 'btn-search';
+        document.querySelector("#estilo-lupa-id").src = 'img/lupa_inactive.svg';
+    } else {
+        document.querySelector("#btn-search-id").className = 'btn-search-active';
+        document.querySelector("#estilo-lupa-id").src = 'img/lupa.svg';
+    }
+}
+
+function clickBotonBuscar(gifoBusqueda) {
+    buscarGifo(gifoBusqueda, 30, seccionBotonSearch);
+}
+
 preCargarSugerencias();
