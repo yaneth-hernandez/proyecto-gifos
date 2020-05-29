@@ -487,25 +487,13 @@ section .buscar {
     align-items: center;
 }
 
-#ver-gifo1,
-#ver-gifo2,
-#ver-gifo3,
-#ver-gifo4,
-#ver-gifo6,
-#ver-gifo7,
-#ver-gifo8,
-#ver-gifo9,
-#ver-gifo13,
-#ver-gifo14 {
+.ver-gifo-small {
     width: 286px;
     height: 296px;
     background-color: violet;
 }
 
-#ver-gifo5,
-#ver-gifo10,
-#ver-gifo11,
-#ver-gifo12 {
+.ver-gifo-largo {
     width: 588px;
     height: 290px;
     background-color: violet;

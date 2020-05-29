@@ -78,6 +78,7 @@ function obtenerSugerencias() {
         'godzilla',
         'comegalletas',
         'aplausos',
+        'jocker',
         'homerosimpson',
         'bruce lee',
         'the muppets',
@@ -114,6 +115,10 @@ function cambiarSeccionSugerenciasHtml(objetoDatos) {
     document.getElementById("sugerido-gif1").src = objetoDatos[1].url;
     document.getElementById("sugerido-gif2").src = objetoDatos[2].url;
     document.getElementById("sugerido-gif3").src = objetoDatos[3].url;
+    document.getElementById("hashtags0-id").textContent = objetoDatos[0].title;
+    document.getElementById("hashtags1-id").textContent = objetoDatos[1].title;
+    document.getElementById("hashtags2-id").textContent = objetoDatos[2].title;
+    document.getElementById("hashtags3-id").textContent = objetoDatos[3].title;
 }
 
 function cargarListaSugerida(inputTextoSugerido) {
@@ -146,6 +151,7 @@ function clickListaSugerida(tituloGif) {
 function mostrarSeccionRestultadosBusqueda(objetoDatos) {
     const contenidoSource = 'SOURCE_GIPHY';
     const datoIdGiphy = 'ID_GIPHY';
+    const hashTag = 'HASHTAG_GIPHY';
 
     const classGyfoStarndard = 'ver-gifo-small';
     const classGyfoLargo = 'ver-gifo-largo';
@@ -154,12 +160,13 @@ function mostrarSeccionRestultadosBusqueda(objetoDatos) {
     let renderGifo = "<figure class='ver-gifo-standar'>";
     renderGifo = renderGifo + "<img class='ver-gifo-small' id='ID_GIPHY' src='SOURCE_GIPHY' alt='' srcset=''>";
     renderGifo = renderGifo + "<figcaption class='ver-gifo-text-standar'>";
-    renderGifo = renderGifo + "#Lorem ipsum</figcaption></figure>";
+    renderGifo = renderGifo + "'HASHTAG_GIPHY'</figcaption></figure>";
 
     document.querySelector("#tend-ver-gifo").innerHTML = '';
     for (var i = 0; i < objetoDatos.length; i++) {
         let nuevoRenderGifo = renderGifo.replace(contenidoSource, objetoDatos[i].url)
-            .replace(datoIdGiphy, objetoDatos[i].id);
+            .replace(datoIdGiphy, objetoDatos[i].id)
+            .replace(hashTag, objetoDatos[i].title);
 
         let finalRenderGifo = '';
         let ancho = parseInt(objetoDatos[i].width);
@@ -187,7 +194,11 @@ function activarBotonBusqueda(inputActivarBoton) {
 }
 
 function clickBotonBuscar(gifoBusqueda) {
-    buscarGifo(gifoBusqueda, 30, seccionBotonSearch);
+    buscarGifo(gifoBusqueda, 100, seccionBotonSearch);
+}
+
+function verMasGifos(objetoDatos) { //buscar los gifo por los títulos sugeridos
+    mostrarSeccionRestultadosBusqueda(objetoDatos)
 }
 
 preCargarSugerencias();
