@@ -4,6 +4,7 @@ let seccionTendencias = 'TENDENCIAS';
 let seccionResultadoSugerido = 'RESULTADOS_SUGERIDOS';
 let seccionMostrarGifos = 'MOSTRAR_GIFOS';
 let seccionBotonSearch = 'BUSCAR_GIFOS';
+let seccionVerMas = 'VER_MAS_GIFOS';
 
 function configuracionSearchUrl(qParametro, limit) {
     const protocolDomRecurso = 'https://api.giphy.com/v1/gifs/search?';
@@ -49,6 +50,8 @@ function buscarGifo(valorBusqueda, limit, nombreSeccion) {
             } else if (nombreSeccion == seccionMostrarGifos) {
                 mostrarSeccionRestultadosBusqueda(arregloResultadosGiphy);
             } else if (nombreSeccion == seccionBotonSearch) {
+                mostrarSeccionRestultadosBusqueda(arregloResultadosGiphy);
+            } else if (nombreSeccion == seccionVerMas) {
                 mostrarSeccionRestultadosBusqueda(arregloResultadosGiphy);
             }
         })
@@ -119,6 +122,21 @@ function cambiarSeccionSugerenciasHtml(objetoDatos) {
     document.getElementById("hashtags1-id").textContent = objetoDatos[1].title;
     document.getElementById("hashtags2-id").textContent = objetoDatos[2].title;
     document.getElementById("hashtags3-id").textContent = objetoDatos[3].title;
+
+}
+//búsqueda con botón ver más
+function clickVerMasGifos(botonVerMasId) {
+    var title = '';
+    if (botonVerMasId == "btn-opt-id0") {
+        title = document.getElementById("hashtags0-id").textContent;
+    } else if (botonVerMasId == "btn-opt-id1") {
+        title = document.getElementById("hashtags1-id").textContent;
+    } else if (botonVerMasId == "btn-opt-id2") {
+        title = document.getElementById("hashtags2-id").textContent;
+    } else if (botonVerMasId == "btn-opt-id3") {
+        title = document.getElementById("hashtags3-id").textContent;
+    }
+    buscarGifo(title, 100, seccionVerMas);
 }
 
 function cargarListaSugerida(inputTextoSugerido) {
@@ -197,8 +215,6 @@ function clickBotonBuscar(gifoBusqueda) {
     buscarGifo(gifoBusqueda, 100, seccionBotonSearch);
 }
 
-function verMasGifos(objetoDatos) { //buscar los gifo por los títulos sugeridos
-    mostrarSeccionRestultadosBusqueda(objetoDatos)
-}
+
 
 preCargarSugerencias();
