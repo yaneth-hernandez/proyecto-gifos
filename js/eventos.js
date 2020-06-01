@@ -7,6 +7,7 @@ textObject.addEventListener("input",
     function() {
         cargarListaSugerida(textObject.value)
         activarBotonBusqueda(textObject.value)
+
     }
 );
 
@@ -15,7 +16,7 @@ const clickObjeto = document.querySelector("#btn-search-id");
 clickObjeto.addEventListener('click', function(event) {
     event.preventDefault();
     clickBotonBuscar(textObject.value);
-    //falta recoger la barra 
+
 
 });
 
@@ -32,7 +33,7 @@ const elementoListaSugeridaTres = document.querySelector("#sugerencia3");
 
         let textoItemSeleccionado = event.currentTarget.children[0].textContent;
         clickListaSugerida(textoItemSeleccionado);
-        //falta recoger la barra 
+
     })
 });
 
@@ -50,5 +51,6 @@ const elementoBotonVerMasTres = document.querySelector("#btn-opt-id3");
     buttonVerMas.addEventListener('click', function(event) {
         let valorIdBoton = event.currentTarget.id;
         clickVerMasGifos(valorIdBoton);
+
     })
 });

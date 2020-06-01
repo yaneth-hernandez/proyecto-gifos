@@ -1,13 +1,16 @@
-let seccionSugerencias = 'SUGERENCIAS';
-let seccionBuscar = 'BUSCAR';
-let seccionTendencias = 'TENDENCIAS';
-let seccionResultadoSugerido = 'RESULTADOS_SUGERIDOS';
-let seccionMostrarGifos = 'MOSTRAR_GIFOS';
-let seccionBotonSearch = 'BUSCAR_GIFOS';
-let seccionVerMas = 'VER_MAS_GIFOS';
+const seccionSugerencias = 'SUGERENCIAS';
+const seccionBuscar = 'BUSCAR';
+const seccionTendencias = 'TENDENCIAS';
+const seccionResultadoSugerido = 'RESULTADOS_SUGERIDOS';
+const seccionMostrarGifos = 'MOSTRAR_GIFOS';
+const seccionBotonSearch = 'BUSCAR_GIFOS';
+const seccionVerMas = 'VER_MAS_GIFOS';
+const prefijoTituloResultadoBusqueda = 'Resultado de Búsqueda: ';
+const searchUrl = 'search';
+const trendingUrl = 'trending';
 
-function configuracionSearchUrl(qParametro, limit) {
-    const protocolDomRecurso = 'https://api.giphy.com/v1/gifs/search?';
+function configuracionUrl(qParametro, limit, tipo) {
+    const protocolDomRecurso = 'https://api.giphy.com/v1/gifs/';
     const giphyApiKey = 'api_key=77oJazzoKbCJaoH8xkykG8dUOdeyy2FO';
     let qValorBusqueda = 'q=' + qParametro;
     let limitedObjetoRecibir = 'limit=' + limit;
@@ -17,6 +20,7 @@ function configuracionSearchUrl(qParametro, limit) {
     const sperador = '&';
 
     let urlCompleta = protocolDomRecurso +
+        tipo + '?' +
         giphyApiKey +
         sperador +
         qValorBusqueda +
@@ -32,8 +36,8 @@ function configuracionSearchUrl(qParametro, limit) {
     return urlCompleta;
 };
 
-function buscarGifo(valorBusqueda, limit, nombreSeccion) {
-    let urlBusqueda = configuracionSearchUrl(valorBusqueda, limit);
+function buscarGifo(valorBusqueda, limit, nombreSeccion, tipo) {
+    let urlBusqueda = configuracionUrl(valorBusqueda, limit, tipo);
     let resultadoBusqueda =
         fetch(urlBusqueda)
         .then(response => response.json())
@@ -46,13 +50,11 @@ function buscarGifo(valorBusqueda, limit, nombreSeccion) {
             if (nombreSeccion == seccionSugerencias) {
                 cambiarSeccionSugerenciasHtml(arregloResultadosGiphy);
             } else if (nombreSeccion == seccionResultadoSugerido) {
-                cambiarSeccionListaSugerido(arregloResultadosGiphy);
-            } else if (nombreSeccion == seccionMostrarGifos) {
-                mostrarSeccionRestultadosBusqueda(arregloResultadosGiphy);
-            } else if (nombreSeccion == seccionBotonSearch) {
-                mostrarSeccionRestultadosBusqueda(arregloResultadosGiphy);
-            } else if (nombreSeccion == seccionVerMas) {
-                mostrarSeccionRestultadosBusqueda(arregloResultadosGiphy);
+                cambiarSeccionListaSugeridoHtml(arregloResultadosGiphy);
+            } else if (nombreSeccion == seccionMostrarGifos ||
+                nombreSeccion == seccionBotonSearch ||
+                nombreSeccion == seccionVerMas) {
+                cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
             }
         })
         .catch((error) => {
@@ -65,12 +67,12 @@ class GiphyClass {
     constructor(obj) {
         this.id = obj.id;
         this.title = obj.title;
-        downsized_large: {
-            this.height = obj.images.original.height;
-            this.size = obj.images.original.size;
-            this.url = obj.images.original.url;
-            this.width = obj.images.original.width;
-        }
+        this.bitlyUrl = obj.bitly_url;
+        this.height = obj.images.original.height;
+        this.size = obj.images.original.size;
+        this.url = obj.images.original.url;
+        this.width = obj.images.original.width;
+
     }
 }
 
@@ -108,24 +110,14 @@ function obtenerSugerencias() {
 }
 
 function preCargarSugerencias() {
-    const maximoResultado = 4;
+    const maximoResultado = 5;
     let palabraSugerida = obtenerSugerencias();
-    buscarGifo(palabraSugerida, maximoResultado, seccionSugerencias);
+    buscarGifo(palabraSugerida, maximoResultado, seccionSugerencias, searchUrl);
 }
 
-function cambiarSeccionSugerenciasHtml(objetoDatos) {
-    document.getElementById("sugerido-gif0").src = objetoDatos[0].url;
-    document.getElementById("sugerido-gif1").src = objetoDatos[1].url;
-    document.getElementById("sugerido-gif2").src = objetoDatos[2].url;
-    document.getElementById("sugerido-gif3").src = objetoDatos[3].url;
-    document.getElementById("hashtags0-id").textContent = objetoDatos[0].title;
-    document.getElementById("hashtags1-id").textContent = objetoDatos[1].title;
-    document.getElementById("hashtags2-id").textContent = objetoDatos[2].title;
-    document.getElementById("hashtags3-id").textContent = objetoDatos[3].title;
-
-}
 //búsqueda con botón ver más
 function clickVerMasGifos(botonVerMasId) {
+
     var title = '';
     if (botonVerMasId == "btn-opt-id0") {
         title = document.getElementById("hashtags0-id").textContent;
@@ -136,69 +128,44 @@ function clickVerMasGifos(botonVerMasId) {
     } else if (botonVerMasId == "btn-opt-id3") {
         title = document.getElementById("hashtags3-id").textContent;
     }
-    buscarGifo(title, 100, seccionVerMas);
+    var tituloBusqueda = prefijoTituloResultadoBusqueda + title;
+    buscarGifo(title, 100, seccionVerMas, searchUrl);
+    cambiarTituloPostBusqueda(tituloBusqueda);
 }
 
 function cargarListaSugerida(inputTextoSugerido) {
     const maximoResultado = 3;
-    buscarGifo(inputTextoSugerido, maximoResultado, seccionResultadoSugerido);
+    buscarGifo(inputTextoSugerido, maximoResultado, seccionResultadoSugerido, searchUrl);
 
     if (inputTextoSugerido == "") {
-        document.querySelector(".resultado-sugerido").style.visibility = "hidden";
+        mostrarOcultarListaSugerida(false);
     } else {
-        document.querySelector(".resultado-sugerido").style.visibility = "visible";
+        mostrarOcultarListaSugerida(true);
     }
 }
 
-function cambiarSeccionListaSugerido(objetoDatos) {
-    document.getElementById('sugerencia-text1').textContent = objetoDatos[0].title;
-    document.getElementById('sugerencia-text2').textContent = objetoDatos[1].title;
-    document.getElementById('sugerencia-text3').textContent = objetoDatos[2].title;
+function mostrarOcultarListaSugerida(mostrar) {
+    if (mostrar == true) {
+        document.querySelector(".resultado-sugerido").style.visibility = "visible";
+    } else {
+        document.querySelector(".resultado-sugerido").style.visibility = "hidden";
+    }
 }
+
+
 
 function clickListaSugerida(tituloGif) {
-    //buscar gifo
-    buscarGifo(tituloGif, 50, seccionMostrarGifos);
-    //mostrar resultados, se debe llamar dentro de buscar 
-    //recoger barra
-    //mostrar botones sección resultado-lista
+    let tituloCompleto = prefijoTituloResultadoBusqueda + tituloGif;
+    mostrarOcultarListaSugerida(false);
+    buscarGifo(tituloGif, 50, seccionMostrarGifos, searchUrl);
+    cambiarTituloPostBusqueda(tituloCompleto);
+
     //ocultar hoy te sugerimos
-    //cambiar título: tendencias a título:resultados de búsqueda, dos puntos texto del span, del botón seleccionado
+    //mostrar botones sección resultado-lista
 }
 
-function mostrarSeccionRestultadosBusqueda(objetoDatos) {
-    const contenidoSource = 'SOURCE_GIPHY';
-    const datoIdGiphy = 'ID_GIPHY';
-    const hashTag = 'HASHTAG_GIPHY';
-
-    const classGyfoStarndard = 'ver-gifo-small';
-    const classGyfoLargo = 'ver-gifo-largo';
-
-
-    let renderGifo = "<figure class='ver-gifo-standar'>";
-    renderGifo = renderGifo + "<img class='ver-gifo-small' id='ID_GIPHY' src='SOURCE_GIPHY' alt='' srcset=''>";
-    renderGifo = renderGifo + "<figcaption class='ver-gifo-text-standar'>";
-    renderGifo = renderGifo + "'HASHTAG_GIPHY'</figcaption></figure>";
-
-    document.querySelector("#tend-ver-gifo").innerHTML = '';
-    for (var i = 0; i < objetoDatos.length; i++) {
-        let nuevoRenderGifo = renderGifo.replace(contenidoSource, objetoDatos[i].url)
-            .replace(datoIdGiphy, objetoDatos[i].id)
-            .replace(hashTag, objetoDatos[i].title);
-
-        let finalRenderGifo = '';
-        let ancho = parseInt(objetoDatos[i].width);
-        if (ancho >= 588) {
-            finalRenderGifo = nuevoRenderGifo.replace(classGyfoStarndard, classGyfoLargo);
-        } else {
-            finalRenderGifo = nuevoRenderGifo;
-        }
-
-        var figure = document.createElement('figure');
-        figure.innerHTML = finalRenderGifo;
-
-        document.querySelector("#tend-ver-gifo").appendChild(figure);
-    }
+function cambiarTituloPostBusqueda(titulo) {
+    document.querySelector("#tendencias-titulo-id").textContent = titulo;
 }
 
 function activarBotonBusqueda(inputActivarBoton) {
@@ -211,10 +178,24 @@ function activarBotonBusqueda(inputActivarBoton) {
     }
 }
 
-function clickBotonBuscar(gifoBusqueda) {
-    buscarGifo(gifoBusqueda, 100, seccionBotonSearch);
+function clickBotonBuscar(textoDeBusqueda) {
+    let tituloCompleto = prefijoTituloResultadoBusqueda + textoDeBusqueda;
+    buscarGifo(textoDeBusqueda, 100, seccionBotonSearch, searchUrl);
+    mostrarOcultarListaSugerida(false);
+    cambiarTituloPostBusqueda(tituloCompleto);
 }
 
-
+function preCargarTrending() {
+    buscarGifo('', 100, seccionMostrarGifos, trendingUrl);
+}
 
 preCargarSugerencias();
+
+preCargarTrending();
+
+//falta:
+//anclar logo para retorno al index
+//agregar evento para que aparezca barra hashtag al pasar el mouse
+//ocultar sección hoy te sugerimos al iniciar la búsqueda
+//mostrar botones con resultados de búsqueda
+//mostrar búsqueda por botones

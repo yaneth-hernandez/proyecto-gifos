@@ -450,8 +450,8 @@ section .buscar {
 }
 
 .ver-gifo-text-standar {
-    width: 286px;
-    height: 24px;
+    width: 294px;
+    height: 30px;
     box-shadow: inset -2px 0px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
     font-family: "Chakra Petch";
@@ -461,9 +461,9 @@ section .buscar {
     color: floralwhite;
 }
 
-.ver-gifo-text {
-    width: 588px;
-    height: 24px;
+.ver-gifo-text-largo {
+    width: 596px;
+    height: 28px;
     box-shadow: inset -2px 0px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
     font-family: "Chakra Petch";
@@ -473,7 +473,7 @@ section .buscar {
     color: floralwhite;
 }
 
-.ver-gifo-standar {
+.contenedor-gifo-standar {
     width: 294px;
     height: 304px;
     margin-bottom: 8px;
@@ -483,9 +483,16 @@ section .buscar {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    align-content: center;
 }
 
-.ver-gifo {
+.ver-gifo-small {
+    width: 280px;
+    height: 280px;
+    background-color: violet;
+}
+
+.contenedor-gifo-largo {
     width: 596px;
     height: 298px;
     margin-bottom: 16px;
@@ -495,12 +502,6 @@ section .buscar {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-}
-
-.ver-gifo-small {
-    width: 286px;
-    height: 296px;
-    background-color: violet;
 }
 
 .ver-gifo-largo {

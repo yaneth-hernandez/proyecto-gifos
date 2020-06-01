@@ -20,7 +20,7 @@
         <div class="content-body">
             <header>
                 <div class="logo">
-                    <img src="img\gifOF_logo.png" id="header-logo" />
+                    <a href="http://127.0.0.1:5500/index.html"><img src="img\gifOF_logo.png" id="header-logo" /></a>
                 </div>
                 <div class="buttons-text">
                     <div class=cr-gif>
@@ -78,9 +78,9 @@
             <!--fin sección buscar-->
             <!--==sugerencias- inicio==-->
             <article class="sugerencias">
-                <div class="sugerimos">
+                <h1 class="sugerimos" id="sugerimos-titulo-id">
                     Hoy te sugerimos:
-                </div>
+                </h1>
                 <div class="sug-option">
                     <figure class="option-content">
                         <figcaption class="option-barr">
@@ -127,24 +127,50 @@
             <!--==sugerencias- fin==-->
             <!--==tendencias- inicios==-->
             <section class="tendencias">
-                <div class="tendencias-titulo">
+                <h2 class="tendencias-titulo" id="tendencias-titulo-id">
                     Tendencias:
-                </div>
+                </h2>
                 <div id="tend-ver-gifo" class="tend-ver-gifo">
                     <figure class='ver-gifo-standar'>
                         <img id='ver-gifo1' src='' alt='' srcset=''>
                         <figcaption class='ver-gifo-text-standar'>
-
                         </figcaption>
                     </figure>
-
+                    <figure class='contenedor-gifo-standar'>
+                        <img id='ver-gifo1' src='' alt='' srcset=''>
+                        <figcaption class='ver-gifo-text-standar'>
+                        </figcaption>
+                    </figure>
+                    <figure class='contenedor-gifo-largo'>
+                        <img id='ver-gifo5' src='' alt='' srcset=''>
+                        <figcaption class='ver-gifo-text'>
+                        </figcaption>
+                    </figure>
                     <figure class='ver-gifo'>
                         <img id='ver-gifo5' src='' alt='' srcset=''>
                         <figcaption class='ver-gifo-text'>
-
                         </figcaption>
                     </figure>
-
+                    <figure class='ver-gifo'>
+                        <img id='ver-gifo5' src='' alt='' srcset=''>
+                        <figcaption class='ver-gifo-text'>
+                        </figcaption>
+                    </figure>
+                    <figure class='ver-gifo-standar'>
+                        <img id='ver-gifo1' src='' alt='' srcset=''>
+                        <figcaption class='ver-gifo-text-standar'>
+                        </figcaption>
+                    </figure>
+                    <figure class='ver-gifo'>
+                        <img id='ver-gifo5' src='' alt='' srcset=''>
+                        <figcaption class='ver-gifo-text'>
+                        </figcaption>
+                    </figure>
+                    <figure class='ver-gifo-standar'>
+                        <img id='ver-gifo1' src='' alt='' srcset=''>
+                        <figcaption class='ver-gifo-text-standar'>
+                        </figcaption>
+                    </figure>
                 </div>
 
             </section>
@@ -153,8 +179,9 @@
             </div>
             </div>
             <script src="js/eventos.js"></script>
-            <script src="js/index.js"></script>
+            <script src="js/manejo-theme.js"></script>
             <script src="js/busqueda-api-giphy.js"></script>
+            <script src="js/cambio-html-elemt.js"></script>
 </body>
 
 </main>
