@@ -257,8 +257,6 @@ section .buscar {
 .resultado-sugerido {
     position: absolute;
     width: 1200px;
-    /*margin-top: -140px;
-    z-index: -3;*/
     display: flex;
     flex-wrap: wrap;
     padding-top: 17px;
@@ -289,24 +287,14 @@ section .buscar {
     padding-left: 7px;
 }
 
-.results-list {
+.menu-results-list-class {
     height: 60px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    margin-top: -80px;
-    z-index: -1;
+    visibility: hidden;
 }
 
-.result-list1,
-.result-list2,
-.result-list3,
-.result-list4,
-.result-list5,
-.result-list6,
-.result-list7,
-.result-list8 {
+.result-list {
     width: 140px;
     height: 34px;
     background: #4180F6;
@@ -321,11 +309,24 @@ section .buscar {
     cursor: pointer;
 }
 
+.text-oculto {
+    display: none;
+}
+
 
 /*===fin sección buscar==*/
 
 
 /*===inicio articulo-sugerencias===*/
+
+.sugerencias {
+    visibility: visible;
+}
+
+.ocultar-seccion-sugerencias {
+    visibility: hidden;
+    height: 0px;
+}
 
 .sugerimos {
     width: 1193px;
@@ -341,6 +342,10 @@ section .buscar {
     background: #FFFAFE;
     border: 1px solid #E6BBE2;
     box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+}
+
+.sugerimos-replace {
+    margin: 0px 0px 16px 0px;
 }
 
 .sug-option {

@@ -180,6 +180,12 @@ li {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    visibility: visible;
+}
+
+.crear-gifos-replace {
+    visibility: hidden;
+    height: 0px;
 }
 
 .barra-crear-gifo {

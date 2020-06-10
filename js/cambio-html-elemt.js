@@ -54,4 +54,41 @@ function cargarSeccionRestultadosBusquedaHtml(objetoDatos) {
 
         document.querySelector("#tend-ver-gifo").append(figure);
     }
+
+}
+//botones resultados -cambio mostrar
+function mostraOcultarBotonesResultListCambioHtml(objetoDatos) {
+    for (var i = 0; i <= 7; i++) {
+        let idName = "#boton-result-list" + i;
+        document.querySelector(idName).childNodes[0].textContent = prepararPlalabras(objetoDatos[i].title);
+        document.querySelector(idName).childNodes[1].textContent = objetoDatos[i].title;
+    }
+    document.querySelector('#menu-results-list-id').style.visibility = "visible";
+}
+
+function prepararPlalabras(frase) {
+    let textoProcesado = '#';
+    let arrayPreprocesado = frase.split(' ');
+    let logitudArreglo = arrayPreprocesado.length;
+
+    if (frase.length > 0 && frase != null) {
+        if (logitudArreglo > 0) {
+            textoProcesado = textoProcesado + arrayPreprocesado[0];
+        }
+        if (logitudArreglo >= 2) {
+            textoProcesado = textoProcesado + ' ' + arrayPreprocesado[1];
+        }
+
+    }
+
+    return textoProcesado;
+}
+
+function ocultarSeccionSugerenciasCambioHtml() {
+    let seccionSugerencias = document.getElementsByClassName('sugerencias')[0];
+    seccionSugerencias.classList.replace('sugerencias', 'ocultar-seccion-sugerencias');
+
+    let tituloSugerimos = document.getElementsByClassName('sugerimos')[0];
+    tituloSugerimos.classList.replace('sugerimos', 'sugerimos-replace');
+
 }

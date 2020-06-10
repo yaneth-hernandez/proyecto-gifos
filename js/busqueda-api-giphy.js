@@ -4,7 +4,9 @@ const seccionTendencias = 'TENDENCIAS';
 const seccionResultadoSugerido = 'RESULTADOS_SUGERIDOS';
 const seccionMostrarGifos = 'MOSTRAR_GIFOS';
 const seccionBotonSearch = 'BUSCAR_GIFOS';
+const seccionBotoneraBuscar = 'BOTONERA_BUSCAR';
 const seccionVerMas = 'VER_MAS_GIFOS';
+const precargaMostrarGifos = 'PRECARGA_MOSTRAR_GIFOS';
 const prefijoTituloResultadoBusqueda = 'Resultado de Búsqueda: ';
 const searchUrl = 'search';
 const trendingUrl = 'trending';
@@ -51,9 +53,17 @@ function buscarGifo(valorBusqueda, limit, nombreSeccion, tipo) {
                 cambiarSeccionSugerenciasHtml(arregloResultadosGiphy);
             } else if (nombreSeccion == seccionResultadoSugerido) {
                 cambiarSeccionListaSugeridoHtml(arregloResultadosGiphy);
+            } else if (nombreSeccion == precargaMostrarGifos) {
+                cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
+            } else if (nombreSeccion == seccionVerMas) {
+                cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
             } else if (nombreSeccion == seccionMostrarGifos ||
-                nombreSeccion == seccionBotonSearch ||
-                nombreSeccion == seccionVerMas) {
+                nombreSeccion == seccionBotonSearch) {
+                mostraOcultarBotonesResultListCambioHtml(arregloResultadosGiphy);
+                ocultarSeccionSugerenciasCambioHtml();
+                cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
+            } else if (nombreSeccion == seccionBotoneraBuscar) {
+
                 cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
             }
         })
@@ -88,6 +98,7 @@ function obtenerSugerencias() {
         'bruce lee',
         'the muppets',
         'friends',
+        'sailor moon',
         'adele',
         'the big bang theory',
         'bob esponja',
@@ -96,6 +107,7 @@ function obtenerSugerencias() {
         'tom and jerry',
         'steve jobs',
         'the nanny',
+        'gordon ramsay',
         'titanic jack',
         'bugs bunny',
         'star wars',
@@ -110,7 +122,7 @@ function obtenerSugerencias() {
 }
 
 function preCargarSugerencias() {
-    const maximoResultado = 5;
+    const maximoResultado = 8;
     let palabraSugerida = obtenerSugerencias();
     buscarGifo(palabraSugerida, maximoResultado, seccionSugerencias, searchUrl);
 }
@@ -160,8 +172,9 @@ function clickListaSugerida(tituloGif) {
     buscarGifo(tituloGif, 50, seccionMostrarGifos, searchUrl);
     cambiarTituloPostBusqueda(tituloCompleto);
 
+
     //ocultar hoy te sugerimos
-    //mostrar botones sección resultado-lista
+
 }
 
 function cambiarTituloPostBusqueda(titulo) {
@@ -180,13 +193,14 @@ function activarBotonBusqueda(inputActivarBoton) {
 
 function clickBotonBuscar(textoDeBusqueda) {
     let tituloCompleto = prefijoTituloResultadoBusqueda + textoDeBusqueda;
-    buscarGifo(textoDeBusqueda, 100, seccionBotonSearch, searchUrl);
+    buscarGifo(textoDeBusqueda, 80, seccionBotonSearch, searchUrl);
     mostrarOcultarListaSugerida(false);
     cambiarTituloPostBusqueda(tituloCompleto);
+
 }
 
 function preCargarTrending() {
-    buscarGifo('', 100, seccionMostrarGifos, trendingUrl);
+    buscarGifo('', 80, precargaMostrarGifos, trendingUrl);
 }
 
 preCargarSugerencias();
