@@ -5,5 +5,4 @@ function precargaParametroUrl() {
         crearGifos.classList.replace('crear-gifos', 'crear-gifos-replace');
     }
 }
-
 precargaParametroUrl();

@@ -24,13 +24,15 @@
             </div>
             <div class="buttons-text">
                 <div class=cr-gif>
-                    <button id="cr-gif" onclick="crearGifos()"><a href="http://127.0.0.1:5500/index-crear-gifo.html">Crear Guifos</a></button>
+                    <button id="cr-gif" onclick="crearGifos()"><a href="http://127.0.0.1:5500/index-crear-gifo.html" target="_top">Crear Guifos</a></button>
                 </div>
                 <div class="menu-ch-gif">
                     <div class="ch-gif">
                         <button id="ch-gif" onclick="themeButtonDopdown()">Elegir Tema</button>
                         <button id="button-dopdown" onclick="themeButtonDopdown()"><i class="fas fa-caret-down"></i></button>
 
+                        <a class="text" href="http://127.0.0.1:5500/index-crear-gifo.html?modulo=mis-gifos" target="_top"><span class="guion-bajo">M</span>
+                            <span class="text-mis-gifos"> is Guifos</span></a>
 
                     </div>
                     <nav id="contenedor-menu">
@@ -45,94 +47,30 @@
 
         <!--inicio mis gifos- crear gifos-->
 
-
-        <!--  <figure class="crear-gifos" id="crear-gifos">
-            <figcaption class="barra-crear-gifo" id="barra-crear-gifo">Crear Guifos</figcaption>
-            <div class="cont-img-tit-crear-gifo">
-                <div class="img-crear-gifo"><img id="img-crear-gifo" src="img/window img.png" alt="Crear-gifos"></div>
-                <div class="titulo-crear-gifo" id="titulo-crear-gifo">Aquí podrás crear tus propios guifos</div>
-            </div>
-            <p class="text-crear-gifo" id="text-crear-gifo">Crear tu <span class="crear-gifos-negrita">guifo</span> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos<br> personalizados. Los pasos para crear tu guifo son:</p>
-            <ol class="text-crear-gifo">
-                <li>1) Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
-
-                <li>2) Capturar tu momento guifo</li>
-                <li>3) Revisar el momento</li>
-                <li>4) Listo para subir y compartir! ¿Quieres comenzar a crear tu <span class="crear-gifos-negrita">guifo</span> ahora?
-            </ol>
-            <div class=content-btn-crear-gifo>
-                <button id="btn-cancelar" onclick="cancelarCreacionGifo()">Cancelar</button>
-                <button id="btn-comenzar" onclick="comenzarCreacionGifo()">Comenzar</button>
-            </div>
-        </figure> -->
-
-        <!--  <figure class="chequeo">
-            <figcaption class="content-text-btn-cerrar">
-                <span>lorem ipsum</span>
-                <img class="close-btn-crar-gifo" src="img/close.svg" alt="">
-            </figcaption> -->
-        <!-- <div class="content-imagen-chequeo"><img class="img-chequeo" src="img/gato_ejemplo.jpg" alt="" srcset="" /></div> -->
-        <!-- <div class="area-botones-chequeo">
-                <div class="btns-camara-captura">
-                    <button class="boton-camara-chequeo"><img class="img-camera-chequeo"src="img/camera.svg"/></button>
-                    <button class="boton-capturar-chequeo">Capturar</button>
+        <section class="proceso-crear-gifos">
+            <!--Inicio- Crear Guifos-->
+            <figure class="crear-gifos" id="crear-gifos">
+                <figcaption class="barra-crear-gifo" id="barra-crear-gifo">Crear Guifos</figcaption>
+                <div class="cont-img-tit-crear-gifo">
+                    <div class="img-crear-gifo"><img id="img-crear-gifo" src="img/window img.png" alt="Crear-gifos"></div>
+                    <div class="titulo-crear-gifo" id="titulo-crear-gifo">Aquí podrás crear tus propios guifos</div>
                 </div>
-            </div> -->
+                <p class="text-crear-gifo" id="text-crear-gifo">Crear tu <span class="crear-gifos-negrita">guifo</span> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos<br> personalizados. Los pasos para crear tu guifo son:</p>
+                <ol class="text-crear-gifo">
+                    <li class="text-crear-gifo">1) Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
 
-        <!-- <div class="area-captura-gifo">
-                <input class="input-capturar" type="number">
-                <div class="boton-listo-vineta">
-                    <button class="boton-vineta-captura-gifo"><img class="img-vineta-captura" src="img/recording.svg" alt="" srcset=""/></button>
-                    <button class="boton-listo">Listo</button>
+                    <li class="text-crear-gifo">2) Capturar tu momento guifo</li>
+                    <li class="text-crear-gifo">3) Revisar el momento</li>
+                    <li class="text-crear-gifo">4) Listo para subir y compartir! ¿Quieres comenzar a crear tu <span class="crear-gifos-negrita">guifo</span> ahora?
+                </ol>
+                <div class=content-btn-crear-gifo>
+                    <button class="btn-cancelar-class" id="btn-cancelar">Cancelar</button>
+                    <button class="btn-comenzar-class" id="btn-comenzar">Comenzar</button>
                 </div>
-            </div> -->
-        <!-- 
-            <div class="area-vista-previa">
-                <div class="temporizador-barra-estado">
-                    <input class="input-vista-previa" type="number">
-                    <div class="boton-temporizador">
-                        <button class="boton-arrow-temporizador"><img class="img-boton-temporizador"src="img/forward.svg" alt="" sizes="" srcset=""></button>
-                        <div class="temporizador"></div>
-                    </div>
-                </div>
-                <div class="boton-repetir-subir">
-                    <button class="boton-repetir-captura">Repetir Captura</button>
-                    <button class="boton-subir-gifo">Subir Guifo</button>
-                </div>
-            </div> -->
-
-        <!--sustituir por esta cuando se esté creando el gifo-->
-
-        <!-- <figure class="content-img-subiendo-gifo"><img class="img-subiendo-gifo" src="img/globe_img.png" alt="" srcset="" />
-                <figcaption class="texto-content-subiendo-gifo">Estamos subiendo tu guifo…</figcaption>
-                <div class="temporizador-subiendo-gifos"></div>
-                <span class="texto-temporizador">Tiempo restante: <span class="decoracion-texto">38 años</span>algunos minutos</span>
             </figure>
-            <div class="area-bton-subiendo-guifo">
-                <div class="boton-cancelar-subiendo-guifos">
-                    <button class="boton-cancelar-subida">Cancelar</button>
-                </div>
-            </div> -->
+            <!--Fin- Crear Guifos-->
 
-
-        <!-- </figure> -->
-
-        <figure class="contenedor-gifo-subido">
-            <figcaption class="encabezado-gifo-subido"><span class="text-gifo-subido">Guifo Subido Con Éxito</span>
-                <img class="close-btn-crar-gifo" src="img/close.svg" alt="">
-            </figcaption>
-            <div class="contenido-gifo-subido">
-                <div class="contenedor-img-gifo-subido"><img class="img-gifo-subido" src="img/gato_ejemplo.jpg" alt="" srcset=""></div>
-                <div class="contenido-gifo-subido-botones">
-                    <span class="contenido-text-gifo-subido">Guifo creado con éxito</span>
-                    <button class="boton-copiar-enlace-gifo">Copiar Enlace Guifo</button>
-                    <button class="boton-descargar-gifo">Descargar Guifo</button>
-                </div>
-            </div>
-            <div class="contenedor-boton-listo-subir">
-                <button class="boton-subido-listo">Listo</button>
-            </div>
-        </figure>
+        </section>
 
         <section class="mis-gifos-contenedor">
             <div id="mis-gifos-titulo">

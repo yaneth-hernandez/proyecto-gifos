@@ -18,6 +18,9 @@ function themeButtonDopdown() {
     }
 }
 
+
+
+
 function guardarEstilo(nombreKey, valor) {
     localStorage.removeItem(nombreKey);
     localStorage.setItem(nombreKey, valor);
