@@ -1,4 +1,22 @@
 /*========================
+ Eventos encabezado
+========================*/
+//Elegir tema
+function eventoClickButtonDopdown() {
+    let botonElegirTema = document.getElementById('ch-gif');
+    let botonDopDown = document.getElementById('button-dopdown');
+    [botonElegirTema,
+        botonDopDown
+    ].forEach(function(botontemas) {
+        botontemas.addEventListener('click', function() {
+            themeButtonDopdown();
+        });
+
+    });
+}
+window.addEventListener('load', eventoClickButtonDopdown);
+
+/*========================
  Eventos barra de búsqueda
 ========================*/
 //evento input para deplegar barra

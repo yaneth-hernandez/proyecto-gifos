@@ -171,10 +171,6 @@ function clickListaSugerida(tituloGif) {
     mostrarOcultarListaSugerida(false);
     buscarGifo(tituloGif, 50, seccionMostrarGifos, searchUrl);
     cambiarTituloPostBusqueda(tituloCompleto);
-
-
-    //ocultar hoy te sugerimos
-
 }
 
 function cambiarTituloPostBusqueda(titulo) {
