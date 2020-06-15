@@ -97,6 +97,7 @@ function obtenerSugerencias() {
         'homerosimpson',
         'bruce lee',
         'the muppets',
+        'marlon brando',
         'friends',
         'sailor moon',
         'adele',
@@ -122,7 +123,7 @@ function obtenerSugerencias() {
 }
 
 function preCargarSugerencias() {
-    const maximoResultado = 8;
+    const maximoResultado = 10;
     let palabraSugerida = obtenerSugerencias();
     buscarGifo(palabraSugerida, maximoResultado, seccionSugerencias, searchUrl);
 }
@@ -199,9 +200,17 @@ function preCargarTrending() {
     buscarGifo('', 80, precargaMostrarGifos, trendingUrl);
 }
 
+function textoBusquedaOculto(idBotonListaSugerida) {
+    let textoBusquedaOculto = document.querySelector("#" + idBotonListaSugerida).childNodes[1].textContent;
+    buscarGifo(textoBusquedaOculto, 80, seccionBotoneraBuscar, searchUrl);
+
+}
 preCargarSugerencias();
 
 preCargarTrending();
+
+
+
 
 //falta:
 //anclar logo para retorno al index

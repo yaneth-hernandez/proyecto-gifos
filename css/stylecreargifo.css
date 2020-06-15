@@ -316,7 +316,6 @@ inicio crear chequeo
 .content-text-btn-cerrar {
     width: 854px;
     height: 24px;
-    margin-right: 13px;
     background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
     font-family: 'Chakra Petch';
     font-size: 14px;
@@ -330,23 +329,17 @@ inicio crear chequeo
 }
 
 .content-imagen-chequeo {
-    width: 838px;
-    height: 440px;
-    margin-top: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 832px;
+    max-height: 434px;
+    margin-top: 15px;
     background: #FFFFFF;
     border: 1px solid #979797;
     box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
 }
 
 .img-chequeo {
-    width: 832px;
+    width: auto;
     height: 434px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: #FFFFFF;
     border: 1px solid #979797;
     box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
@@ -395,7 +388,7 @@ fin chequeo
 inicio capturar
 ===================*/
 
-.area-captura-gifo {
+.area-botones-captura-gifo {
     width: 98%;
     height: 14%;
     display: flex;

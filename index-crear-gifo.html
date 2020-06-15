@@ -19,7 +19,7 @@
     <main class="contenedor-crear-gifos" id="contenedor-crear-gifos">
         <header class="container-header">
             <div class="logo-arrow">
-                <a class="link-arrow" href="http://127.0.0.1:5500/index.html"><img src="img/arrow.svg" id="header-arrow" /></a>
+                <a id="link-arrow-id" class="link-arrow"><img src="img/arrow.svg" id="header-arrow" /></a>
                 <img src="img/gifOF_logo.png" id="header-logo-arrow" />
             </div>
             <div class="buttons-text">
@@ -47,9 +47,9 @@
 
         <!--inicio mis gifos- crear gifos-->
 
-        <section class="proceso-crear-gifos">
+        <section id="proceso-crear-gifos-id" class="proceso-crear-gifos">
             <!--Inicio- Crear Guifos-->
-            <figure class="crear-gifos" id="crear-gifos">
+            <figure class="crear-gifos" id="crear-gifos-id">
                 <figcaption class="barra-crear-gifo" id="barra-crear-gifo">Crear Guifos</figcaption>
                 <div class="cont-img-tit-crear-gifo">
                     <div class="img-crear-gifo"><img id="img-crear-gifo" src="img/window img.png" alt="Crear-gifos"></div>
@@ -131,8 +131,14 @@
     </main>
 
     <!--fin mis gifos- crear gifos-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
     <script src="js/manejo-theme.js"></script>
-    <script src="js/crear-gifo.js"></script>
+
+    <script src="js/crear_gifo/constantes_crear_gifos.js"></script>
+    <script src="js/crear_gifo/eventos_creargifo.js"></script>
+    <script src="js/crear_gifo/cambios_crear_gifos.js"></script>
+    <script src="js/crear_gifo/crear-gifo.js"></script>
+    <script src=""></script>
 </body>
 
 </html>

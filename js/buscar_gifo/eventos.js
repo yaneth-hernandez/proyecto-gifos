@@ -110,9 +110,3 @@ function clickBotonesListaSugerida() {
 
 }
 window.addEventListener('load', clickBotonesListaSugerida);
-
-function textoBusquedaOculto(idBotonListaSugerida) {
-    let textoBusquedaOculto = document.querySelector("#" + idBotonListaSugerida).childNodes[1].textContent;
-    buscarGifo(textoBusquedaOculto, 80, seccionBotoneraBuscar, searchUrl);
-
-}
