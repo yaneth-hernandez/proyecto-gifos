@@ -18,7 +18,7 @@ function clickBotonComenzar() {
     let botonComenzar = document.getElementById('btn-comenzar');
     botonComenzar.addEventListener('click', function() {
         avanzarCapturarGifos();
-        getStreamAndRecord();
+        iniciarCamara();
     });
 }
 window.addEventListener('load', clickBotonComenzar);

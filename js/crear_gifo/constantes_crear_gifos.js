@@ -20,7 +20,7 @@ const cuerpoComenzar = `<figure class="crear-gifos" id="crear-gifos-id">
         </ol>
         <div class=content-btn-crear-gifo>
             <button class="btn-cancelar-class" id="btn-cancelar">Cancelar</button>
-            <button onclick="avanzarCapturarGifos(); getStreamAndRecord()";class="btn-comenzar-class" id="btn-comenzar">Comenzar</button>
+            <button onclick="avanzarCapturarGifos(); encenderCamara()";class="btn-comenzar-class" id="btn-comenzar">Comenzar</button>
             
         </div>
     </figure>`;
@@ -32,30 +32,30 @@ const cuerpoCapturarGifos = `<figure id="contenedor-captura-id" class="contenedo
             <img class="close-btn-crar-gifo" src="img/close.svg" alt="">
         </figcaption>
         <div class="content-imagen-chequeo">
-            <video autoplay class="img-chequeo" id="video"></video>
+            <video data-duration="0" class="img-chequeo" id="video" onended="detenerConteo();" ></video>
         </div>
         <div class="area-botones-chequeo" id="area-botones-chequeo-id">
             <div class="btns-camara-captura" id="btns-camara-captura-id">
                 <button class="boton-camara-chequeo" onclick="cambiarAreaCapturaVideo()"><img class="img-camera-chequeo" src="img/camera.svg"/></button>
-                <button class="boton-capturar-chequeo" onclick="cambiarAreaCapturaVideo()">Capturar</button>
-                
+                <button class="boton-capturar-chequeo" onclick="cambiarAreaCapturaVideo(); iniciarGrabacion();">Capturar</button>
             </div>
         </div>
     </figure>`;
 
 const botonesCapturarGifos = `
-    <input class="input-capturar" type="number">
+    <input class="input-capturar" type="text" id="input-timer-id">
     <div class="boton-listo-vineta">
-        <button class="boton-vineta-captura-gifo" onclick="cambiarAreaVistaPrevia()"><img class="img-vineta-captura" src="img/recording.svg" alt="" srcset=""/></button>
-        <button class="boton-listo" onclick="cambiarAreaVistaPrevia()">Listo</button>
+        <button class="boton-vineta-captura-gifo" onclick="cambiarAreaVistaPrevia(); detenerGrabacion(); detenerConteo();"><img class="img-vineta-captura" src="img/recording.svg" alt="" srcset=""/></button>
+        <button class="boton-listo" onclick="cambiarAreaVistaPrevia(); detenerGrabacion(); detenerConteo();">Listo</button>
        </div>`;
-
 
 const botonesVistaPrevia = `
        <div class="temporizador-barra-estado">
-            <input class="input-vista-previa" type="number">
+            <input class="input-vista-previa" type="text" id="input-timer-id">
              <div class="boton-temporizador">
-                <button class="boton-arrow-temporizador"><img class="img-boton-temporizador"src="img/forward.svg" alt="" sizes="" srcset=""></button>
+                <button class="boton-arrow-temporizador" onclick="playVistaPrevia();">
+                    <img class="img-boton-temporizador"src="img/forward.svg" alt="" sizes="" srcset="">
+                </button>
                 <div class="temporizador"></div>
             </div>
          </div>
@@ -86,7 +86,7 @@ const gifoSubido = `<figcaption class="encabezado-gifo-subido"><span class="text
 <img class="close-btn-crar-gifo" src="img/close.svg" alt="">
 </figcaption>
 <div class="contenido-gifo-subido">
-<div class="contenedor-img-gifo-subido"><img class="img-gifo-subido" src="img/gato_ejemplo.jpg" alt="" srcset=""></div>
+<div class="contenedor-img-gifo-subido"><img class="img-gifo-subido" id="img-gifo-subido-id" src="" alt="" srcset=""></div>
 <div class="contenido-gifo-subido-botones">
     <span class="contenido-text-gifo-subido">Guifo creado con éxito</span>
     <button class="boton-copiar-enlace-gifo">Copiar Enlace Guifo</button>
