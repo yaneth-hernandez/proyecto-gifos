@@ -11,6 +11,7 @@ const prefijoTituloResultadoBusqueda = 'Resultado de Búsqueda: ';
 const searchUrl = 'search';
 const trendingUrl = 'trending';
 
+//defino la url, configurandola, dejando los parametros 
 function configuracionUrl(qParametro, limit, tipo) {
     const protocolDomRecurso = 'https://api.giphy.com/v1/gifs/';
     const giphyApiKey = 'api_key=77oJazzoKbCJaoH8xkykG8dUOdeyy2FO';
@@ -38,39 +39,34 @@ function configuracionUrl(qParametro, limit, tipo) {
     return urlCompleta;
 };
 
-function buscarGifo(valorBusqueda, limit, nombreSeccion, tipo) {
+async function buscarGifo(valorBusqueda, limit, nombreSeccion, tipo) {
     let urlBusqueda = configuracionUrl(valorBusqueda, limit, tipo);
-    let resultadoBusqueda =
-        fetch(urlBusqueda)
-        .then(response => response.json())
-        .then(resultJson => {
-            var arregloResultadosGiphy = [];
-            resultJson.data.forEach(result => {
-                var objectResult = new GiphyClass(result);
-                arregloResultadosGiphy.push(objectResult);
-            })
-            if (nombreSeccion == seccionSugerencias) {
-                cambiarSeccionSugerenciasHtml(arregloResultadosGiphy);
-            } else if (nombreSeccion == seccionResultadoSugerido) {
-                cambiarSeccionListaSugeridoHtml(arregloResultadosGiphy);
-            } else if (nombreSeccion == precargaMostrarGifos) {
-                cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
-            } else if (nombreSeccion == seccionVerMas) {
-                cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
-            } else if (nombreSeccion == seccionMostrarGifos ||
-                nombreSeccion == seccionBotonSearch) {
-                mostraOcultarBotonesResultListCambioHtml(arregloResultadosGiphy);
-                ocultarSeccionSugerenciasCambioHtml();
-                cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
-            } else if (nombreSeccion == seccionBotoneraBuscar) {
+    var respuestaBusqueda = await fetch(urlBusqueda);
+    var resultadoDatos = await respuestaBusqueda.json();
 
-                cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
-            }
-        })
-        .catch((error) => {
-            return error
-        })
-    return resultadoBusqueda;
+    var arregloResultadosGiphy = [];
+    resultadoDatos.data.forEach(result => {
+        var objectResult = new GiphyClass(result);
+        arregloResultadosGiphy.push(objectResult);
+    })
+
+    if (nombreSeccion == seccionSugerencias) {
+        cambiarSeccionSugerenciasHtml(arregloResultadosGiphy);
+    } else if (nombreSeccion == seccionResultadoSugerido) {
+        cambiarSeccionListaSugeridoHtml(arregloResultadosGiphy);
+    } else if (nombreSeccion == precargaMostrarGifos) {
+        cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
+    } else if (nombreSeccion == seccionVerMas) {
+        cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
+    } else if (nombreSeccion == seccionMostrarGifos ||
+        nombreSeccion == seccionBotonSearch) {
+        mostraOcultarBotonesResultListCambioHtml(arregloResultadosGiphy);
+        ocultarSeccionSugerenciasCambioHtml();
+        cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
+    } else if (nombreSeccion == seccionBotoneraBuscar) {
+
+        cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
+    }
 }
 
 class GiphyClass {

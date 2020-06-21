@@ -15,38 +15,68 @@ async function iniciarCamara() {
     video.srcObject = streamCapturaUserMedia;
     video.play();
 }
+async function detenerCamara() {
+    //detengo càmara
+    if (streamCapturaUserMedia != null) {
+        streamCapturaUserMedia.getTracks().forEach(track => {
+            track.stop();
+        });
+        streamCapturaUserMedia = null;
+    }
+    //detengo grabación
+    if (recorderVideo != null) {
+        await recorderVideo.stopRecording();
+        await recorderVideo.reset();
+        await recorderVideo.destroy();
+        recorderVideo = null;
+    }
+
+    if (recorderGif != null) {
+        await recorderGif.stopRecording();
+        await recorderGif.reset();
+        await recorderGif.destroy();
+        recorderGif = null;
+    }
+}
 
 async function iniciarGrabacion() {
-    recorderGif = new RecordRTCPromisesHandler(streamCapturaUserMedia, {
-        type: "gif"
-    });
-    await recorderGif.startRecording();
+    try {
+        recorderGif = new RecordRTCPromisesHandler(streamCapturaUserMedia, {
+            type: "gif"
+        });
+        await recorderGif.startRecording();
 
-    recorderVideo = new RecordRTCPromisesHandler(streamCapturaUserMedia, {
-        type: "video"
-    });
-    await recorderVideo.startRecording();
+        recorderVideo = new RecordRTCPromisesHandler(streamCapturaUserMedia, {
+            type: "video"
+        });
+        await recorderVideo.startRecording();
+    } catch (err) {
+        console.log('Error al iniciar grabación' + err)
+    }
 }
 
 async function detenerGrabacion() {
-    document.getElementById('video').srcObject = null;
+    try {
+        document.getElementById('video').srcObject = null;
+        await recorderVideo.stopRecording();
+        let blob = await recorderVideo.getBlob();
 
-    await recorderVideo.stopRecording();
-    let blob = await recorderVideo.getBlob();
-
-    await recorderGif.stopRecording();
-    contenidoArchivoGif = await recorderGif.getBlob();
-    streamCapturaUserMedia.getTracks().forEach(track => {
-        track.stop();
-    });
-    await recorderVideo.reset();
-    await recorderVideo.destroy();
-    recorderVideo = null;
-    await recorderGif.reset();
-    await recorderGif.destroy();
-    recorderGif = null;
-    streamCapturaUserMedia = null;
-    document.getElementById('video').src = URL.createObjectURL(blob);
+        await recorderGif.stopRecording();
+        contenidoArchivoGif = await recorderGif.getBlob();
+        streamCapturaUserMedia.getTracks().forEach(track => {
+            track.stop();
+        });
+        await recorderVideo.reset();
+        await recorderVideo.destroy();
+        recorderVideo = null;
+        await recorderGif.reset();
+        await recorderGif.destroy();
+        recorderGif = null;
+        streamCapturaUserMedia = null;
+        document.getElementById('video').src = URL.createObjectURL(blob);
+    } catch (err) {
+        console.log('No se puede detener la grabación' + err)
+    }
 }
 
 function playVistaPrevia() {
@@ -88,12 +118,19 @@ async function enviarGifo() {
         cors: "cors",
         signal: cancelarPeticionPost.signal
     };
-
     let respuestaUpload = await fetch(urlUpload, requestIni);
     let respuestaJson = await respuestaUpload.json();
-
-    await buscarPorId(respuestaJson.data.id);
+    let urlReturn = await retornarUrlGifoPorId(respuestaJson.data.id);
+    confirmacionGifo(urlReturn);
     guardarId(respuestaJson.data.id);
+}
+
+async function retornarUrlGifoPorId(id) {
+    let urlBuscar = configuracionUrlBuscarPorId(id);
+    let respuestaBuscar = await fetch(urlBuscar);
+    let respuestaJson = await respuestaBuscar.json();
+    let urlMiGifo = respuestaJson.data.images.original.url;
+    return urlMiGifo;
 }
 
 function guardarId(id) {
@@ -101,20 +138,33 @@ function guardarId(id) {
     localStorage.setItem(nombreKey, id);
 }
 
-async function buscarPorId(id) {
-    let urlBuscar = configuracionUrlBuscarPorId(id);
-    let respuestaBuscar = await fetch(urlBuscar);
-    let respuestaJson = await respuestaBuscar.json();
-    let urlMiGifo = respuestaJson.data.images.original.url;
+function obtenerEnlaceImgGifo() {
+    let enlaceGifo = document.querySelector('#img-gifo-subido-id');
+    let copiaEnlace = document.createElement("input");
+    copiaEnlace.setAttribute("value", enlaceGifo.src);
+    document.body.appendChild(copiaEnlace);
+    copiaEnlace.select();
+    document.execCommand("copy");
+    document.body.removeChild(copiaEnlace);
 
-    confirmacionGifo(urlMiGifo);
 }
 
-//llamar con await. ejemplo:   await retornarGifoPorId("DGFDF5x34");
-async function retornarGifoPorId(id) {
-    let urlBuscar = configuracionUrlBuscarPorId(id);
-    let respuestaBuscar = await fetch(urlBuscar);
-    let respuestaJson = await respuestaBuscar.json();
-    let urlMiGifo = respuestaJson.data.images.original.url;
-    return urlMiGifo;
+function descargaImagen() {
+
+    var source = document.querySelector('#img-gifo-subido-id').src;
+    fetch(source)
+        .then(resp => resp.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const nuevoEnlace = document.createElement('a');
+            nuevoEnlace.style.display = 'none';
+            nuevoEnlace.href = url;
+            nuevoEnlace.download = 'guifo-img.gif';
+            document.body.appendChild(nuevoEnlace);
+            nuevoEnlace.click();
+            window.URL.revokeObjectURL(url);
+            alert('Archivo descargado con éxito!!');
+        })
+        .catch(() => alert('No se pudo descargar su gif'));
+
 }

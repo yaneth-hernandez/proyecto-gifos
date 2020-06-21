@@ -31,7 +31,7 @@
                         <button id="ch-gif" onclick="themeButtonDopdown()">Elegir Tema</button>
                         <button id="button-dopdown" onclick="themeButtonDopdown()"><i class="fas fa-caret-down"></i></button>
 
-                        <a class="text" href="http://127.0.0.1:5500/index-crear-gifo.html?modulo=mis-gifos" target="_top"><span class="guion-bajo">M</span>
+                        <a class="text" id="text-id" href="http://127.0.0.1:5500/index-crear-gifo.html?modulo=mis-gifos" target="_top"><span class="guion-bajo">M</span>
                             <span class="text-mis-gifos"> is Guifos</span></a>
 
                     </div>
@@ -64,7 +64,7 @@
                     <li class="text-crear-gifo">4) Listo para subir y compartir! ¿Quieres comenzar a crear tu <span class="crear-gifos-negrita">guifo</span> ahora?
                 </ol>
                 <div class=content-btn-crear-gifo>
-                    <button class="btn-cancelar-class" id="btn-cancelar">Cancelar</button>
+                    <button class="btn-cancelar-class" id="btn-cancelar" onclick="botonCancelarComienzo()">Cancelar</button>
                     <button class="btn-comenzar-class" id="btn-comenzar">Comenzar</button>
                 </div>
             </figure>
@@ -76,56 +76,7 @@
             <div id="mis-gifos-titulo">
                 Mis guifos
             </div>
-            <div class="mis-gifos-ver-contenedor">
-                <figure class="ver-mis-gifo">
-                    <img id="ver-mis-gifo1" src="" alt="">
-                    <figcaption class="ver-mis-gifo-text">
-                        #Lorem ipsum
-                    </figcaption>
-                </figure>
-                <figure class="ver-mis-gifo">
-                    <img id="ver-mis-gifo2" src="" alt="">
-                    <figcaption class="ver-mis-gifo-text">
-                        #Lorem ipsum
-                    </figcaption>
-                </figure>
-                <figure class="ver-mis-gifo">
-                    <img id="ver-mis-gifo3" src="" alt="">
-                    <figcaption class="ver-mis-gifo-text">
-                        #Lorem ipsum
-                    </figcaption>
-                </figure>
-                <figure class="ver-mis-gifo">
-                    <img id="ver-mis-gifo4" src="" alt="">
-                    <figcaption class="ver-mis-gifo-text">
-                        #Lorem ipsum
-                    </figcaption>
-                </figure>
-                <figure class="ver-mis-gifo">
-                    <img id="ver-mis-gifo5" src="" alt="">
-                    <figcaption class="ver-mis-gifo-text">
-                        #Lorem ipsum
-                    </figcaption>
-                </figure>
-                <figure class="ver-mis-gifo">
-                    <img id="ver-mis-gifo6" src="" alt="">
-                    <figcaption class="ver-mis-gifo-text">
-                        #Lorem ipsum
-                    </figcaption>
-                </figure>
-                <figure class="ver-mis-gifo">
-                    <img id="ver-mis-gifo7" src="" alt="">
-                    <figcaption class="ver-mis-gifo-text">
-                        #Lorem ipsum
-                    </figcaption>
-                </figure>
-                <figure class="ver-mis-gifo">
-                    <img id="ver-mis-gifo8" src="" alt="">
-                    <figcaption class="ver-mis-gifo-text">
-                        #Lorem ipsum
-                    </figcaption>
-                </figure>
-
+            <div class="mis-gifos-ver-contenedor" id="mis-gifos-ver-contenedor-id">
             </div>
         </section>
     </main>
@@ -135,9 +86,11 @@
     <script src="js/manejo-theme.js"></script>
 
     <script src="js/crear_gifo/constantes_crear_gifos.js"></script>
-    <script src="js/crear_gifo/eventos_creargifo.js"></script>
-    <script src="js/crear_gifo/cambios_crear_gifos.js"></script>
     <script src="js/crear_gifo/crear-gifo.js"></script>
+    <script src="js/crear_gifo/cambios_crear_gifos.js"></script>
+    <script src="js/crear_gifo/eventos_creargifo.js"></script>
+
+
     <script src=""></script>
 </body>
 

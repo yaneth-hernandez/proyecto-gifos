@@ -11,6 +11,7 @@ function cambiarLinkArrowUrl() {
     if (idActual == procesoCrearGifosId) {
         window.location = "http://127.0.0.1:5500/index.html";
     } else if (idActual == contenedorCapturaId) {
+        detenerCamara();
         retrocederComenzarGifos();
     }
 }
@@ -19,6 +20,10 @@ function avanzarCapturarGifos() {
     let figureById = document.getElementById(procesoCrearGifosId);
     figureById.remove();
     seccionProcesoCrear.innerHTML = cuerpoCapturarGifos;
+}
+
+function botonCancelarComienzo() {
+    window.location = "http://127.0.0.1:5500/index.html";
 }
 
 function retrocederComenzarGifos() {
@@ -141,4 +146,53 @@ function chronometerRegresivo() {
 
     let inputTemporizador = document.getElementById("input-timer-id");
     inputTemporizador.value = `${hours}:${minutes}:${seconds}`;
+}
+
+async function obtenerGifosCreados() {
+    await limpiarVisualizacionMisGifos();
+    for (i = 0; i < localStorage.length; i++) {
+        let gifoLocaleStarage = localStorage.key(i);
+
+        let existe = localStorage.key(1).indexOf('miGifo-');
+        if (existe != -1) {
+            let idMigifo = localStorage.getItem(gifoLocaleStarage)
+            let urlMigifo = await retornarUrlGifoPorId(idMigifo)
+            await mostrarGifosCreados(urlMigifo);
+        }
+    }
+}
+
+async function limpiarVisualizacionMisGifos() {
+    let contenedorMostrar = document.getElementById('mis-gifos-ver-contenedor-id');
+    while (contenedorMostrar.firstChild) {
+        let myFirstNode = contenedorMostrar.firstChild;
+        contenedorMostrar.removeChild(myFirstNode);
+    }
+}
+
+async function mostrarGifosCreados(urlGifo) {
+    let contenedorMostrar = document.getElementById('mis-gifos-ver-contenedor-id');
+    let gifo = `<img class="ver-mis-gifo-class" src="` + urlGifo + `" alt="">`;
+    let figureMisGifos = document.createElement('figure');
+    figureMisGifos.className = 'ver-mis-gifo';
+    figureMisGifos.innerHTML = gifo;
+    contenedorMostrar.append(figureMisGifos);
+}
+
+async function obtenerUrlDeGifoCreado() {
+    let urlMigifo = document.getElementById('img-gifo-subido-id').src;
+    await mostrarGifosCreados(urlMigifo);
+    ocultarConfirmar();
+}
+
+function ocultarConfirmar() {
+    retrocederComenzarGifos();
+    /* let seccionConfirmar = document.getElementById('proceso-crear-gifos-id');
+    seccionConfirmar.classList.replace('proceso-crear-gifos', 'proceso-crear-gifos-replace'); */
+}
+
+function volverCaptura() {
+    detenerCamara();
+    retrocederComenzarGifos();
+
 }

@@ -70,7 +70,13 @@ header.container-header {
 
 .guion-bajo {
     text-decoration: underline;
-    margin-right: -4px;
+    margin-right: -20px;
+    font-family: "Chakra Petch";
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 18px;
+    margin-left: 16px;
 }
 
 #cr-gif {
@@ -169,7 +175,9 @@ li {
 /*fin encabezado*/
 
 
-/*---inicio crear gifos---*/
+/*==================
+=inicio crear gifos=
+====================*/
 
 .crear-gifos {
     width: 684px;
@@ -181,11 +189,6 @@ li {
     justify-content: space-between;
     align-items: center;
     visibility: visible;
-}
-
-.crear-gifos-replace {
-    visibility: hidden;
-    height: 0px;
 }
 
 .barra-crear-gifo {
@@ -227,7 +230,6 @@ li {
 }
 
 .text-crear-gifo {
-    width: 76%;
     font-family: 'Chakra Petch';
     font-weight: normal;
     font-size: 14px;
@@ -265,12 +267,9 @@ li {
     letter-spacing: 0;
     text-align: center;
     line-height: 18px;
-    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
     background: #110038;
-    border-width: 1px;
-    border-style: solid;
     border: 1px solid #979797;
-    border-image: initial;
+    box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
 
 #btn-comenzar {
@@ -282,14 +281,519 @@ li {
     letter-spacing: 0;
     text-align: center;
     line-height: 18px;
-    color: #FFFFFF;
-    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     background: #EE3EFE;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(17, 0, 56);
-    border-image: initial;
+    color: #FFFFFF;
+    border: 1px solid rgb(17, 0, 56);
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
+
+
+/*================
+fin crear gifos
+===================*/
+
+
+/*================
+inicio crear chequeo
+===================*/
+
+.contenedor-captura {
+    width: 860px;
+    height: 548px;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.content-text-btn-cerrar {
+    width: 854px;
+    height: 24px;
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+    font-family: 'Chakra Petch';
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4px;
+}
+
+.content-imagen-chequeo {
+    max-width: 832px;
+    max-height: 434px;
+    margin-top: 15px;
+    background: #FFFAFE;
+    border: 1px solid #2E32FB;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
+}
+
+.img-chequeo {
+    width: auto;
+    height: 434px;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+.area-botones-chequeo {
+    width: 91%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btns-camara-captura {
+    display: flex;
+}
+
+.boton-camara-chequeo {
+    width: 36px;
+    height: 36px;
+    background: #EE3EFE;
+    color: #FFFFFF;
+    border: 1px solid rgb(17, 0, 56);
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.img-camera-chequeo {
+    width: 18px;
+    height: 16.5px;
+    color: #FFFFFF;
+}
+
+.boton-capturar-chequeo {
+    width: 144px;
+    height: 36px;
+    background: #EE3EFE;
+    color: #FFFFFF;
+    border: 1px solid rgb(17, 0, 56);
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+
+/*================
+fin chequeo
+===================*/
+
+
+/*================
+inicio capturar
+===================*/
+
+.area-botones-captura-gifo {
+    width: 91%;
+    height: 14%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-capturar {
+    width: 124px;
+    height: 36px;
+    text-align: center;
+    background: #FFFAFE;
+    border: 1px solid #2E32FB;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
+    font-family: 'Chakra Petch';
+    font-weight: normal;
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.boton-listo-vineta {
+    display: flex;
+    flex-direction: row;
+}
+
+.boton-vineta-captura-gifo {
+    width: 36px;
+    height: 36px;
+    background: #FF6161;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.img-vineta-captura {
+    width: 20px;
+    height: 20px;
+}
+
+.boton-listo {
+    width: 144px;
+    height: 36px;
+    margin-left: 0px;
+    font-family: 'Chakra Petch';
+    font-size: 16px;
+    font-weight: lighter;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    background: #FF6161;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+}
+
+
+/*================
+fin capturar
+===================*/
+
+
+/*================
+inicio vista previa
+===================*/
+
+.close-btn-crar-gifo {
+    display: none;
+}
+
+.area-vista-previa {
+    width: 91%;
+    height: 14%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.temporizador-barra-estado {
+    width: 49%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-vista-previa {
+    width: 124px;
+    height: 36px;
+    margin-right: 24px;
+    text-align: center;
+    background: #FFFAFE;
+    border: 1px solid #2E32FB;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
+    font-family: 'Chakra Petch';
+    font-weight: normal;
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.boton-temporizador {
+    display: flex;
+    flex-direction: row;
+}
+
+.boton-arrow-temporizador {
+    width: 24px;
+    height: 24px;
+    background: #EE3EFE;
+    color: #FFFFFF;
+    border: 1px solid rgb(17, 0, 56);
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.img-boton-temporizador {
+    width: 6px;
+    height: 10px;
+    color: #FFFFFF;
+}
+
+.temporizador {
+    width: 242px;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.contenido-barra {
+    width: 12px;
+    height: 20px;
+    background: #8F8F8F;
+}
+
+.contenido-barra-replace {
+    background: #EE3EFE;
+}
+
+.boton-repetir-subir {
+    width: 36%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.boton-repetir-captura {
+    width: 144px;
+    height: 36px;
+    margin-right: 16px;
+    font-family: 'Chakra Petch';
+    font-size: 16px;
+    font-weight: normal;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    background: #110038;
+    border: 1px solid #979797;
+    box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.boton-subir-gifo {
+    width: 144px;
+    height: 36px;
+    font-family: 'Chakra Petch';
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    background: #EE3EFE;
+    color: #FFFFFF;
+    border: 1px solid rgb(17, 0, 56);
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+
+/*================
+fin vista previa
+===================*/
+
+
+/*================
+inicio subiendo gifos
+===================*/
+
+.content-img-subiendo-gifo {
+    width: 838px;
+    height: 440px;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFAFE;
+    border: 1px solid #2E32FB;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
+}
+
+.img-subiendo-gifo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+}
+
+.texto-content-subiendo-gifo {
+    font-family: 'Chakra Petch';
+    font-weight: bold;
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 22px;
+}
+
+.temporizador-subiendo-gifos {
+    width: 324px;
+    height: 26px;
+    margin: 39px 0px 10px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.temporizador-subiendo-gifos-replace {
+    background: #EE3EFE;
+}
+
+.texto-temporizador {
+    font-family: 'Chakra Petch';
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(17, 0, 56, 0.64);
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 14px;
+}
+
+.decoracion-texto {
+    text-decoration: line-through;
+}
+
+.area-bton-subiendo-guifo {
+    width: 98%;
+    height: 14%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.boton-cancelar-subida {
+    width: 144px;
+    height: 36px;
+    margin-right: 16px;
+    font-family: 'Chakra Petch';
+    font-size: 16px;
+    font-weight: normal;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    background: #110038;
+    border: 1px solid #979797;
+    box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+
+/*================
+Fin subiendo gifos
+===================*/
+
+
+/*================
+Gifo subido con éxito
+===================*/
+
+.contenedor-gifo-subido {
+    width: 721px;
+    height: 391px;
+    display: flex;
+    flex-direction: column;
+    background: #B4B4B4;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.encabezado-gifo-subido {
+    width: 720px;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+}
+
+.text-gifo-subido {
+    display: flex;
+    align-items: center;
+    font-family: 'Chakra Petch';
+    font-weight: Bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.contenido-gifo-subido {
+    width: 98%;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 27px;
+}
+
+.contenedor-img-gifo-subido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 371px;
+    height: 196px;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+.img-gifo-subido {
+    width: 365px;
+    height: 191px;
+}
+
+.contenido-gifo-subido-botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 68%;
+}
+
+.contenido-text-gifo-subido {
+    font-family: 'Chakra Petch';
+    font-weight: Bold;
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.boton-copiar-enlace-gifo {
+    width: 256px;
+    height: 36px;
+    font-family: 'Chakra Petch';
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    background: #EE3EFE;
+    color: #FFFFFF;
+    border: 1px solid rgb(17, 0, 56);
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.boton-descargar-gifo {
+    width: 256px;
+    height: 36px;
+    font-family: 'Chakra Petch';
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    background: #EE3EFE;
+    color: #FFFFFF;
+    border: 1px solid rgb(17, 0, 56);
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.contenedor-boton-listo-subir {
+    width: 95%;
+    height: 40%;
+}
+
+.boton-subido-listo {
+    width: 144px;
+    height: 36px;
+    font-family: 'Chakra Petch';
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    background: #EE3EFE;
+    color: #FFFFFF;
+    border: 1px solid rgb(17, 0, 56);
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    transform: translateX(540px) translateY(50px);
+}
+
+
+/*================
+Fin Gifo subido con éxito
+===================*/
+
+
+/*================
+inicio sección mis gifos
+===================*/
 
 .mis-gifos-contenedor {
     width: 1200px;
@@ -346,4 +850,6 @@ li {
 }
 
 
-/*---fin crear gifos---*/
+/*================
+fin sección mis gifos
+===================*/

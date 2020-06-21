@@ -19,8 +19,8 @@ const cuerpoComenzar = `<figure class="crear-gifos" id="crear-gifos-id">
             <li class="text-crear-gifo">4) Listo para subir y compartir! ¿Quieres comenzar a crear tu <span class="crear-gifos-negrita">guifo</span> ahora?
         </ol>
         <div class=content-btn-crear-gifo>
-            <button class="btn-cancelar-class" id="btn-cancelar">Cancelar</button>
-            <button onclick="avanzarCapturarGifos(); encenderCamara()";class="btn-comenzar-class" id="btn-comenzar">Comenzar</button>
+            <button class="btn-cancelar-class" id="btn-cancelar" onclick="botonCancelarComienzo()">Cancelar</button>
+            <button onclick="avanzarCapturarGifos(); iniciarCamara()";class="btn-comenzar-class" id="btn-comenzar">Comenzar</button>
             
         </div>
     </figure>`;
@@ -43,7 +43,7 @@ const cuerpoCapturarGifos = `<figure id="contenedor-captura-id" class="contenedo
     </figure>`;
 
 const botonesCapturarGifos = `
-    <input class="input-capturar" type="text" id="input-timer-id">
+    <input class="input-capturar" type="text" id="input-timer-id" readonly>
     <div class="boton-listo-vineta">
         <button class="boton-vineta-captura-gifo" onclick="cambiarAreaVistaPrevia(); detenerGrabacion(); detenerConteo();"><img class="img-vineta-captura" src="img/recording.svg" alt="" srcset=""/></button>
         <button class="boton-listo" onclick="cambiarAreaVistaPrevia(); detenerGrabacion(); detenerConteo();">Listo</button>
@@ -51,16 +51,34 @@ const botonesCapturarGifos = `
 
 const botonesVistaPrevia = `
        <div class="temporizador-barra-estado">
-            <input class="input-vista-previa" type="text" id="input-timer-id">
+            <input class="input-vista-previa" type="text" id="input-timer-id" readonly>
              <div class="boton-temporizador">
                 <button class="boton-arrow-temporizador" onclick="playVistaPrevia();">
                     <img class="img-boton-temporizador"src="img/forward.svg" alt="" sizes="" srcset="">
                 </button>
-                <div class="temporizador"></div>
+                <div class="temporizador">
+                <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                            <div class="contenido-barra"></div>
+                </div>
             </div>
          </div>
         <div class="boton-repetir-subir">
-            <button class="boton-repetir-captura">Repetir Captura</button>
+            <button class="boton-repetir-captura" onclick="volverCaptura()">Repetir Captura</button>
             <button class="boton-subir-gifo" onclick="cambiarSubiendoGifos()">Subir Guifo</button>
         </div>`;
 
@@ -72,7 +90,31 @@ const botonesSubiendoGifo = `
 <figure class="content-img-subiendo-gifo">
     <img class="img-subiendo-gifo" src="img/globe_img.png" alt="" srcset="" />
     <figcaption class="texto-content-subiendo-gifo">Estamos subiendo tu guifo…</figcaption>
-    <div class="temporizador-subiendo-gifos"></div>
+    <div class="temporizador-subiendo-gifos">
+    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+                    <div class="contenido-barra"></div>
+    </div>
     <span class="texto-temporizador">Tiempo restante: <span class="decoracion-texto">38 años</span>algunos minutos</span>
 </figure>
 <div class="area-bton-subiendo-guifo">
@@ -89,10 +131,10 @@ const gifoSubido = `<figcaption class="encabezado-gifo-subido"><span class="text
 <div class="contenedor-img-gifo-subido"><img class="img-gifo-subido" id="img-gifo-subido-id" src="" alt="" srcset=""></div>
 <div class="contenido-gifo-subido-botones">
     <span class="contenido-text-gifo-subido">Guifo creado con éxito</span>
-    <button class="boton-copiar-enlace-gifo">Copiar Enlace Guifo</button>
-    <button class="boton-descargar-gifo">Descargar Guifo</button>
+    <button class="boton-copiar-enlace-gifo" id="boton-copiar-enlace-gifo-id" onclick ="obtenerEnlaceImgGifo()" >Copiar Enlace Guifo</button>
+    <button class="boton-descargar-gifo" onclick="descargaImagen()">Descargar Guifo</button>
 </div>
 </div>
 <div class="contenedor-boton-listo-subir">
-<button class="boton-subido-listo">Listo</button>
+<button class="boton-subido-listo" onclick = "obtenerUrlDeGifoCreado()">Listo</button>
 </div>`;
