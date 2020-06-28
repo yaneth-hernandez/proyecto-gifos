@@ -5,7 +5,8 @@ const opcionCrear = 'crear';
 const nombreIndexCss = 'indexCssKey';
 const nombreCrearCss = 'crearCssKey';
 const nombreLogo = 'logoKey';
-const nombreLupa = 'lupaKey'
+const nombreLupa = 'lupaKey';
+
 
 recuperarEstilo(location.pathname);
 
@@ -19,7 +20,6 @@ function themeButtonDopdown() {
     }
 }
 
-
 function guardarEstilo(nombreKey, valor) {
     localStorage.removeItem(nombreKey);
     localStorage.setItem(nombreKey, valor);
@@ -28,15 +28,17 @@ function guardarEstilo(nombreKey, valor) {
 function recuperarEstilo(origenPagina) {
     var recuperarTemaCss;
     var recuperarTemaLogo;
-    var recuperarLupa;
+    var recuperarTemaLupa;
 
     recuperarTemaLogo = localStorage.getItem(nombreLogo);
     if (origenPagina == "/index.html") {
         recuperarTemaCss = localStorage.getItem(nombreIndexCss);
-        if (recuperarTemaCss != null && recuperarTemaLogo != null && recuperarLupa != null) {
+        recuperarTemaLupa = localStorage.getItem(nombreLupa);
+        if (recuperarTemaCss != null && recuperarTemaLogo != null && recuperarTemaLupa != null) {
             document.querySelector("#style-theme-rel").href = recuperarTemaCss;
             document.querySelector("#header-logo").src = recuperarTemaLogo;
-            document.querySelector("#estilo-lupa-id").src = recuperarLupa;
+            document.querySelector("#estilo-lupa-id").src = recuperarTemaLupa;
+
         }
     } else if (origenPagina == "/index-crear-gifo.html") {
         recuperarTemaCss = localStorage.getItem(nombreCrearCss);
@@ -47,17 +49,18 @@ function recuperarEstilo(origenPagina) {
     }
 }
 
+
 function themeSailorNight(esIndexOCrear) {
     const valorIndexCss = "/css/style-theme2.css";
     const valorCrearCss = "css/stylecreargifo-theme2.css";
     const valorLogo = "img/gifOF_logo_dark.png";
-    const valorLupa = "img/combined_shape.svg";
-
+    const valorLupaInactiva = "img/combined_shape.svg";
 
     if (esIndexOCrear == opcionIndex) {
         document.querySelector("#style-theme-rel").href = valorIndexCss;
         document.querySelector("#header-logo").src = valorLogo;
-        document.querySelector("#estilo-lupa-id").src = valorLupa;
+        document.querySelector("#estilo-lupa-id").src = valorLupaInactiva;
+
     } else if (esIndexOCrear == opcionCrear) {
         document.querySelector("#style-theme-crear-gifo").href = valorCrearCss;
         document.querySelector("#header-logo-arrow").src = valorLogo;
@@ -65,7 +68,7 @@ function themeSailorNight(esIndexOCrear) {
     guardarEstilo(nombreIndexCss, valorIndexCss);
     guardarEstilo(nombreCrearCss, valorCrearCss);
     guardarEstilo(nombreLogo, valorLogo);
-    guardarEstilo(nombreLupa, valorLupa);
+    guardarEstilo(nombreLupa, valorLupaInactiva);
     themeButtonDopdown();
 }
 
@@ -73,12 +76,14 @@ function themeSailorDay(esIndexOCrear) {
     const valorIndexCss = "/css/style.css";
     const valorCrearCss = "css/stylecreargifo.css";
     const valorLogo = "img/gifOF_logo.png";
-    const valorLupa = "img/lupa_inactive.svg";
+    const valorLupaInactiva = "img/lupa_inactive.svg";
+
 
     if (esIndexOCrear == opcionIndex) {
         document.querySelector("#style-theme-rel").href = valorIndexCss;
         document.querySelector("#header-logo").src = valorLogo;
-        document.querySelector("#estilo-lupa-id").src = valorLupa;
+        document.querySelector("#estilo-lupa-id").src = valorLupaInactiva;
+
     } else if (esIndexOCrear == opcionCrear) {
         document.querySelector("#style-theme-crear-gifo").href = valorCrearCss;
         document.querySelector("#header-logo-arrow").src = valorLogo;
@@ -87,6 +92,6 @@ function themeSailorDay(esIndexOCrear) {
     guardarEstilo(nombreCrearCss, valorCrearCss);
     guardarEstilo(nombreIndexCss, valorIndexCss);
     guardarEstilo(nombreLogo, valorLogo);
-    guardarEstilo(nombreLupa, valorLupa);
+    guardarEstilo(nombreLupa, valorLupaInactiva);
     themeButtonDopdown();
 }

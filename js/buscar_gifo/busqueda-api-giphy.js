@@ -121,7 +121,6 @@ function preCargarSugerencias() {
 
 //búsqueda con botón ver más
 function clickVerMasGifos(botonVerMasId) {
-
     var title = '';
     if (botonVerMasId == "btn-opt-id0") {
         title = document.getElementById("hashtags0-id").textContent;
@@ -167,13 +166,33 @@ function cambiarTituloPostBusqueda(titulo) {
     document.querySelector("#tendencias-titulo-id").textContent = titulo;
 }
 
+function obtenerThemeActual() {
+    let obtenerTemaCss = localStorage.getItem(nombreIndexCss);
+    return obtenerTemaCss;
+}
+
 function activarBotonBusqueda(inputActivarBoton) {
+    let valorTheme = obtenerThemeActual();
+
     if (inputActivarBoton == '') {
-        document.querySelector("#btn-search-id").className = 'btn-search';
-        document.querySelector("#estilo-lupa-id").src = 'img/lupa_inactive.svg';
+
+        if (valorTheme == '/css/style.css') {
+            document.querySelector("#btn-search-id").className = 'btn-search';
+            document.querySelector("#estilo-lupa-id").src = 'img/lupa_inactive.svg';
+        } else {
+            document.querySelector("#btn-search-id").className = 'btn-search';
+            document.querySelector("#estilo-lupa-id").src = 'img/combined_shape.svg';
+        }
+
     } else {
-        document.querySelector("#btn-search-id").className = 'btn-search-active';
-        document.querySelector("#estilo-lupa-id").src = 'img/lupa.svg';
+        if (valorTheme == '/css/style.css') {
+
+            document.querySelector("#btn-search-id").className = 'btn-search-active';
+            document.querySelector("#estilo-lupa-id").src = 'img/lupa.svg';
+        } else {
+            document.querySelector("#btn-search-id").className = 'btn-search-active';
+            document.querySelector("#estilo-lupa-id").src = 'img/lupa_light.svg';
+        }
     }
 }
 

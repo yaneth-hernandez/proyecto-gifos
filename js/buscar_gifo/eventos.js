@@ -27,6 +27,7 @@ function eventoClickButtonDopdown() {
         botonDopDown
     ].forEach(function(botontemas) {
         botontemas.addEventListener('click', function() {
+
             themeButtonDopdown();
             botontemas.className = 'ch-gif-active';
         });
@@ -111,22 +112,24 @@ textObject.addEventListener("input",
 //EVENTO CLICK EN BOTÓN BÚSQUEDA 
 function eventoClickBotonBuscar() {
     const clickObjeto = document.querySelector("#btn-search-id");
+
     clickObjeto.addEventListener('click', function(event) {
         event.preventDefault();
         clickBotonBuscar(textObject.value)
     });
+
     clickObjeto.addEventListener('mouseenter', function() {
         clickObjeto.className = 'btn-search-click';
-        document.querySelector("#estilo-lupa-id").src = 'img/lupa.svg';
+        let valorTheme = obtenerThemeActual();
+        if (valorTheme == '/css/style.css') {
+            document.querySelector("#estilo-lupa-id").src = 'img/lupa.svg';
+        } else {
+            document.querySelector("#estilo-lupa-id").src = 'img/lupa_light.svg';
+        }
     });
 
-    clickObjeto.addEventListener('mousedown', function() {
-        clickObjeto.className = 'btn-search-click';
-        document.querySelector("#estilo-lupa-id").src = 'img/lupa.svg';
-    });
     clickObjeto.addEventListener('mouseleave', function() {
-        clickObjeto.className = 'btn-search ';
-        document.querySelector("#estilo-lupa-id").src = 'img/lupa_inactive.svg';
+        activarBotonBusqueda(document.querySelector("#text-buscar").value);
     });
 
 }
