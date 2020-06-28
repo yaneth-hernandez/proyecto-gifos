@@ -37,7 +37,7 @@ function configuracionUrl(qParametro, limit, tipo) {
         lang;
 
     return urlCompleta;
-};
+}
 
 async function buscarGifo(valorBusqueda, limit, nombreSeccion, tipo) {
     let urlBusqueda = configuracionUrl(valorBusqueda, limit, tipo);
@@ -53,7 +53,7 @@ async function buscarGifo(valorBusqueda, limit, nombreSeccion, tipo) {
     if (nombreSeccion == seccionSugerencias) {
         cambiarSeccionSugerenciasHtml(arregloResultadosGiphy);
     } else if (nombreSeccion == seccionResultadoSugerido) {
-        cambiarSeccionListaSugeridoHtml(arregloResultadosGiphy);
+        await cambiarSeccionListaSugeridoHtml(arregloResultadosGiphy);
     } else if (nombreSeccion == precargaMostrarGifos) {
         cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
     } else if (nombreSeccion == seccionVerMas) {
@@ -64,7 +64,6 @@ async function buscarGifo(valorBusqueda, limit, nombreSeccion, tipo) {
         ocultarSeccionSugerenciasCambioHtml();
         cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
     } else if (nombreSeccion == seccionBotoneraBuscar) {
-
         cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
     }
 }
@@ -78,7 +77,6 @@ class GiphyClass {
         this.size = obj.images.original.size;
         this.url = obj.images.original.url;
         this.width = obj.images.original.width;
-
     }
 }
 
@@ -86,14 +84,11 @@ function obtenerSugerencias() {
     let sugerencias = [
         'lord of the rings',
         'babyyoda',
-        'godzilla',
         'comegalletas',
         'aplausos',
-        'jocker',
         'homerosimpson',
         'bruce lee',
         'the muppets',
-        'marlon brando',
         'friends',
         'sailor moon',
         'adele',
@@ -144,12 +139,12 @@ function clickVerMasGifos(botonVerMasId) {
 
 function cargarListaSugerida(inputTextoSugerido) {
     const maximoResultado = 3;
-    buscarGifo(inputTextoSugerido, maximoResultado, seccionResultadoSugerido, searchUrl);
 
     if (inputTextoSugerido == "") {
         mostrarOcultarListaSugerida(false);
     } else {
         mostrarOcultarListaSugerida(true);
+        buscarGifo(inputTextoSugerido, maximoResultado, seccionResultadoSugerido, searchUrl);
     }
 }
 
@@ -161,12 +156,10 @@ function mostrarOcultarListaSugerida(mostrar) {
     }
 }
 
-
-
 function clickListaSugerida(tituloGif) {
     let tituloCompleto = prefijoTituloResultadoBusqueda + tituloGif;
     mostrarOcultarListaSugerida(false);
-    buscarGifo(tituloGif, 50, seccionMostrarGifos, searchUrl);
+    buscarGifo(tituloGif, 100, seccionMostrarGifos, searchUrl);
     cambiarTituloPostBusqueda(tituloCompleto);
 }
 
@@ -184,33 +177,24 @@ function activarBotonBusqueda(inputActivarBoton) {
     }
 }
 
+
 function clickBotonBuscar(textoDeBusqueda) {
     let tituloCompleto = prefijoTituloResultadoBusqueda + textoDeBusqueda;
-    buscarGifo(textoDeBusqueda, 80, seccionBotonSearch, searchUrl);
+    buscarGifo(textoDeBusqueda, 100, seccionBotonSearch, searchUrl);
     mostrarOcultarListaSugerida(false);
     cambiarTituloPostBusqueda(tituloCompleto);
 
 }
 
 function preCargarTrending() {
-    buscarGifo('', 80, precargaMostrarGifos, trendingUrl);
+    buscarGifo('', 100, precargaMostrarGifos, trendingUrl);
 }
 
 function textoBusquedaOculto(idBotonListaSugerida) {
-    let textoBusquedaOculto = document.querySelector("#" + idBotonListaSugerida).childNodes[1].textContent;
-    buscarGifo(textoBusquedaOculto, 80, seccionBotoneraBuscar, searchUrl);
+    let busquedatextoOculto = document.querySelector("#" + idBotonListaSugerida).childNodes[1].textContent;
+    buscarGifo(busquedatextoOculto, 100, seccionBotoneraBuscar, searchUrl);
 
 }
 preCargarSugerencias();
 
 preCargarTrending();
-
-
-
-
-//falta:
-//anclar logo para retorno al index
-//agregar evento para que aparezca barra hashtag al pasar el mouse
-//ocultar sección hoy te sugerimos al iniciar la búsqueda
-//mostrar botones con resultados de búsqueda
-//mostrar búsqueda por botones

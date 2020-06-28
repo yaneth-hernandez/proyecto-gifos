@@ -83,15 +83,19 @@ header.container-header {
     width: 144px;
     height: 36px;
     margin-right: 16px;
+    background: #EE3EFE;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    cursor: pointer;
+}
+
+.crear-gifo-enlace {
     font-family: "Chakra Petch";
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0px;
     color: #FFFFFF;
-    background: #EE3EFE;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
-    cursor: pointer;
+    text-decoration: none;
 }
 
 #ch-gif {
@@ -189,6 +193,11 @@ li {
     justify-content: space-between;
     align-items: center;
     visibility: visible;
+}
+
+.crear-gifos-replace {
+    visibility: hidden;
+    height: 0px;
 }
 
 .barra-crear-gifo {
@@ -324,7 +333,7 @@ inicio crear chequeo
 }
 
 .content-imagen-chequeo {
-    max-width: 832px;
+    max-width: auto;
     max-height: 434px;
     margin-top: 15px;
     background: #FFFAFE;
@@ -341,7 +350,7 @@ inicio crear chequeo
 }
 
 .area-botones-chequeo {
-    width: 91%;
+    width: 98%;
     height: 15%;
     display: flex;
     justify-content: flex-end;
@@ -356,7 +365,6 @@ inicio crear chequeo
     width: 36px;
     height: 36px;
     background: #EE3EFE;
-    color: #FFFFFF;
     border: 1px solid rgb(17, 0, 56);
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
@@ -364,14 +372,12 @@ inicio crear chequeo
 .img-camera-chequeo {
     width: 18px;
     height: 16.5px;
-    color: #FFFFFF;
 }
 
 .boton-capturar-chequeo {
     width: 144px;
     height: 36px;
     background: #EE3EFE;
-    color: #FFFFFF;
     border: 1px solid rgb(17, 0, 56);
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
@@ -505,7 +511,6 @@ inicio vista previa
 .img-boton-temporizador {
     width: 6px;
     height: 10px;
-    color: #FFFFFF;
 }
 
 .temporizador {
@@ -819,10 +824,12 @@ inicio sección mis gifos
 }
 
 .mis-gifos-ver-contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 
 .ver-mis-gifo-text {

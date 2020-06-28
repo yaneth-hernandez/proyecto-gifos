@@ -150,10 +150,11 @@ function chronometerRegresivo() {
 
 async function obtenerGifosCreados() {
     await limpiarVisualizacionMisGifos();
-    for (i = 0; i < localStorage.length; i++) {
+    debugger
+    for (let i = 0; i < localStorage.length; i++) {
         let gifoLocaleStarage = localStorage.key(i);
 
-        let existe = localStorage.key(1).indexOf('miGifo-');
+        let existe = localStorage.key(i).indexOf('miGifo-');
         if (existe != -1) {
             let idMigifo = localStorage.getItem(gifoLocaleStarage)
             let urlMigifo = await retornarUrlGifoPorId(idMigifo)

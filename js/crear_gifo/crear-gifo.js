@@ -91,7 +91,7 @@ function configuracionUrlCrear() {
         '?' +
         giphyApiKey;
     return urlCompleta;
-};
+}
 
 
 function configuracionUrlBuscarPorId(id) {
@@ -102,7 +102,7 @@ function configuracionUrlBuscarPorId(id) {
         "?" +
         giphyApiKey;
     return urlCompleta;
-};
+}
 
 async function enviarGifo() {
     let formUpload = new FormData();

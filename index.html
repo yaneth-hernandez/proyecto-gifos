@@ -7,7 +7,6 @@
     <title>gif.os</title>
     <link rel=icon href="img/gifOF_logo.png">
     <link rel="stylesheet" href="css/style.css" id="style-theme-rel">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
@@ -20,27 +19,27 @@
         <div class="content-body">
             <header>
                 <div class="logo">
-                    <a href="http://127.0.0.1:5500/index.html"><img src="img\gifOF_logo.png" id="header-logo" /></a>
+                    <a href="http://127.0.0.1:5500/index.html"><img src="img/gifOF_logo.png" id="header-logo" alt="logo" /></a>
                 </div>
                 <div class="buttons-text">
                     <div class=cr-gif>
-                        <button id="cr-gif"><a href="http://127.0.0.1:5500/index-crear-gifo.html?modulo=crear">Crear Guifos</a></button>
+                        <button class="ch-gif-normal" id="cr-gif"><a class="crear-gifo-enlace"href="http://127.0.0.1:5500/index-crear-gifo.html?modulo=crear">Crear Guifos</a></button>
                     </div>
                     <div class="menu-ch-gif">
                         <div class="ch-gif">
                             <button class="ch-gif-class" id="ch-gif">Elegir Tema</button>
-                            <button class="button-dopdown-class" id="button-dopdown"><img src="img/dropdown.svg" alt="" srcset=""></button>
+                            <button class="button-dopdown-class" id="button-dopdown"><img src="img/dropdown.svg" alt="dopdown" srcset=""></button>
 
-                            <a class="text" href="http://127.0.0.1:5500/index-crear-gifo.html?modulo=mis-gifos"><span class="guion-bajo">M</span>
-                                is Guifos</a>
+                            <a id="text-id" class="text" href="http://127.0.0.1:5500/index-crear-gifo.html?modulo=mis-gifos"><span class="guion-bajo">M</span>is Guifos</a>
                         </div>
                         <nav id="contenedor-menu">
                             <ul class="menu">
-                                <li class="bto-sd"><button id=sailor-day onclick="themeSailorDay('index')">Sailor Day</button></li>
-                                <li class="bto-sn"><button id=sailor-night onclick="themeSailorNight('index')">Sailor Night</button></li>
+                                <li class="bto-sd"><button class="sailor-day-class" id="sailor-day">Sailor Day</button></li>
+                                <li class="bto-sn"><button class="sailor-night-class" id="sailor-night">Sailor Night</button></li>
                             </ul>
                         </nav>
-
+                    </div>
+                </div>
             </header>
             <!--inicio sección buscar-->
             <section class="buscar">
@@ -52,7 +51,7 @@
                             <input type="sumit" id="text-buscar" class="letra-text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" size="154" />
                         </div>
                         <div>
-                            <button class="btn-search" id="btn-search-id"><img id="estilo-lupa-id" src="img/lupa_inactive.svg"/> Buscar</button>
+                            <button class="btn-search" id="btn-search-id"><img id="estilo-lupa-id" src="img/lupa_inactive.svg" alt="lupa"/> Buscar</button>
                         </div>
                     </form>
                 </figure>
@@ -85,40 +84,40 @@
                     <figure class="option-content">
                         <figcaption class="option-barr">
                             <span id="hashtags0-id" class="text-option-barr"></span>
-                            <button class="btn-cierre"><img class="gif" src="img\close.svg"></button>
+                            <button class="btn-cierre"><img class="boton-cierre-tend" src="img/button close.svg" alt="cierre"></button>
                         </figcaption>
                         <div class="video-btn-content">
-                            <img id="sugerido-gif0" class="gif" src="" />
+                            <img id="sugerido-gif0" class="gif" src="" alt="gif" />
                             <button id="btn-opt-id0" class="btn-opt">Ver más...</button>
                         </div>
                     </figure>
                     <figure class="option-content">
                         <figcaption class="option-barr">
                             <span id="hashtags1-id" class="text-option-barr"></span>
-                            <button class="btn-cierre"><img class="gif" src="img\close.svg"></button>
+                            <button class="btn-cierre"><img class="boton-cierre-tend" src="img/button close.svg" alt="cierre"></button>
                         </figcaption>
                         <div class="video-btn-content">
-                            <img id="sugerido-gif1" class="gif" src="" />
+                            <img id="sugerido-gif1" class="gif" src="" alt="gif" />
                             <button id="btn-opt-id1" class="btn-opt">Ver más...</button>
                         </div>
                     </figure>
                     <figure class="option-content">
                         <figcaption class="option-barr">
                             <span id="hashtags2-id" class="text-option-barr"></span>
-                            <button class="btn-cierre"><img class="gif" src="img\close.svg"></button>
+                            <button class="btn-cierre"><img class="boton-cierre-tend" src="img/button close.svg" alt="gif"></button>
                         </figcaption>
                         <div class="video-btn-content">
-                            <img id="sugerido-gif2" class="gif" src="" />
+                            <img id="sugerido-gif2" class="gif" src="" alt="gif" />
                             <button id="btn-opt-id2" class="btn-opt">Ver más...</button>
                         </div>
                     </figure>
                     <figure class="option-content">
                         <figcaption class="option-barr">
                             <span id="hashtags3-id" class="text-option-barr"></span>
-                            <button class="btn-cierre"><img class="gif" src="img\close.svg"></button>
+                            <button class="btn-cierre"><img class="boton-cierre-tend" src="img/button close.svg" alt="cierre"></button>
                         </figcaption>
                         <div class="video-btn-content">
-                            <img id="sugerido-gif3" class="gif" src="" />
+                            <img id="sugerido-gif3" class="gif" src="" alt="gif" />
                             <button id="btn-opt-id3" class="btn-opt">Ver más...</button>
                         </div>
                     </figure>
@@ -131,57 +130,18 @@
                     Tendencias:
                 </h2>
                 <div id="tend-ver-gifo" class="tend-ver-gifo">
-                    <figure class='ver-gifo-standar'>
-                        <img id='ver-gifo1' src='' alt='' srcset=''>
-                        <figcaption class='ver-gifo-text-standar'>
-                        </figcaption>
-                    </figure>
-                    <figure class='contenedor-gifo-standar'>
-                        <img id='ver-gifo1' src='' alt='' srcset=''>
-                        <figcaption class='ver-gifo-text-standar'>
-                        </figcaption>
-                    </figure>
-                    <figure class='contenedor-gifo-largo'>
-                        <img id='ver-gifo5' src='' alt='' srcset=''>
-                        <figcaption class='ver-gifo-text'>
-                        </figcaption>
-                    </figure>
-                    <figure class='ver-gifo'>
-                        <img id='ver-gifo5' src='' alt='' srcset=''>
-                        <figcaption class='ver-gifo-text'>
-                        </figcaption>
-                    </figure>
-                    <figure class='ver-gifo'>
-                        <img id='ver-gifo5' src='' alt='' srcset=''>
-                        <figcaption class='ver-gifo-text'>
-                        </figcaption>
-                    </figure>
-                    <figure class='ver-gifo-standar'>
-                        <img id='ver-gifo1' src='' alt='' srcset=''>
-                        <figcaption class='ver-gifo-text-standar'>
-                        </figcaption>
-                    </figure>
-                    <figure class='ver-gifo'>
-                        <img id='ver-gifo5' src='' alt='' srcset=''>
-                        <figcaption class='ver-gifo-text'>
-                        </figcaption>
-                    </figure>
-                    <figure class='ver-gifo-standar'>
-                        <img id='ver-gifo1' src='' alt='' srcset=''>
-                        <figcaption class='ver-gifo-text-standar'>
-                        </figcaption>
-                    </figure>
+
                 </div>
 
             </section>
             <!--==tendencias- fin==-->
             <footer></footer>
-            </div>
-            </div>
-            <script src="js/buscar_gifo/eventos.js"></script>
-            <script src="js/manejo-theme.js"></script>
-            <script src="js/buscar_gifo/busqueda-api-giphy.js"></script>
-            <script src="js/buscar_gifo/cambio-html-elemt.js"></script>
+        </div>
+        </div>
+        <script src="js/buscar_gifo/eventos.js"></script>
+        <script src="js/manejo-theme.js"></script>
+        <script src="js/buscar_gifo/busqueda-api-giphy.js"></script>
+        <script src="js/buscar_gifo/cambio-html-elemt.js"></script>
 </body>
 
 </main>

@@ -10,10 +10,12 @@ function cambiarSeccionSugerenciasHtml(objetoDatos) {
 
 }
 
-function cambiarSeccionListaSugeridoHtml(objetoDatos) {
-    document.getElementById('sugerencia-text1').textContent = objetoDatos[0].title;
-    document.getElementById('sugerencia-text2').textContent = objetoDatos[1].title;
-    document.getElementById('sugerencia-text3').textContent = objetoDatos[2].title;
+async function cambiarSeccionListaSugeridoHtml(objetoDatos) {
+    if (objetoDatos != null && objetoDatos != undefined) {
+        document.getElementById('sugerencia-text1').textContent = objetoDatos[0].title;
+        document.getElementById('sugerencia-text2').textContent = objetoDatos[1].title;
+        document.getElementById('sugerencia-text3').textContent = objetoDatos[2].title;
+    }
 }
 
 function cargarSeccionRestultadosBusquedaHtml(objetoDatos) {
@@ -27,16 +29,15 @@ function cargarSeccionRestultadosBusquedaHtml(objetoDatos) {
 
     let renderGifo = "<a href='BITLY_URL' target='_blank'>";
     renderGifo = renderGifo + "<img class='ver-gifo-small' id='ID_GIPHY' src='SOURCE_GIPHY' alt='' srcset=''>";
-    renderGifo = renderGifo + "</a>"
     renderGifo = renderGifo + "<figcaption class='ver-gifo-text-standar'>";
     renderGifo = renderGifo + "'HASHTAG_GIPHY'</figcaption>";
-
+    renderGifo = renderGifo + "</a>";
     document.querySelector("#tend-ver-gifo").innerHTML = '';
     for (var i = 0; i < objetoDatos.length; i++) {
         let nuevoRenderGifo = renderGifo.replace(contenidoSource, objetoDatos[i].url)
             .replace(datoIdGiphy, objetoDatos[i].id)
             .replace(hashTag, objetoDatos[i].title)
-            .replace(urlShort, objetoDatos[i].bitlyUrl);
+            .replace(urlShort, objetoDatos[i].bitlyUrl); //enviar busqueda a pagina de giphy
 
         let finalRenderGifo = '';
         let ancho = (objetoDatos[i].width / objetoDatos[i].height);
@@ -53,6 +54,8 @@ function cargarSeccionRestultadosBusquedaHtml(objetoDatos) {
         figure.innerHTML = finalRenderGifo;
 
         document.querySelector("#tend-ver-gifo").append(figure);
+
+
     }
 
 }
@@ -78,17 +81,16 @@ function prepararPlalabras(frase) {
         if (logitudArreglo >= 2) {
             textoProcesado = textoProcesado + ' ' + arrayPreprocesado[1];
         }
-
     }
-
     return textoProcesado;
 }
 
 function ocultarSeccionSugerenciasCambioHtml() {
     let seccionSugerencias = document.getElementsByClassName('sugerencias')[0];
-    seccionSugerencias.classList.replace('sugerencias', 'ocultar-seccion-sugerencias');
-
     let tituloSugerimos = document.getElementsByClassName('sugerimos')[0];
-    tituloSugerimos.classList.replace('sugerimos', 'sugerimos-replace');
 
+    if (seccionSugerencias != null && tituloSugerimos != null) {
+        seccionSugerencias.classList.replace('sugerencias', 'ocultar-seccion-sugerencias');
+        tituloSugerimos.classList.replace('sugerimos', 'sugerimos-replace');
+    }
 }
