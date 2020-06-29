@@ -23,6 +23,7 @@ async function detenerCamara() {
         });
         streamCapturaUserMedia = null;
     }
+
     //detengo grabación
     if (recorderVideo != null) {
         await recorderVideo.stopRecording();

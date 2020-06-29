@@ -20,7 +20,10 @@ function avanzarCapturarGifos() {
     let figureById = document.getElementById(procesoCrearGifosId);
     figureById.remove();
     seccionProcesoCrear.innerHTML = cuerpoCapturarGifos;
+    mostrarIconosTema();
+
 }
+
 
 function botonCancelarComienzo() {
     window.location = "http://127.0.0.1:5500/index.html";
@@ -41,6 +44,8 @@ function cambiarAreaCapturaVideo() {
     /*
     Seinvoca a la función que inicializa y va incrementando el contador de duración delvideo
      */
+
+
     iniciarConteo();
 }
 
@@ -150,7 +155,6 @@ function chronometerRegresivo() {
 
 async function obtenerGifosCreados() {
     await limpiarVisualizacionMisGifos();
-    debugger
     for (let i = 0; i < localStorage.length; i++) {
         let gifoLocaleStarage = localStorage.key(i);
 

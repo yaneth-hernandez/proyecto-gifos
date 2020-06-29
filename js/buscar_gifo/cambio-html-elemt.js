@@ -86,11 +86,11 @@ function prepararPlalabras(frase) {
 }
 
 function ocultarSeccionSugerenciasCambioHtml() {
-    let seccionSugerencias = document.getElementsByClassName('sugerencias')[0];
+    let seccionSugerencias = document.getElementsByClassName('seccion-sugerencias')[0];
     let tituloSugerimos = document.getElementsByClassName('sugerimos')[0];
 
     if (seccionSugerencias != null && tituloSugerimos != null) {
-        seccionSugerencias.classList.replace('sugerencias', 'ocultar-seccion-sugerencias');
+        seccionSugerencias.classList.replace('seccion-sugerencias', 'ocultar-seccion-sugerencias');
         tituloSugerimos.classList.replace('sugerimos', 'sugerimos-replace');
     }
 }

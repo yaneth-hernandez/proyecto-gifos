@@ -105,8 +105,7 @@ function obtenerSugerencias() {
         'star wars',
         'cats',
         'game of throne',
-        'what?',
-        'jonathan van ness'
+        'what?'
     ];
     let posicion = Math.floor(Math.random() * sugerencias.length);
 
@@ -187,10 +186,10 @@ function activarBotonBusqueda(inputActivarBoton) {
     } else {
         if (valorTheme == '/css/style.css') {
 
-            document.querySelector("#btn-search-id").className = 'btn-search-active';
+            document.querySelector("#btn-search-id").className = 'btn-search-click';
             document.querySelector("#estilo-lupa-id").src = 'img/lupa.svg';
         } else {
-            document.querySelector("#btn-search-id").className = 'btn-search-active';
+            document.querySelector("#btn-search-id").className = 'btn-search-click';
             document.querySelector("#estilo-lupa-id").src = 'img/lupa_light.svg';
         }
     }

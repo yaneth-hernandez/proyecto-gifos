@@ -378,6 +378,7 @@ inicio crear chequeo
     width: 144px;
     height: 36px;
     background: #F7C9F3;
+    color: #110038;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
@@ -652,10 +653,14 @@ inicio subiendo gifos
     font-family: 'Chakra Petch';
     font-weight: lighter;
     font-size: 16px;
+    font-weight: normal;
     color: #110038;
     letter-spacing: 0;
     text-align: center;
     line-height: 18px;
+    background: #FFF4FD;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
 
@@ -775,6 +780,7 @@ Gifo subido con éxito
     width: 144px;
     height: 36px;
     background: #F7C9F3;
+    color: #110038;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     transform: translateX(540px) translateY(50px);
@@ -855,7 +861,6 @@ contenedor mis gifos
 .ver-mis-gifo {
     width: 288px;
     height: 298px;
-    background-color: violet;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

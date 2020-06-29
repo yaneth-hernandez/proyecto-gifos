@@ -79,7 +79,7 @@
     transform: translateX(185px);
 }
 
-.guion-bajo {
+.text ::first-letter {
     text-decoration: underline;
 }
 
@@ -103,6 +103,10 @@
     transform: translateX(185px);
     outline: 1px #6a5b81 dotted;
     outline-offset: -4px;
+}
+
+.text-replaces ::first-letter {
+    text-decoration: underline;
 }
 
 #cr-gif {
@@ -345,19 +349,6 @@ section .buscar {
     cursor: pointer;
 }
 
-.btn-search-active {
-    width: 102px;
-    height: 36px;
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-    font-family: 'Chakra Petch';
-    font-size: 16px;
-    color: #110038;
-    letter-spacing: 0;
-    line-height: 18px;
-}
-
 .btn-search-click {
     width: 102px;
     height: 36px;
@@ -395,6 +386,20 @@ section .buscar {
     box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
 }
 
+.sugerencia-replace {
+    width: 89%;
+    height: 36px;
+    margin-left: 15px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    background: #dbdbdb;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+    outline: 2px #6a5b81 dotted;
+    outline-offset: -3px;
+}
+
 .sugerencia-text {
     font-family: 'Chakra Petch';
     font-size: 16px;
@@ -409,6 +414,7 @@ section .buscar {
     height: 60px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     visibility: hidden;
 }
 
@@ -427,6 +433,23 @@ section .buscar {
     cursor: pointer;
 }
 
+.resultado-lista-replace {
+    width: 140px;
+    height: 34px;
+    background: #3a72db;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+    font-family: 'Chakra Petch';
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
+    outline: 2px #110038 dotted;
+    outline-offset: -5px;
+}
+
 .text-oculto {
     display: none;
 }
@@ -437,7 +460,7 @@ section .buscar {
 
 /*===inicio articulo-sugerencias===*/
 
-.sugerencias {
+.seccion-sugerencias {
     visibility: visible;
 }
 
@@ -514,14 +537,16 @@ section .buscar {
     height: 280px;
 }
 
-.video-btn-content :hover {
-    outline: 2px #6a5b81 dotted;
-    outline-offset: -1px;
-}
-
 .gif {
     width: 100%;
     height: 100%;
+}
+
+.gif-replace {
+    width: 100%;
+    height: 100%;
+    outline: 2px #6a5b81 dotted;
+    outline-offset: -1px;
 }
 
 .btn-opt {
@@ -541,9 +566,23 @@ section .buscar {
     cursor: pointer;
 }
 
-.btn-opt:hover {
-    outline: 3px #110038 dotted;
-    outline-offset: -6px;
+.btn-opt-replace {
+    outline: 2px #110038 dotted;
+    outline-offset: -5px;
+    position: absolute;
+    transform: translateX(-265px) translateY(235px);
+    width: 81px;
+    height: 34px;
+    background: #3a72db;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+    font-family: 'Chakra Petch';
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
 }
 
 
@@ -583,6 +622,7 @@ section .buscar {
     width: 287px;
     height: 24px;
     transform: translateY(-18px);
+    transition: 1s ease-in-out 0s;
     box-shadow: inset -2px 0px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
     font-family: "Chakra Petch";
@@ -597,6 +637,7 @@ section .buscar {
     width: 592px;
     height: 24px;
     transform: translateY(-15px);
+    transition: 1s ease-in-out 0s;
     box-shadow: inset -2px 0px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
     font-family: "Chakra Petch";

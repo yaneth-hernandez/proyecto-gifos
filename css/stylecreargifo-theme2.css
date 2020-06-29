@@ -276,7 +276,7 @@ li {
     letter-spacing: 0;
     text-align: center;
     line-height: 18px;
-    background: #110038;
+    background: #2e32fb;
     border: 1px solid #979797;
     box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
@@ -292,8 +292,8 @@ li {
     line-height: 18px;
     background: #EE3EFE;
     color: #FFFFFF;
-    border: 1px solid rgb(17, 0, 56);
-    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
 
 
@@ -378,6 +378,7 @@ inicio crear chequeo
     width: 144px;
     height: 36px;
     background: #EE3EFE;
+    color: #FFFFFF;
     border: 1px solid rgb(17, 0, 56);
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
@@ -550,7 +551,7 @@ inicio vista previa
     letter-spacing: 0;
     text-align: center;
     line-height: 18px;
-    background: #110038;
+    background: #2e32fb;
     border: 1px solid #979797;
     box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
@@ -564,10 +565,10 @@ inicio vista previa
     letter-spacing: 0;
     text-align: center;
     line-height: 18px;
-    background: #EE3EFE;
     color: #FFFFFF;
-    border: 1px solid rgb(17, 0, 56);
-    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    background: #EE3EFE;
+    border: 1px solid #979797;
+    box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
 
 
@@ -657,7 +658,7 @@ inicio subiendo gifos
     letter-spacing: 0;
     text-align: center;
     line-height: 18px;
-    background: #110038;
+    background: #2e32fb;
     border: 1px solid #979797;
     box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
@@ -692,6 +693,7 @@ Gifo subido con éxito
 .text-gifo-subido {
     display: flex;
     align-items: center;
+    margin-left: 7px;
     font-family: 'Chakra Petch';
     font-weight: Bold;
     font-size: 14px;
@@ -777,12 +779,6 @@ Gifo subido con éxito
 .boton-subido-listo {
     width: 144px;
     height: 36px;
-    font-family: 'Chakra Petch';
-    font-size: 16px;
-    font-weight: normal;
-    letter-spacing: 0;
-    text-align: center;
-    line-height: 18px;
     background: #EE3EFE;
     color: #FFFFFF;
     border: 1px solid rgb(17, 0, 56);
@@ -796,8 +792,25 @@ Fin Gifo subido con éxito
 ===================*/
 
 
+/*inicio ocultar sección entera*/
+
+.proceso-crear-gifos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.proceso-crear-gifos-replace {
+    visibility: hidden;
+    height: 0px;
+}
+
+
+/*fin ocultar sección entera*/
+
+
 /*================
-inicio sección mis gifos
+contenedor mis gifos
 ===================*/
 
 .mis-gifos-contenedor {
@@ -812,7 +825,6 @@ inicio sección mis gifos
     margin: 65px 0px 16px 0px;
     display: flex;
     align-items: center;
-    line-height: 22px;
     padding-left: 7px;
     font-family: 'Chakra Petch';
     font-size: 16px;
@@ -849,11 +861,15 @@ inicio sección mis gifos
 .ver-mis-gifo {
     width: 288px;
     height: 298px;
-    background-color: violet;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 20px;
+}
+
+.ver-mis-gifo-class {
+    width: 288px;
+    height: 298px;
 }
 
 

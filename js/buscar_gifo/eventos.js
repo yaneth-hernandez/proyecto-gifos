@@ -151,32 +151,64 @@ const elementoListaSugeridaTres = document.querySelector("#sugerencia3");
 
         let textoItemSeleccionado = event.currentTarget.children[0].textContent;
         clickListaSugerida(textoItemSeleccionado);
-
-
-    })
+    });
+    buttonLista.addEventListener('mouseenter', function() {
+        buttonLista.className = 'sugerencia-replace';
+    });
+    buttonLista.addEventListener('mouseleave', function() {
+        buttonLista.className = 'sugerencia';
+    });
 });
+//evento click sobre imagenes seccion ver más
+function clickImgVerMas() {
+    const imagenVermas0 = document.querySelector('#sugerido-gif0');
+    const imagenVermas1 = document.querySelector('#sugerido-gif1');
+    const imagenVermas2 = document.querySelector('#sugerido-gif2');
+    const imagenVermas3 = document.querySelector('#sugerido-gif3');
+    [
+        imagenVermas0,
+        imagenVermas1,
+        imagenVermas2,
+        imagenVermas3
+    ].forEach(function(gifVerMas) {
+        gifVerMas.addEventListener('mouseenter', function() {
+            gifVerMas.className = 'gif-replace';
+        });
 
+        gifVerMas.addEventListener('mouseleave', function() {
+            gifVerMas.className = 'gif';
+        });
 
+    });
+}
+window.addEventListener('load', clickImgVerMas);
 
 
 //evento click botón ver más
-const elementoBotonVerMasCero = document.querySelector("#btn-opt-id0");
-const elementoBotonVerMasUno = document.querySelector("#btn-opt-id1");
-const elementoBotonVerMasDos = document.querySelector("#btn-opt-id2");
-const elementoBotonVerMasTres = document.querySelector("#btn-opt-id3");
-[
-    elementoBotonVerMasCero,
-    elementoBotonVerMasUno,
-    elementoBotonVerMasDos,
-    elementoBotonVerMasTres
-].forEach(function(buttonVerMas) {
-    buttonVerMas.addEventListener('click', function(event) {
-        let valorIdBoton = event.currentTarget.id;
-        clickVerMasGifos(valorIdBoton);
-
-    })
-});
-
+function eventoClickBotonVerMas() {
+    const elementoBotonVerMasCero = document.querySelector("#btn-opt-id0");
+    const elementoBotonVerMasUno = document.querySelector("#btn-opt-id1");
+    const elementoBotonVerMasDos = document.querySelector("#btn-opt-id2");
+    const elementoBotonVerMasTres = document.querySelector("#btn-opt-id3");
+    [
+        elementoBotonVerMasCero,
+        elementoBotonVerMasUno,
+        elementoBotonVerMasDos,
+        elementoBotonVerMasTres
+    ].forEach(function(buttonVerMas) {
+        buttonVerMas.addEventListener('click', function(event) {
+            let valorIdBoton = event.currentTarget.id;
+            clickVerMasGifos(valorIdBoton);
+        });
+        buttonVerMas.addEventListener('mouseenter', function() {
+            buttonVerMas.className = 'btn-opt-replace';
+        });
+        buttonVerMas.addEventListener('mouseleave', function() {
+            buttonVerMas.className = 'btn-opt';
+        });
+    });
+}
+window.addEventListener('load', eventoClickBotonVerMas);
 //click botones busqueda sugerida
 
 function clickBotonesListaSugerida() {
@@ -201,6 +233,12 @@ function clickBotonesListaSugerida() {
         botonListaSugerida.addEventListener('click', function(event) {
             let idBotonListaSugerida = event.currentTarget.id;
             textoBusquedaOculto(idBotonListaSugerida);
+        });
+        botonListaSugerida.addEventListener('mouseenter', function() {
+            botonListaSugerida.className = 'resultado-lista-replace';
+        });
+        botonListaSugerida.addEventListener('mouseleave', function() {
+            botonListaSugerida.className = 'result-list';
         });
     });
 
