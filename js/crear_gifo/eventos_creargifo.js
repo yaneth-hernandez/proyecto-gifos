@@ -81,7 +81,7 @@ window.addEventListener('load', clickSailorDay);
 function clickSailorNight() {
     let sailoNight = document.getElementById('sailor-night');
     sailoNight.addEventListener('click', function() {
-        themeSailorNight('index');
+        themeSailorNight('crear');
         sailoNight.className = 'sailor-replace-night';
     });
     sailoNight.addEventListener('mouseenter', function() {
@@ -112,14 +112,7 @@ function agregarClickMisGifos() {
 }
 window.addEventListener('load', agregarClickMisGifos);
 
-function clickBotonComenzar() {
-    let botonComenzar = document.getElementById('btn-comenzar');
-    botonComenzar.addEventListener('click', function() {
-        avanzarCapturarGifos();
-        iniciarCamara();
-    });
-}
-window.addEventListener('load', clickBotonComenzar);
+
 
 function eventoClickMisGifos() {
     let misGifos = document.getElementById('text-id');
@@ -132,5 +125,41 @@ function eventoClickMisGifos() {
 }
 window.addEventListener('load', eventoClickMisGifos);
 
+function clickBotonComenzar() {
+    let botonComenzar = document.getElementById('btn-comenzar');
+    botonComenzar.addEventListener('click', function() {
+        avanzarCapturarGifos();
+        iniciarCamara();
+    });
+    botonComenzar.addEventListener('mouseenter', function() {
+        botonComenzar.className = 'cr-gif-replace';
+    });
+    botonComenzar.addEventListener('mousedown', function() {
+        botonComenzar.className = 'cr-gif-replace';
+    });
+    botonComenzar.addEventListener('mouseleave', function() {
+        botonComenzar.className = 'cr-gif-inactivo';
+    });
+}
+window.addEventListener('load', clickBotonComenzar);
+
+function clickBotonCancelarComienzo() {
+    let botonCancelar = document.getElementById('btn-cancelar');
+    botonCancelar.addEventListener('click', function(e) {
+        e.preventDefault();
+        botonCancelarComienzo();
+
+    });
+    botonCancelar.addEventListener('mouseenter', function() {
+        botonCancelar.className = 'btn-cancelar-replace';
+    });
+    botonCancelar.addEventListener('mousedown', function() {
+        botonCancelar.className = 'btn-cancelar-replace';
+    });
+    botonCancelar.addEventListener('mouseleave', function() {
+        botonCancelar.className = '';
+    });
+}
+window.addEventListener('load', clickBotonCancelarComienzo);
 
 precargaParametroUrl();

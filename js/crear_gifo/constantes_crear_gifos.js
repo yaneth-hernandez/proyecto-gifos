@@ -37,8 +37,8 @@ const cuerpoCapturarGifos = `<figure id="contenedor-captura-id" class="contenedo
         </div>
         <div class="area-botones-chequeo" id="area-botones-chequeo-id">
             <div class="btns-camara-captura" id="btns-camara-captura-id">
-                <button class="boton-camara-chequeo" onclick="cambiarAreaCapturaVideo()"><img id="img-camera-chequeo-id" class="img-camera-chequeo" src="img/camera.svg"/></button>
-                <button class="boton-capturar-chequeo" onclick="cambiarAreaCapturaVideo(); iniciarGrabacion();">Capturar</button>
+                <button  class="boton-camara-chequeo" onclick="cambiarAreaCapturaVideo()"><img id="img-camera-chequeo-id" class="img-camera-chequeo" src="img/camera.svg"/></button>
+                <button  class="boton-capturar-chequeo" onclick="cambiarAreaCapturaVideo(); iniciarGrabacion();">Capturar</button>
             </div>
         </div>
     </figure>`;

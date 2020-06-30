@@ -101,14 +101,16 @@ window.addEventListener('load', agregarClickMisGifos);
  Eventos barra de búsqueda
 ========================*/
 //evento input para deplegar barra
-const textObject = document.querySelector("#text-buscar");
-textObject.addEventListener("input",
-    function() {
-        cargarListaSugerida(textObject.value)
-        activarBotonBusqueda(textObject.value)
-    }
-);
-
+function eventoDespliegueBarra() {
+    const textObject = document.querySelector("#text-buscar");
+    textObject.addEventListener("input",
+        function() {
+            cargarListaSugerida(textObject.value)
+            activarBotonBusqueda(textObject.value)
+        }
+    );
+}
+window.addEventListener('load', eventoDespliegueBarra);
 //EVENTO CLICK EN BOTÓN BÚSQUEDA 
 function eventoClickBotonBuscar() {
     const clickObjeto = document.querySelector("#btn-search-id");

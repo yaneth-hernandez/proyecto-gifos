@@ -41,42 +41,66 @@ header.container-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transform: translateY(18px);
 }
 
-.logo img {
-    width: 100%;
-}
-
-.buttons-text {
-    width: 90%;
+.contenedor-crear-gifos .buttons-text {
+    width: 38%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
-.buttons-text .menu-ch-gif {
+.contenedor-crear-gifos .buttons-text .menu-ch-gif {
     display: flex;
     flex-direction: column;
 }
 
-.text-mis-gifos {
+.contenedor-crear-gifos .text {
     font-family: "Chakra Petch";
     font-size: 16px;
     color: #FFFFFF;
     letter-spacing: 0;
     line-height: 18px;
     margin-left: 16px;
+    width: 98px;
+    height: 36px;
+    border-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transform: translateX(185px);
 }
 
-.guion-bajo {
+.text ::first-letter {
     text-decoration: underline;
-    margin-right: -20px;
+}
+
+
+/*enlazar con js*/
+
+.text-replaces {
     font-family: "Chakra Petch";
     font-size: 16px;
     color: #FFFFFF;
     letter-spacing: 0;
     line-height: 18px;
     margin-left: 16px;
+    width: 98px;
+    height: 36px;
+    border-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transform: translateX(185px);
+    outline: 1px #FFFFFF dotted;
+    outline-offset: -4px;
+}
+
+.text-replaces ::first-letter {
+    text-decoration: underline;
 }
 
 #cr-gif {
@@ -87,6 +111,27 @@ header.container-header {
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;
+    transform: translateY(33px);
+}
+
+
+/*enlazar con js*/
+
+.cr-gif-inactivo {
+    width: 144px;
+    height: 36px;
+    background-color: #EE3EFE;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    cursor: pointer;
+}
+
+.cr-gif-replace {
+    width: 144px;
+    height: 36px;
+    background-color: #ce1adf;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    outline: 1px #110038 dotted;
+    outline-offset: -5px;
 }
 
 .crear-gifo-enlace {
@@ -110,7 +155,18 @@ header.container-header {
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;
+    transform: translateY(33px);
 }
+
+.ch-gif-active {
+    background: #ce1adf;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    outline: 1px #110038 dotted;
+    outline-offset: -5px;
+}
+
+
+/*enlazar con js*/
 
 #button-dopdown {
     width: 36px;
@@ -125,7 +181,11 @@ header.container-header {
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;
+    transform: translateY(33px);
 }
+
+
+/*enlazar con js*/
 
 #contenedor-menu {
     visibility: hidden;
@@ -147,7 +207,7 @@ li {
     list-style: none;
 }
 
-#sailor-day {
+.sailor-day-class {
     width: 150px;
     height: 36px;
     font-family: 'Chakra Petch';
@@ -161,7 +221,25 @@ li {
     cursor: pointer;
 }
 
-#sailor-night {
+.sailor-replace-day {
+    width: 150px;
+    height: 36px;
+    font-family: 'Chakra Petch';
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    background: #2E32FB;
+    border: 1px solid rgba(51, 53, 143, 0.20);
+    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+    cursor: pointer;
+}
+
+.sailor-replace-day::first-letter {
+    text-decoration: underline;
+}
+
+.sailor-night-class {
     width: 150px;
     height: 36px;
     font-family: 'Chakra Petch';
@@ -173,6 +251,24 @@ li {
     border: 1px solid #808080;
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;
+}
+
+.sailor-replace-night {
+    width: 150px;
+    height: 36px;
+    font-family: 'Chakra Petch';
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    background: #2E32FB;
+    border: 1px solid rgba(51, 53, 143, 0.20);
+    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+    cursor: pointer;
+}
+
+.sailor-replace-night::first-letter {
+    text-decoration: underline;
 }
 
 
@@ -281,6 +377,24 @@ li {
     box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
 
+.btn-cancelar-replace {
+    width: 144px;
+    height: 36px;
+    background: #2629cc;
+    box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
+    outline: 1px #110038 dotted;
+    outline-offset: -5px;
+}
+
+
+/*para contenido creado dinámicamente*/
+
+#btn-cancelar:hover {
+    outline: 1px #110038 dotted;
+    outline-offset: -5px;
+    background: #2629cc;
+}
+
 #btn-comenzar {
     width: 144px;
     height: 36px;
@@ -294,6 +408,12 @@ li {
     color: #FFFFFF;
     border: 1px solid #979797;
     box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+#btn-comenzar:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -4px;
+    background: #ce1adf;
 }
 
 
@@ -369,6 +489,12 @@ inicio crear chequeo
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.boton-camara-chequeo:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -4px;
+    background: #ce1adf;
+}
+
 .img-camera-chequeo {
     width: 18px;
     height: 16.5px;
@@ -379,8 +505,14 @@ inicio crear chequeo
     height: 36px;
     background: #EE3EFE;
     color: #FFFFFF;
-    border: 1px solid rgb(17, 0, 56);
+    border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.boton-capturar-chequeo:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -4px;
+    background: #ce1adf;
 }
 
 
@@ -429,6 +561,12 @@ inicio capturar
     box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.boton-vineta-captura-gifo :hover {
+    outline: 1px #FFFFFF dotted;
+    outline-offset: 5px;
+    background: #f33f3f;
+}
+
 .img-vineta-captura {
     width: 20px;
     height: 20px;
@@ -448,6 +586,12 @@ inicio capturar
     background: #FF6161;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.boton-listo-vineta:last-child :hover {
+    outline: 1px #FFFFFF dotted;
+    outline-offset: -4px;
+    background: #f33f3f;
 }
 
 
@@ -509,6 +653,12 @@ inicio vista previa
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.boton-arrow-temporizador:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -4px;
+    background: #ce1adf;
+}
+
 .img-boton-temporizador {
     width: 6px;
     height: 10px;
@@ -556,6 +706,12 @@ inicio vista previa
     box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
 
+.boton-repetir-captura:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -5px;
+    background: #2629cc;
+}
+
 .boton-subir-gifo {
     width: 144px;
     height: 36px;
@@ -569,6 +725,12 @@ inicio vista previa
     background: #EE3EFE;
     border: 1px solid #979797;
     box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.boton-subir-gifo:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -4px;
+    background: #ce1adf;
 }
 
 
@@ -661,6 +823,12 @@ inicio subiendo gifos
     background: #2e32fb;
     border: 1px solid #979797;
     box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.boton-cancelar-subida:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -5px;
+    background: #2629cc;
 }
 
 
@@ -756,6 +924,12 @@ Gifo subido con éxito
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.boton-copiar-enlace-gifo:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -5px;
+    background: #ce1adf;
+}
+
 .boton-descargar-gifo {
     width: 256px;
     height: 36px;
@@ -771,6 +945,12 @@ Gifo subido con éxito
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.boton-descargar-gifo:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -5px;
+    background: #ce1adf;
+}
+
 .contenedor-boton-listo-subir {
     width: 95%;
     height: 40%;
@@ -784,6 +964,12 @@ Gifo subido con éxito
     border: 1px solid rgb(17, 0, 56);
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     transform: translateX(540px) translateY(50px);
+}
+
+.boton-subido-listo:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -5px;
+    background: #ce1adf;
 }
 
 

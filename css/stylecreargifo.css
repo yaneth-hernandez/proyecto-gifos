@@ -108,6 +108,7 @@ header.container-header {
     height: 36px;
     margin-right: 16px;
     background-color: #F7C9F3;
+    border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;
     transform: translateY(33px);
@@ -127,7 +128,7 @@ header.container-header {
 .cr-gif-replace {
     width: 144px;
     height: 36px;
-    background-color: #d7add6;
+    background-color: #dda1dc;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     outline: 1px #6a5b81 dotted;
     outline-offset: -5px;
@@ -376,6 +377,24 @@ li {
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.btn-cancelar-replace {
+    width: 144px;
+    height: 36px;
+    background: #dad3d9;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -5px;
+}
+
+
+/*para contenido creado dinámicamente*/
+
+#btn-cancelar:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -5px;
+    background: #dad3d9;
+}
+
 #btn-comenzar {
     width: 144px;
     height: 36px;
@@ -389,6 +408,12 @@ li {
     background: #F7C9F3;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+#btn-comenzar:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -4px;
+    background: #d7add6;
 }
 
 
@@ -464,6 +489,12 @@ inicio crear chequeo
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.boton-camara-chequeo:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -4px;
+    background: #d7add6;
+}
+
 .img-camera-chequeo {
     width: 18px;
     height: 16.5px;
@@ -476,6 +507,12 @@ inicio crear chequeo
     color: #110038;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.boton-capturar-chequeo:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -4px;
+    background: #d7add6;
 }
 
 
@@ -524,6 +561,12 @@ inicio capturar
     box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.boton-vineta-captura-gifo :hover {
+    outline: 1px #FFFFFF dotted;
+    outline-offset: 5px;
+    background: #f33f3f;
+}
+
 .img-vineta-captura {
     width: 20px;
     height: 20px;
@@ -543,6 +586,12 @@ inicio capturar
     background: #FF6161;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.boton-listo-vineta:last-child :hover {
+    outline: 1px #FFFFFF dotted;
+    outline-offset: -4px;
+    background: #f33f3f;
 }
 
 
@@ -604,6 +653,12 @@ inicio vista previa
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.boton-arrow-temporizador:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -4px;
+    background: #d7add6;
+}
+
 .img-boton-temporizador {
     width: 6px;
     height: 10px;
@@ -651,6 +706,12 @@ inicio vista previa
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.boton-repetir-captura:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -5px;
+    background: #eedcec;
+}
+
 .boton-subir-gifo {
     width: 144px;
     height: 36px;
@@ -664,6 +725,12 @@ inicio vista previa
     background: #F7C9F3;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.boton-subir-gifo:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -4px;
+    background: #d7add6;
 }
 
 
@@ -756,6 +823,12 @@ inicio subiendo gifos
     background: #FFF4FD;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.boton-cancelar-subida:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -5px;
+    background: #dad3d9;
 }
 
 
