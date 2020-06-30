@@ -60,8 +60,8 @@ function recuperarEstilo(origenPagina) {
 
 
 function themeSailorNight(esIndexOCrear) {
-    const valorIndexCss = "/css/style-theme2.css";
-    const valorCrearCss = "css/stylecreargifo-theme2.css";
+    const valorIndexCss = "./css/style-theme2.css";
+    const valorCrearCss = "./css/stylecreargifo-theme2.css";
     const valorLogo = "img/gifOF_logo_dark.png";
     const valorLupaInactiva = "img/combined_shape.svg";
     const valorCamaraNight = "img/camera_light.svg";
@@ -91,8 +91,8 @@ function themeSailorNight(esIndexOCrear) {
 }
 
 function themeSailorDay(esIndexOCrear) {
-    const valorIndexCss = "/css/style.css";
-    const valorCrearCss = "css/stylecreargifo.css";
+    const valorIndexCss = "./css/style.css";
+    const valorCrearCss = "./css/stylecreargifo.css";
     const valorLogo = "img/gifOF_logo.png";
     const valorLupaInactiva = "img/lupa_inactive.svg";
     const valorCamaraDay = "img/camera.svg";
@@ -135,7 +135,7 @@ function mostrarIconosTema() {
 
 
     if (imagenCamara != null) {
-        if (valorTheme == "css/stylecreargifo-theme2.css") {
+        if (valorTheme == "./css/stylecreargifo-theme2.css") {
             imagenCamara.src = "img/camera_light.svg";
 
         } else {
