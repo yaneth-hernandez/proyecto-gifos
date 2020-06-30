@@ -2,6 +2,7 @@ const procesoCrearGifosId = "crear-gifos-id";
 const contenedorCapturaId = "contenedor-captura-id";
 const areaBotonesCaptura = "btns-camara-captura-id";
 const areaBotonesChequeo = "area-botones-chequeo-id";
+//const areaContenedorSubiendoGifos = "";
 const seccionProcesoCrear = document.querySelector("#proceso-crear-gifos-id");
 
 const cuerpoComenzar = `<figure class="crear-gifos" id="crear-gifos-id">
@@ -82,7 +83,7 @@ const botonesVistaPrevia = `
             <button class="boton-subir-gifo" onclick="cambiarSubiendoGifos()">Subir Guifo</button>
         </div>`;
 
-const botonesSubiendoGifo = `
+const cuerpoSubiendoGifo = `
 <figcaption class="content-text-btn-cerrar">
     <span>Subiendo Guifo</span>
     <img class="close-btn-crar-gifo" src="img/close.svg" alt="">
@@ -119,7 +120,7 @@ const botonesSubiendoGifo = `
 </figure>
 <div class="area-bton-subiendo-guifo">
     <div class="boton-cancelar-subiendo-guifos">
-    <button class="boton-cancelar-subida" onclick="confirmacionGifo()">Cancelar</button>
+    <button class="boton-cancelar-subida" onclick="cancelarSubirGifo()">Cancelar</button>
 </div>
 </div>
 </div> `;

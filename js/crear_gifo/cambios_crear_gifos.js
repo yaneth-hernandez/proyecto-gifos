@@ -35,6 +35,8 @@ function retrocederComenzarGifos() {
     seccionProcesoCrear.innerHTML = cuerpoComenzar;
 }
 
+
+
 function cambiarAreaCapturaVideo() {
     let figureById = document.getElementById(areaBotonesCaptura);
     figureById.remove();
@@ -69,13 +71,23 @@ function cambiarSubiendoGifos() {
         Muestra la ventana de Subiendo gifo...
     */
     let figureContenedorCaptura = document.getElementById(contenedorCapturaId);
-    figureContenedorCaptura.innerHTML = botonesSubiendoGifo;
+    figureContenedorCaptura.innerHTML = cuerpoSubiendoGifo;
     /*
         Enviar por POST a la API de Giphy
     */
     enviarGifo();
 
 }
+
+function cancelarSubirGifo() {
+    cancelarPeticionPost.abort();
+    alert('Proceso cancelado');
+    let figureById = document.getElementById(contenedorCapturaId);
+    figureById.remove();
+    seccionProcesoCrear.innerHTML = cuerpoComenzar;
+
+}
+
 
 function confirmacionGifo(urlMiGifo) {
     let figureContenedorCaptura = document.getElementById(contenedorCapturaId);

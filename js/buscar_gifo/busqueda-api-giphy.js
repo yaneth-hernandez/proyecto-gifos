@@ -122,13 +122,13 @@ function preCargarSugerencias() {
 function clickVerMasGifos(botonVerMasId) {
     var title = '';
     if (botonVerMasId == "btn-opt-id0") {
-        title = document.getElementById("hashtags0-id").textContent;
+        title = document.getElementById('hashtags0-id').getAttribute("data-titulo");
     } else if (botonVerMasId == "btn-opt-id1") {
-        title = document.getElementById("hashtags1-id").textContent;
+        title = document.getElementById('hashtags1-id').getAttribute("data-titulo");
     } else if (botonVerMasId == "btn-opt-id2") {
-        title = document.getElementById("hashtags2-id").textContent;
+        title = document.getElementById('hashtags2-id').getAttribute("data-titulo");
     } else if (botonVerMasId == "btn-opt-id3") {
-        title = document.getElementById("hashtags3-id").textContent;
+        title = document.getElementById('hashtags3-id').getAttribute("data-titulo");
     }
     var tituloBusqueda = prefijoTituloResultadoBusqueda + title;
     buscarGifo(title, 100, seccionVerMas, searchUrl);
@@ -197,11 +197,12 @@ function activarBotonBusqueda(inputActivarBoton) {
 
 
 function clickBotonBuscar(textoDeBusqueda) {
-    let tituloCompleto = prefijoTituloResultadoBusqueda + textoDeBusqueda;
-    buscarGifo(textoDeBusqueda, 100, seccionBotonSearch, searchUrl);
-    mostrarOcultarListaSugerida(false);
-    cambiarTituloPostBusqueda(tituloCompleto);
-
+    if (textoDeBusqueda != null && textoDeBusqueda != "") {
+        let tituloCompleto = prefijoTituloResultadoBusqueda + textoDeBusqueda;
+        buscarGifo(textoDeBusqueda, 100, seccionBotonSearch, searchUrl);
+        mostrarOcultarListaSugerida(false);
+        cambiarTituloPostBusqueda(tituloCompleto);
+    }
 }
 
 function preCargarTrending() {

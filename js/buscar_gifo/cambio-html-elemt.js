@@ -1,13 +1,14 @@
 function cambiarSeccionSugerenciasHtml(objetoDatos) {
-    document.getElementById("sugerido-gif0").src = objetoDatos[0].url;
-    document.getElementById("sugerido-gif1").src = objetoDatos[1].url;
-    document.getElementById("sugerido-gif2").src = objetoDatos[2].url;
-    document.getElementById("sugerido-gif3").src = objetoDatos[3].url;
-    document.getElementById("hashtags0-id").textContent = objetoDatos[0].title;
-    document.getElementById("hashtags1-id").textContent = objetoDatos[1].title;
-    document.getElementById("hashtags2-id").textContent = objetoDatos[2].title;
-    document.getElementById("hashtags3-id").textContent = objetoDatos[3].title;
+    const sugeridoGif = 'sugerido-gif';
+    const tituloHash = 'hashtags';
 
+    for (let i = 0; i <= 3; i++) {
+        let sugeridoGifIterador = sugeridoGif + i;
+        document.getElementById(sugeridoGifIterador).src = objetoDatos[i].url;
+        let sugeridoTituloIterador = tituloHash + i + '-id';
+        document.getElementById(sugeridoTituloIterador).textContent = prepararPlalabras(objetoDatos[i].title);
+        document.getElementById(sugeridoTituloIterador).setAttribute("data-titulo", objetoDatos[i].title);
+    }
 }
 
 async function cambiarSeccionListaSugeridoHtml(objetoDatos) {
@@ -29,14 +30,14 @@ function cargarSeccionRestultadosBusquedaHtml(objetoDatos) {
 
     let renderGifo = "<a href='BITLY_URL' target='_blank'>";
     renderGifo = renderGifo + "<img class='ver-gifo-small' id='ID_GIPHY' src='SOURCE_GIPHY' alt='' srcset=''>";
-    renderGifo = renderGifo + "<figcaption class='ver-gifo-text-standar'>";
+    renderGifo = renderGifo + "<figcaption  class='ver-gifo-text-standar'>";
     renderGifo = renderGifo + "'HASHTAG_GIPHY'</figcaption>";
     renderGifo = renderGifo + "</a>";
     document.querySelector("#tend-ver-gifo").innerHTML = '';
     for (var i = 0; i < objetoDatos.length; i++) {
         let nuevoRenderGifo = renderGifo.replace(contenidoSource, objetoDatos[i].url)
             .replace(datoIdGiphy, objetoDatos[i].id)
-            .replace(hashTag, objetoDatos[i].title)
+            .replace(hashTag, prepararPlalabras(objetoDatos[i].title))
             .replace(urlShort, objetoDatos[i].bitlyUrl); //enviar busqueda a pagina de giphy
 
         let finalRenderGifo = '';
