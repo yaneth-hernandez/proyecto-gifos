@@ -36,7 +36,7 @@ function recuperarEstilo(origenPagina) {
 
     recuperarTemaBoton = localStorage.getItem(nombreBoton);
     recuperarTemaLogo = localStorage.getItem(nombreLogo);
-    if (origenPagina.indexOf("/index.html") == 0) {
+    if (origenPagina.indexOf("/index.html") != -1) {
         recuperarTemaCss = localStorage.getItem(nombreIndexCss);
         recuperarTemaLupa = localStorage.getItem(nombreLupa);
         if (recuperarTemaCss != null && recuperarTemaLogo != null && recuperarTemaLupa != null && recuperarTemaBoton != null) {
@@ -46,7 +46,7 @@ function recuperarEstilo(origenPagina) {
             document.querySelector("#dopdown-forward").src = recuperarTemaBoton;
 
         }
-    } else if (origenPagina.indexOf("/index-crear-gifo.html") == 0) {
+    } else if (origenPagina.indexOf("/index-crear-gifo.html") != -1) {
         recuperarTemaCamara = localStorage.getItem(nombreCrearCss);
         recuperarTemaCss = localStorage.getItem(nombreCrearCss);
         if (recuperarTemaCss != null && recuperarTemaLogo != null && recuperarTemaCamara != null && recuperarTemaBoton != null) {
