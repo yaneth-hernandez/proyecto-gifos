@@ -133,7 +133,7 @@
 .cr-gif-replace {
     width: 144px;
     height: 36px;
-    background-color: #e6bbe2;
+    background-color: #d7add6;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     outline: 1px #6a5b81 dotted;
     outline-offset: -5px;
@@ -164,7 +164,7 @@
 }
 
 .ch-gif-active {
-    background-color: #e6bbe2;
+    background-color: #d7add6;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     outline: 1px #6a5b81 dotted;
     outline-offset: -5px;
