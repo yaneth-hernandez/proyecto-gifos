@@ -101,7 +101,7 @@ window.addEventListener('load', agregarClickMisGifos);
  Eventos barra de búsqueda
 ========================*/
 //evento input para deplegar barra
-function eventoDespliegueBarra() {
+function eventoIputBarra() {
     const textObject = document.querySelector("#text-buscar");
     textObject.addEventListener("input",
         function() {
@@ -110,7 +110,7 @@ function eventoDespliegueBarra() {
         }
     );
 }
-window.addEventListener('load', eventoDespliegueBarra);
+window.addEventListener('load', eventoIputBarra);
 //EVENTO CLICK EN BOTÓN BÚSQUEDA 
 function eventoClickBotonBuscar() {
     const clickObjeto = document.querySelector("#btn-search-id");
@@ -141,26 +141,29 @@ window.addEventListener('load', eventoClickBotonBuscar);
 
 
 //depliegue barra, evento click
-const elementoListaSugeridaUno = document.querySelector("#sugerencia1");
-const elementoListaSugeridoDos = document.querySelector("#sugerencia2");
-const elementoListaSugeridaTres = document.querySelector("#sugerencia3");
-[
-    elementoListaSugeridaUno,
-    elementoListaSugeridoDos,
-    elementoListaSugeridaTres
-].forEach(function(buttonLista) {
-    buttonLista.addEventListener('click', function(event) {
+function eventClickList() {
+    const elementoListaSugeridaUno = document.querySelector("#sugerencia1");
+    const elementoListaSugeridoDos = document.querySelector("#sugerencia2");
+    const elementoListaSugeridaTres = document.querySelector("#sugerencia3");
+    [
+        elementoListaSugeridaUno,
+        elementoListaSugeridoDos,
+        elementoListaSugeridaTres
+    ].forEach(function(buttonLista) {
+        buttonLista.addEventListener('click', function(event) {
 
-        let textoItemSeleccionado = event.currentTarget.children[0].textContent;
-        clickListaSugerida(textoItemSeleccionado);
+            let textoItemSeleccionado = event.currentTarget.children[0].textContent;
+            clickListaSugerida(textoItemSeleccionado);
+        });
+        buttonLista.addEventListener('mouseenter', function() {
+            buttonLista.className = 'sugerencia-replace';
+        });
+        buttonLista.addEventListener('mouseleave', function() {
+            buttonLista.className = 'sugerencia';
+        });
     });
-    buttonLista.addEventListener('mouseenter', function() {
-        buttonLista.className = 'sugerencia-replace';
-    });
-    buttonLista.addEventListener('mouseleave', function() {
-        buttonLista.className = 'sugerencia';
-    });
-});
+}
+window.addEventListener('load', eventClickList);
 //evento click sobre imagenes seccion ver más
 function clickImgVerMas() {
     const imagenVermas0 = document.querySelector('#sugerido-gif0');
