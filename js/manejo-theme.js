@@ -36,7 +36,7 @@ function recuperarEstilo(origenPagina) {
 
     recuperarTemaBoton = localStorage.getItem(nombreBoton);
     recuperarTemaLogo = localStorage.getItem(nombreLogo);
-    if (origenPagina == "/index.html") {
+    if (origenPagina.indexOf("/index.html") == 0) {
         recuperarTemaCss = localStorage.getItem(nombreIndexCss);
         recuperarTemaLupa = localStorage.getItem(nombreLupa);
         if (recuperarTemaCss != null && recuperarTemaLogo != null && recuperarTemaLupa != null && recuperarTemaBoton != null) {
@@ -46,14 +46,13 @@ function recuperarEstilo(origenPagina) {
             document.querySelector("#dopdown-forward").src = recuperarTemaBoton;
 
         }
-    } else if (origenPagina == "/index-crear-gifo.html") {
+    } else if (origenPagina.indexOf("/index-crear-gifo.html") == 0) {
         recuperarTemaCamara = localStorage.getItem(nombreCrearCss);
         recuperarTemaCss = localStorage.getItem(nombreCrearCss);
         if (recuperarTemaCss != null && recuperarTemaLogo != null && recuperarTemaCamara != null && recuperarTemaBoton != null) {
             document.querySelector("#style-theme-crear-gifo").href = recuperarTemaCss;
             document.querySelector("#header-logo-arrow").src = recuperarTemaLogo;
             document.querySelector("#dopdown-forward-cr").src = recuperarTemaBoton;
-            //document.querySelector("#img-camera-chequeo-id").src = recuperarTemaCamara;
         }
     }
 }
