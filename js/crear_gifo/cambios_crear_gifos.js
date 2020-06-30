@@ -9,7 +9,7 @@ function cambiarLinkArrowUrl() {
     let idActual = document.querySelector("#proceso-crear-gifos-id").firstElementChild.getAttribute('id')
 
     if (idActual == procesoCrearGifosId) {
-        window.location = "http://127.0.0.1:5500/index.html";
+        window.location = "./index.html";
     } else if (idActual == contenedorCapturaId) {
         detenerCamara();
         retrocederComenzarGifos();
@@ -26,7 +26,7 @@ function avanzarCapturarGifos() {
 
 
 function botonCancelarComienzo() {
-    window.location = "http://127.0.0.1:5500/index.html";
+    window.location = "./index.html";
 }
 
 function retrocederComenzarGifos() {
