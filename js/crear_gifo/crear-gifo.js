@@ -4,6 +4,7 @@ var streamCapturaUserMedia = null;
 var contenidoArchivoGif = null;
 var cancelarPeticionPost = null;
 
+
 async function iniciarCamara() {
     streamCapturaUserMedia = await navigator.mediaDevices.getUserMedia({
         audio: false,
@@ -111,19 +112,23 @@ async function enviarGifo() {
     let urlUpload = configuracionUrlCrear();
     const heading = new Headers();
     cancelarPeticionPost = new AbortController();
+    try {
+        let requestIni = {
+            method: "POST",
+            headers: heading,
+            body: formUpload,
+            cors: "cors",
+            signal: cancelarPeticionPost.signal
+        };
+        let respuestaUpload = await fetch(urlUpload, requestIni);
+        let respuestaJson = await respuestaUpload.json();
+        let urlReturn = await retornarUrlGifoPorId(respuestaJson.data.id);
+        confirmacionGifo(urlReturn);
+        guardarId(respuestaJson.data.id);
+    } catch (error) {
+        console.log(error);
 
-    let requestIni = {
-        method: "POST",
-        headers: heading,
-        body: formUpload,
-        cors: "cors",
-        signal: cancelarPeticionPost.signal
-    };
-    let respuestaUpload = await fetch(urlUpload, requestIni);
-    let respuestaJson = await respuestaUpload.json();
-    let urlReturn = await retornarUrlGifoPorId(respuestaJson.data.id);
-    confirmacionGifo(urlReturn);
-    guardarId(respuestaJson.data.id);
+    }
 }
 
 async function retornarUrlGifoPorId(id) {
