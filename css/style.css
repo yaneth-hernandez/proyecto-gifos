@@ -113,6 +113,7 @@
     width: 144px;
     height: 36px;
     margin-right: 16px;
+    border: 1px solid #110038;
     background-color: #F7C9F3;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     cursor: pointer;

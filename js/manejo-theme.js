@@ -61,10 +61,10 @@ function recuperarEstilo(origenPagina) {
 function themeSailorNight(esIndexOCrear) {
     const valorIndexCss = "./css/style-theme2.css";
     const valorCrearCss = "./css/stylecreargifo-theme2.css";
-    const valorLogo = "img/gifOF_logo_dark.png";
-    const valorLupaInactiva = "img/combined_shape.svg";
-    const valorCamaraNight = "img/camera_light.svg";
-    const valorBotonNight = "img/forward.svg";
+    const valorLogo = "./img/gifOF_logo_dark.png";
+    const valorLupaInactiva = "./img/combined_shape.svg";
+    const valorCamaraNight = "./img/camera_light.svg";
+    const valorBotonNight = "./img/forward.svg";
 
 
     if (esIndexOCrear == opcionIndex) {
@@ -92,10 +92,10 @@ function themeSailorNight(esIndexOCrear) {
 function themeSailorDay(esIndexOCrear) {
     const valorIndexCss = "./css/style.css";
     const valorCrearCss = "./css/stylecreargifo.css";
-    const valorLogo = "img/gifOF_logo.png";
-    const valorLupaInactiva = "img/lupa_inactive.svg";
-    const valorCamaraDay = "img/camera.svg";
-    const valorBotonDay = "img/dropdown.svg";
+    const valorLogo = "./img/gifOF_logo.png";
+    const valorLupaInactiva = "./img/lupa_inactive.svg";
+    const valorCamaraDay = "./img/camera.svg";
+    const valorBotonDay = "./img/dropdown.svg";
 
 
     if (esIndexOCrear == opcionIndex) {
@@ -135,10 +135,10 @@ function mostrarIconosTema() {
 
     if (imagenCamara != null) {
         if (valorTheme == "./css/stylecreargifo-theme2.css") {
-            imagenCamara.src = "img/camera_light.svg";
+            imagenCamara.src = "./img/camera_light.svg";
 
         } else {
-            imagenCamara.src = "img/camera.svg";
+            imagenCamara.src = "./img/camera.svg";
 
         }
     }
