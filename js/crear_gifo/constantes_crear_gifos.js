@@ -8,7 +8,7 @@ const seccionProcesoCrear = document.querySelector("#proceso-crear-gifos-id");
 const cuerpoComenzar = `<figure class="crear-gifos" id="crear-gifos-id">
         <figcaption class="barra-crear-gifo" id="barra-crear-gifo">Crear Guifos</figcaption>
         <div class="cont-img-tit-crear-gifo">
-            <div class="img-crear-gifo"><img id="img-crear-gifo" src="img/window img.png" alt="Crear-gifos"></div>
+            <div class="img-crear-gifo"><img id="img-crear-gifo" src="img/window_img.png" alt="Crear-gifos"></div>
             <div class="titulo-crear-gifo" id="titulo-crear-gifo">Aquí podrás crear tus propios guifos</div>
         </div>
         <p class="text-crear-gifo" id="text-crear-gifo">Crear tu <span class="crear-gifos-negrita">guifo</span> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos<br> personalizados. Los pasos para crear tu guifo son:</p>
