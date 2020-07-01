@@ -23,12 +23,12 @@
                 </div>
                 <div class="buttons-text">
                     <div class=cr-gif>
-                        <button class="ch-gif-normal" id="cr-gif"><a class="crear-gifo-enlace"href="./index-crear-gifo.html?modulo=crear">Crear Guifos</a></button>
+                        <a class="crear-gifo-enlace" id="cr-gif" href="./index-crear-gifo.html?modulo=crear">Crear Guifos</a>
                     </div>
                     <div class="menu-ch-gif">
                         <div class="ch-gif">
                             <button class="ch-gif-class" id="ch-gif">Elegir Tema</button>
-                            <button class="button-dopdown-class" id="button-dopdown"><img id="dopdown-forward"src="img/dropdown.svg" alt="dopdown" srcset=""></button>
+                            <button class="button-dopdown-class" id="button-dopdown"><img id="dopdown-forward" src="img/dropdown.svg" alt="dopdown" ></button>
 
                             <a id="text-id" class="text" href="./index-crear-gifo.html?modulo=mis-gifos"><span class="guion-bajo">M</span>is Guifos</a>
                         </div>
@@ -42,13 +42,12 @@
                 </div>
             </header>
             <!--inicio sección buscar-->
-            <section class="buscar">
-
+            <div class="buscar">
                 <figure class="buscar-form">
                     <figcaption class="bar-buscar">Buscar</figcaption>
-                    <form action="" autocomplete="off">
+                    <form autocomplete="off">
                         <div>
-                            <input type="sumit" id="text-buscar" class="letra-text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" size="154" />
+                            <input type="search" id="text-buscar" class="letra-text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" size="154" />
                         </div>
                         <div>
                             <button class="btn-search" id="btn-search-id"><img id="estilo-lupa-id" src="img/lupa_inactive.svg" alt="lupa"/> Buscar</button>
@@ -73,7 +72,7 @@
                     <button id="boton-result-list7" class="result-list"><span id="result-list7">#lorem ipsu</span><span id="text-oculto7" class="text-oculto"></span></button>
                 </figure>
 
-            </section>
+            </div>
             <!--fin sección buscar-->
             <!--==sugerencias- inicio==-->
             <article class="seccion-sugerencias">
@@ -84,7 +83,7 @@
                     <figure class="option-content">
                         <figcaption class="option-barr">
                             <span data-titulo="" id="hashtags0-id" class="text-option-barr"></span>
-                            <button class="btn-cierre"><img class="boton-cierre-tend" src="img/button close.svg" alt="cierre"></button>
+                            <button class="btn-cierre"><img class="boton-cierre-tend" src="img/buttonclose.svg" alt="cierre"></button>
                         </figcaption>
                         <div class="video-btn-content">
                             <img id="sugerido-gif0" class="gif" src="" alt="gif" />
@@ -94,7 +93,7 @@
                     <figure class="option-content">
                         <figcaption class="option-barr">
                             <span data-titulo="" id="hashtags1-id" class="text-option-barr"></span>
-                            <button class="btn-cierre"><img class="boton-cierre-tend" src="img/button close.svg" alt="cierre"></button>
+                            <button class="btn-cierre"><img class="boton-cierre-tend" src="img\buttonclose.svg" alt="cierre"></button>
                         </figcaption>
                         <div class="video-btn-content">
                             <img id="sugerido-gif1" class="gif" src="" alt="gif" />
@@ -104,7 +103,7 @@
                     <figure class="option-content">
                         <figcaption class="option-barr">
                             <span data-titulo="" id="hashtags2-id" class="text-option-barr"></span>
-                            <button class="btn-cierre"><img class="boton-cierre-tend" src="img/button close.svg" alt="gif"></button>
+                            <button class="btn-cierre"><img class="boton-cierre-tend" src="img/buttonclose.svg" alt="gif"></button>
                         </figcaption>
                         <div class="video-btn-content">
                             <img id="sugerido-gif2" class="gif" src="" alt="gif" />
@@ -114,7 +113,7 @@
                     <figure class="option-content">
                         <figcaption class="option-barr">
                             <span data-titulo="" id="hashtags3-id" class="text-option-barr"></span>
-                            <button class="btn-cierre"><img class="boton-cierre-tend" src="img/button close.svg" alt="cierre"></button>
+                            <button class="btn-cierre"><img class="boton-cierre-tend" src="img/buttonclose.svg" alt="cierre"></button>
                         </figcaption>
                         <div class="video-btn-content">
                             <img id="sugerido-gif3" class="gif" src="" alt="gif" />
@@ -137,13 +136,14 @@
             <!--==tendencias- fin==-->
             <footer></footer>
         </div>
-        </div>
+
         <script src="js/manejo-theme.js"></script>
         <script src="js/buscar_gifo/eventos.js"></script>
         <script src="js/buscar_gifo/busqueda-api-giphy.js"></script>
         <script src="js/buscar_gifo/cambio-html-elemt.js"></script>
+    </main>
 </body>
 
-</main>
+
 
 </html>

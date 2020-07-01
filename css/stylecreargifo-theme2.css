@@ -107,7 +107,18 @@ header.container-header {
 #cr-gif {
     width: 144px;
     height: 36px;
+    font-family: "Chakra Petch";
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 18px;
+    margin-left: 16px;
     margin-right: 16px;
+    border-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     background: #EE3EFE;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
@@ -133,15 +144,6 @@ header.container-header {
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
     outline: 1px #110038 dotted;
     outline-offset: -5px;
-}
-
-.crear-gifo-enlace {
-    font-family: "Chakra Petch";
-    font-size: 16px;
-    line-height: 18px;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    text-decoration: none;
 }
 
 #ch-gif {
@@ -454,7 +456,7 @@ inicio crear chequeo
 }
 
 .content-imagen-chequeo {
-    max-width: auto;
+    width: auto;
     max-height: 434px;
     margin-top: 15px;
     background: #FFFAFE;
