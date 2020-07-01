@@ -1,6 +1,8 @@
 /*========================
  Eventos encabezado
 ========================*/
+const textObject = document.querySelector("#text-buscar");
+
 function clickCrearGifos() {
     let botonCrear = document.getElementById('cr-gif');
     botonCrear.addEventListener('click', function() {
@@ -102,7 +104,7 @@ window.addEventListener('load', agregarClickMisGifos);
 ========================*/
 //evento input para deplegar barra
 function eventoIputBarra() {
-    const textObject = document.querySelector("#text-buscar");
+
     textObject.addEventListener("input",
         function() {
             cargarListaSugerida(textObject.value)
