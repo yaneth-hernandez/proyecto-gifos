@@ -18,6 +18,7 @@ main.contenedor-crear-gifos {
 /*encabezado*/
 
 .header-barr {
+    min-width: 1440px;
     height: 23px;
     margin: 1px 1px 0px 1px;
     border-bottom: solid 1px #110038;
@@ -1009,7 +1010,7 @@ contenedor mis gifos
     margin: auto;
     display: grid;
     grid-gap: 16px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
 }
 
 .ver-mis-gifo-text {

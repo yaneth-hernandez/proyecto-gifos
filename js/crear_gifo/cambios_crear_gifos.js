@@ -166,16 +166,27 @@ function chronometerRegresivo() {
 }
 
 async function obtenerGifosCreados() {
+    let banderaExisteGifo = false;
+
     await limpiarVisualizacionMisGifos();
     for (let i = 0; i < localStorage.length; i++) {
         let gifoLocaleStarage = localStorage.key(i);
 
         let existe = localStorage.key(i).indexOf('miGifo-');
         if (existe != -1) {
+            banderaExisteGifo = true;
             let idMigifo = localStorage.getItem(gifoLocaleStarage)
             let urlMigifo = await retornarUrlGifoPorId(idMigifo)
             await mostrarGifosCreados(urlMigifo);
         }
+    }
+    if (banderaExisteGifo == false) {
+        let contenedorMostrar = document.getElementById('mis-gifos-ver-contenedor-id');
+        let espacioGifo = `<label class="ver-mis-gifo-class"/>`;
+        let figureMisGifos = document.createElement('figure');
+        figureMisGifos.className = 'ver-mis-gifo';
+        figureMisGifos.innerHTML = espacioGifo;
+        contenedorMostrar.append(figureMisGifos)
     }
 }
 
