@@ -113,7 +113,7 @@ function obtenerSugerencias() {
 }
 
 function preCargarSugerencias() {
-    const maximoResultado = 10;
+    const maximoResultado = 4;
     let palabraSugerida = obtenerSugerencias();
     buscarGifo(palabraSugerida, maximoResultado, seccionSugerencias, searchUrl);
 }
@@ -131,7 +131,7 @@ function clickVerMasGifos(botonVerMasId) {
         title = document.getElementById('hashtags3-id').getAttribute("data-titulo");
     }
     var tituloBusqueda = prefijoTituloResultadoBusqueda + title;
-    buscarGifo(title, 100, seccionVerMas, searchUrl);
+    buscarGifo(title, 50, seccionVerMas, searchUrl);
     cambiarTituloPostBusqueda(tituloBusqueda);
 }
 
@@ -157,7 +157,7 @@ function mostrarOcultarListaSugerida(mostrar) {
 function clickListaSugerida(tituloGif) {
     let tituloCompleto = prefijoTituloResultadoBusqueda + tituloGif;
     mostrarOcultarListaSugerida(false);
-    buscarGifo(tituloGif, 100, seccionMostrarGifos, searchUrl);
+    buscarGifo(tituloGif, 50, seccionMostrarGifos, searchUrl);
     cambiarTituloPostBusqueda(tituloCompleto);
 }
 
@@ -175,7 +175,7 @@ function activarBotonBusqueda(inputActivarBoton) {
 
     if (inputActivarBoton == '') {
 
-        if (valorTheme == '/css/style.css') {
+        if (valorTheme == './css/style.css') {
             document.querySelector("#btn-search-id").className = 'btn-search';
             document.querySelector("#estilo-lupa-id").src = 'img/lupa_inactive.svg';
         } else {
@@ -184,7 +184,7 @@ function activarBotonBusqueda(inputActivarBoton) {
         }
 
     } else {
-        if (valorTheme == '/css/style.css') {
+        if (valorTheme == './css/style.css') {
 
             document.querySelector("#btn-search-id").className = 'btn-search-click';
             document.querySelector("#estilo-lupa-id").src = 'img/lupa.svg';
@@ -199,19 +199,19 @@ function activarBotonBusqueda(inputActivarBoton) {
 function clickBotonBuscar(textoDeBusqueda) {
     if (textoDeBusqueda != null && textoDeBusqueda != "") {
         let tituloCompleto = prefijoTituloResultadoBusqueda + textoDeBusqueda;
-        buscarGifo(textoDeBusqueda, 100, seccionBotonSearch, searchUrl);
+        buscarGifo(textoDeBusqueda, 50, seccionBotonSearch, searchUrl);
         mostrarOcultarListaSugerida(false);
         cambiarTituloPostBusqueda(tituloCompleto);
     }
 }
 
 function preCargarTrending() {
-    buscarGifo('', 100, precargaMostrarGifos, trendingUrl);
+    buscarGifo('', 50, precargaMostrarGifos, trendingUrl);
 }
 
 function textoBusquedaOculto(idBotonListaSugerida) {
     let busquedatextoOculto = document.querySelector("#" + idBotonListaSugerida).childNodes[1].textContent;
-    buscarGifo(busquedatextoOculto, 100, seccionBotoneraBuscar, searchUrl);
+    buscarGifo(busquedatextoOculto, 50, seccionBotoneraBuscar, searchUrl);
 
 }
 preCargarSugerencias();

@@ -125,7 +125,7 @@ function eventoClickBotonBuscar() {
     clickObjeto.addEventListener('mouseenter', function() {
         clickObjeto.className = 'btn-search-click';
         let valorTheme = obtenerThemeActual();
-        if (valorTheme == '/css/style.css') {
+        if (valorTheme == './css/style.css') {
             document.querySelector("#estilo-lupa-id").src = 'img/lupa.svg';
         } else {
             document.querySelector("#estilo-lupa-id").src = 'img/lupa_light.svg';

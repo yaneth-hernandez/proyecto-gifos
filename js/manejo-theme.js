@@ -77,7 +77,7 @@ function themeSailorNight(esIndexOCrear) {
         document.querySelector("#style-theme-crear-gifo").href = valorCrearCss;
         document.querySelector("#header-logo-arrow").src = valorLogo;
         document.querySelector("#dopdown-forward-cr").src = valorBotonNight;
-        //document.querySelector("#img-camera-chequeo-id").src = valorCamaraNight;
+
     }
     guardarEstilo(nombreIndexCss, valorIndexCss);
     guardarEstilo(nombreCrearCss, valorCrearCss);
@@ -108,7 +108,7 @@ function themeSailorDay(esIndexOCrear) {
         document.querySelector("#style-theme-crear-gifo").href = valorCrearCss;
         document.querySelector("#header-logo-arrow").src = valorLogo;
         document.querySelector("#dopdown-forward-cr").src = valorBotonDay;
-        // document.querySelector("#img-camera-chequeo-id").src = valorCamaraDay;
+
 
     }
 
