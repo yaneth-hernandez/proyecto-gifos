@@ -24,7 +24,6 @@ function cargarSeccionRestultadosBusquedaHtml(objetoDatos) {
     const datoIdGiphy = 'ID_GIPHY';
     const hashTag = 'HASHTAG_GIPHY';
     const urlShort = 'BITLY_URL';
-
     const classGyfoStarndard = 'ver-gifo-small';
     const classGyfoLargo = 'ver-gifo-largo';
 
@@ -55,17 +54,23 @@ function cargarSeccionRestultadosBusquedaHtml(objetoDatos) {
         figure.innerHTML = finalRenderGifo;
 
         document.querySelector("#tend-ver-gifo").append(figure);
-
-
     }
 
 }
 //botones resultados -cambio mostrar
 function mostraOcultarBotonesResultListCambioHtml(objetoDatos) {
-    for (var i = 0; i <= 7; i++) {
-        let idName = "#boton-result-list" + i;
-        document.querySelector(idName).childNodes[0].textContent = prepararPlalabras(objetoDatos[i].title);
-        document.querySelector(idName).childNodes[1].textContent = objetoDatos[i].title;
+    const botongResultPrefijoId = "#boton-result-list";
+    for (let i = 0; i <= 7; i++) {
+        let idName = botongResultPrefijoId + i;
+        let botonResultListElement = document.querySelector(idName);
+        botonResultListElement.style.visibility = "hidden";
+    }
+    for (let i = 0; i < objetoDatos.length && i <= 7; i++) {
+        let idName = botongResultPrefijoId + i;
+        let botonResultListElement = document.querySelector(idName);
+        botonResultListElement.childNodes[0].textContent = prepararPlalabras(objetoDatos[i].title);
+        botonResultListElement.childNodes[1].textContent = objetoDatos[i].title;
+        botonResultListElement.style.visibility = "visible";
     }
     document.querySelector('#menu-results-list-id').style.visibility = "visible";
 }

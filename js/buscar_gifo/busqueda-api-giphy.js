@@ -40,7 +40,6 @@ function configuracionUrl(qParametro, limit, tipo) {
 }
 
 async function buscarGifo(valorBusqueda, limit, nombreSeccion, tipo) {
-
     let existeGifo = false;
     let urlBusqueda = configuracionUrl(valorBusqueda, limit, tipo);
     var respuestaBusqueda = await fetch(urlBusqueda);

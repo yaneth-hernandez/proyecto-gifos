@@ -65,7 +65,6 @@ function clickSailorDay() {
 }
 window.addEventListener('load', clickSailorDay);
 
-
 function clickSailorNight() {
     let sailoNight = document.getElementById('sailor-night');
     sailoNight.addEventListener('click', function() {

@@ -434,6 +434,7 @@ section .buscar {
     text-align: center;
     line-height: 18px;
     cursor: pointer;
+    visibility: hidden;
 }
 
 .resultado-lista-replace {
