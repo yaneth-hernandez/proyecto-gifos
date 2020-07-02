@@ -40,6 +40,8 @@ function configuracionUrl(qParametro, limit, tipo) {
 }
 
 async function buscarGifo(valorBusqueda, limit, nombreSeccion, tipo) {
+
+    let existeGifo = false;
     let urlBusqueda = configuracionUrl(valorBusqueda, limit, tipo);
     var respuestaBusqueda = await fetch(urlBusqueda);
     var resultadoDatos = await respuestaBusqueda.json();
@@ -49,23 +51,26 @@ async function buscarGifo(valorBusqueda, limit, nombreSeccion, tipo) {
         var objectResult = new GiphyClass(result);
         arregloResultadosGiphy.push(objectResult);
     })
-
-    if (nombreSeccion == seccionSugerencias) {
-        cambiarSeccionSugerenciasHtml(arregloResultadosGiphy);
-    } else if (nombreSeccion == seccionResultadoSugerido) {
-        await cambiarSeccionListaSugeridoHtml(arregloResultadosGiphy);
-    } else if (nombreSeccion == precargaMostrarGifos) {
-        cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
-    } else if (nombreSeccion == seccionVerMas) {
-        cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
-    } else if (nombreSeccion == seccionMostrarGifos ||
-        nombreSeccion == seccionBotonSearch) {
-        mostraOcultarBotonesResultListCambioHtml(arregloResultadosGiphy);
-        ocultarSeccionSugerenciasCambioHtml();
-        cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
-    } else if (nombreSeccion == seccionBotoneraBuscar) {
-        cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
+    if (resultadoDatos.data.length != 0) {
+        existeGifo = true;
+        if (nombreSeccion == seccionSugerencias) {
+            cambiarSeccionSugerenciasHtml(arregloResultadosGiphy);
+        } else if (nombreSeccion == seccionResultadoSugerido) {
+            await cambiarSeccionListaSugeridoHtml(arregloResultadosGiphy);
+        } else if (nombreSeccion == precargaMostrarGifos) {
+            cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
+        } else if (nombreSeccion == seccionVerMas) {
+            cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
+        } else if (nombreSeccion == seccionMostrarGifos ||
+            nombreSeccion == seccionBotonSearch) {
+            mostraOcultarBotonesResultListCambioHtml(arregloResultadosGiphy);
+            ocultarSeccionSugerenciasCambioHtml();
+            cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
+        } else if (nombreSeccion == seccionBotoneraBuscar) {
+            cargarSeccionRestultadosBusquedaHtml(arregloResultadosGiphy);
+        }
     }
+    return existeGifo;
 }
 
 class GiphyClass {
@@ -135,14 +140,14 @@ function clickVerMasGifos(botonVerMasId) {
     cambiarTituloPostBusqueda(tituloBusqueda);
 }
 
-function cargarListaSugerida(inputTextoSugerido) {
+async function cargarListaSugerida(inputTextoSugerido) {
     const maximoResultado = 3;
 
     if (inputTextoSugerido == "") {
         mostrarOcultarListaSugerida(false);
     } else {
-        mostrarOcultarListaSugerida(true);
-        buscarGifo(inputTextoSugerido, maximoResultado, seccionResultadoSugerido, searchUrl);
+        let existeGifo = await buscarGifo(inputTextoSugerido, maximoResultado, seccionResultadoSugerido, searchUrl);
+        mostrarOcultarListaSugerida(existeGifo);
     }
 }
 

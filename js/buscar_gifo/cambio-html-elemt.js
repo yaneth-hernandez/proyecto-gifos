@@ -13,9 +13,9 @@ function cambiarSeccionSugerenciasHtml(objetoDatos) {
 
 async function cambiarSeccionListaSugeridoHtml(objetoDatos) {
     if (objetoDatos != null && objetoDatos != undefined) {
-        document.getElementById('sugerencia-text1').textContent = objetoDatos[0].title;
-        document.getElementById('sugerencia-text2').textContent = objetoDatos[1].title;
-        document.getElementById('sugerencia-text3').textContent = objetoDatos[2].title;
+        for (let i = 0; i < objetoDatos.length; i++) {
+            document.getElementById('sugerencia-text' + i).textContent = objetoDatos[i].title;
+        }
     }
 }
 
