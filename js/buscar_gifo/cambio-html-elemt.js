@@ -20,39 +20,28 @@ async function cambiarSeccionListaSugeridoHtml(objetoDatos) {
 }
 
 function cargarSeccionRestultadosBusquedaHtml(objetoDatos) {
-    const contenidoSource = 'SOURCE_GIPHY';
-    const datoIdGiphy = 'ID_GIPHY';
-    const hashTag = 'HASHTAG_GIPHY';
-    const urlShort = 'BITLY_URL';
-    const classGyfoStarndard = 'ver-gifo-small';
+    const classGyfoStandard = 'ver-gifo-small';
     const classGyfoLargo = 'ver-gifo-largo';
+    const verGifoTextStandar = 'ver-gifo-text-standar';
+    const verGifoTextLargo = 'ver-gifo-text-largo';
 
-    let renderGifo = "<a href='BITLY_URL' target='_blank'>";
-    renderGifo = renderGifo + "<img class='ver-gifo-small' id='ID_GIPHY' src='SOURCE_GIPHY' alt='' srcset=''>";
-    renderGifo = renderGifo + "<figcaption  class='ver-gifo-text-standar'>";
-    renderGifo = renderGifo + "'HASHTAG_GIPHY'</figcaption>";
-    renderGifo = renderGifo + "</a>";
     document.querySelector("#tend-ver-gifo").innerHTML = '';
     for (var i = 0; i < objetoDatos.length; i++) {
-        let nuevoRenderGifo = renderGifo.replace(contenidoSource, objetoDatos[i].url)
-            .replace(datoIdGiphy, objetoDatos[i].id)
-            .replace(hashTag, prepararPlalabras(objetoDatos[i].title))
-            .replace(urlShort, objetoDatos[i].bitlyUrl); //enviar busqueda a pagina de giphy
+            let hasTagtext = prepararPlalabras(objetoDatos[i].title);
+            let renderGifo = `<a href='` + objetoDatos[i].bitlyUrl  + `' target='_blank'>`
+                            + `<img class='ver-gifo-small' id='` + objetoDatos[i].id +`' src='` + objetoDatos[i].url + `' alt='' srcset=''>`
+                            + `<figcaption class='ver-gifo-text-standar'>'` + hasTagtext + `'</figcaption>`+
+                            `</a>`;
 
-        let finalRenderGifo = '';
-        let ancho = (objetoDatos[i].width / objetoDatos[i].height);
         var figure = document.createElement('figure');
-        if (ancho >= 1.5) {
-            finalRenderGifo = nuevoRenderGifo.replace(classGyfoStarndard, classGyfoLargo)
-                .replace('ver-gifo-text-standar', 'ver-gifo-text-largo');
+        if (objetoDatos[i].isLarge) {
+            renderGifo = renderGifo.replace(classGyfoStandard, classGyfoLargo)
+                                    .replace(verGifoTextStandar, verGifoTextLargo);
             figure.className = 'contenedor-gifo-largo';
-
         } else {
-            finalRenderGifo = nuevoRenderGifo;
             figure.className = 'contenedor-gifo-standar';
         }
-        figure.innerHTML = finalRenderGifo;
-
+        figure.innerHTML = renderGifo;
         document.querySelector("#tend-ver-gifo").append(figure);
     }
 

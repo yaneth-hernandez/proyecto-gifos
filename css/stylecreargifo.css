@@ -927,6 +927,12 @@ Gifo subido con éxito
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.boton-copiar-enlace-gifo:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -5px;
+    background: #d7add6;
+}
+
 .boton-descargar-gifo {
     width: 256px;
     height: 36px;
@@ -942,6 +948,12 @@ Gifo subido con éxito
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.boton-descargar-gifo:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -5px;
+    background: #d7add6;
+}
+
 .contenedor-boton-listo-subir {
     width: 95%;
     height: 40%;
@@ -955,6 +967,12 @@ Gifo subido con éxito
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     transform: translateX(540px) translateY(50px);
+}
+
+.boton-subido-listo:hover {
+    outline: 1px #6a5b81 dotted;
+    outline-offset: -5px;
+    background: #d7add6;
 }
 
 

@@ -539,6 +539,7 @@ section .buscar {
 .video-btn-content {
     width: 280px;
     height: 280px;
+    background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
 }
 
 .gif {
@@ -602,8 +603,10 @@ section .buscar {
 }
 
 .tendencias-titulo {
+    width: 1194.80px;
     height: 32px;
     margin: 65px 0px 16px 0px;
+    transform: translateX(100);
     display: flex;
     align-items: center;
     padding-left: 7px;
@@ -617,9 +620,10 @@ section .buscar {
 }
 
 .tend-ver-gifo {
+    width: 1220px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    transform: translateX(-12px);
 }
 
 .ver-gifo-text-standar {
@@ -655,6 +659,7 @@ section .buscar {
 .contenedor-gifo-standar a {
     width: 294px;
     height: 304px;
+    margin-left: 10px;
     margin-bottom: 8px;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
@@ -664,7 +669,7 @@ section .buscar {
 }
 
 .contenedor-gifo-standar :hover {
-    outline: 2px #6a5b81 dotted;
+    outline: 1px #6a5b81 dotted;
     outline-offset: -1px;
 }
 
@@ -675,11 +680,13 @@ section .buscar {
 .ver-gifo-small {
     width: 288px;
     height: 300px;
+    background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
 }
 
 .contenedor-gifo-largo a {
-    width: 596px;
+    width: 600px;
     height: 304px;
+    margin-left: 10px;
     margin-bottom: 16px;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
@@ -689,7 +696,7 @@ section .buscar {
 }
 
 .contenedor-gifo-largo :hover {
-    outline: 2px #6a5b81 dotted;
+    outline: 1px #6a5b81 dotted;
     outline-offset: -1px;
 }
 
@@ -700,6 +707,7 @@ section .buscar {
 a .ver-gifo-largo {
     width: 590px;
     height: 300px;
+    background-image: linear-gradient(225deg, #F7C9F3, #4180F6);
 }
 
 
