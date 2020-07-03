@@ -220,16 +220,15 @@ function activarBotonBusqueda(inputActivarBoton) {
 
     if (inputActivarBoton == '') {
 
-        if (valorTheme == './css/style.css') {
+        if (valorTheme == './css/style.css' || valorTheme == null) {
             document.querySelector("#btn-search-id").className = 'btn-search';
             document.querySelector("#estilo-lupa-id").src = './img/lupa_inactive.svg';
         } else {
             document.querySelector("#btn-search-id").className = 'btn-search';
             document.querySelector("#estilo-lupa-id").src = './img/combined_shape.svg';
         }
-
     } else {
-        if (valorTheme == './css/style.css') {
+        if (valorTheme == './css/style.css' || valorTheme == null) {
 
             document.querySelector("#btn-search-id").className = 'btn-search-click';
             document.querySelector("#estilo-lupa-id").src = './img/lupa.svg';
