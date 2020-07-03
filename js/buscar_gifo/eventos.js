@@ -125,9 +125,9 @@ function eventoClickBotonBuscar() {
         clickObjeto.className = 'btn-search-click';
         let valorTheme = obtenerThemeActual();
         if (valorTheme == './css/style.css') {
-            document.querySelector("#estilo-lupa-id").src = 'img/lupa.svg';
+            document.querySelector("#estilo-lupa-id").src = './img/lupa.svg';
         } else {
-            document.querySelector("#estilo-lupa-id").src = 'img/lupa_light.svg';
+            document.querySelector("#estilo-lupa-id").src = './img/lupa_light.svg';
         }
     });
 

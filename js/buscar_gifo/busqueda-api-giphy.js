@@ -69,11 +69,10 @@ async function ordenarGifosConsultados(resultadoDatos) {
     if (resultadoDatos != null) {
         resultadoDatos.forEach(result => {
             let resultData = new GiphyClass(result);
-            
+
             if (resultData.isLarge) {
                 contadorLinea = contadorLinea + 2;
-            }
-            else {
+            } else {
                 contadorLinea = contadorLinea + 1;
             }
             if (contadorLinea == 4) {
@@ -84,11 +83,9 @@ async function ordenarGifosConsultados(resultadoDatos) {
             } else {
                 resultadoDatos.push(result);
                 if (resultData.isLarge) {
-                    contadorLinea = contadorLinea -2;
-                }
-                else
-                {
-                    contadorLinea = contadorLinea -1;
+                    contadorLinea = contadorLinea - 2;
+                } else {
+                    contadorLinea = contadorLinea - 1;
                 }
             }
         });
@@ -225,20 +222,20 @@ function activarBotonBusqueda(inputActivarBoton) {
 
         if (valorTheme == './css/style.css') {
             document.querySelector("#btn-search-id").className = 'btn-search';
-            document.querySelector("#estilo-lupa-id").src = 'img/lupa_inactive.svg';
+            document.querySelector("#estilo-lupa-id").src = './img/lupa_inactive.svg';
         } else {
             document.querySelector("#btn-search-id").className = 'btn-search';
-            document.querySelector("#estilo-lupa-id").src = 'img/combined_shape.svg';
+            document.querySelector("#estilo-lupa-id").src = './img/combined_shape.svg';
         }
 
     } else {
         if (valorTheme == './css/style.css') {
 
             document.querySelector("#btn-search-id").className = 'btn-search-click';
-            document.querySelector("#estilo-lupa-id").src = 'img/lupa.svg';
+            document.querySelector("#estilo-lupa-id").src = './img/lupa.svg';
         } else {
             document.querySelector("#btn-search-id").className = 'btn-search-click';
-            document.querySelector("#estilo-lupa-id").src = 'img/lupa_light.svg';
+            document.querySelector("#estilo-lupa-id").src = './img/lupa_light.svg';
         }
     }
 }
